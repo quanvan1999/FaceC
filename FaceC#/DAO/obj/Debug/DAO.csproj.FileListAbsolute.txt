@@ -1,0 +1,9 @@
+C:\Users\Laptopgame\Desktop\aaa\GUI\DAO\bin\Debug\DAO.dll
+C:\Users\Laptopgame\Desktop\aaa\GUI\DAO\bin\Debug\DAO.pdb
+C:\Users\Laptopgame\Desktop\aaa\GUI\DAO\bin\Debug\DTO.dll
+C:\Users\Laptopgame\Desktop\aaa\GUI\DAO\bin\Debug\DTO.pdb
+C:\Users\Laptopgame\Desktop\aaa\GUI\DAO\obj\Debug\DAO.csprojAssemblyReference.cache
+C:\Users\Laptopgame\Desktop\aaa\GUI\DAO\obj\Debug\DAO.csproj.CoreCompileInputs.cache
+C:\Users\Laptopgame\Desktop\aaa\GUI\DAO\obj\Debug\DAO.csproj.CopyComplete
+C:\Users\Laptopgame\Desktop\aaa\GUI\DAO\obj\Debug\DAO.dll
+C:\Users\Laptopgame\Desktop\aaa\GUI\DAO\obj\Debug\DAO.pdb

@@ -1,0 +1,11 @@
+C:\Users\Laptopgame\Desktop\aaa\GUI\BUS\bin\Debug\BUS.dll
+C:\Users\Laptopgame\Desktop\aaa\GUI\BUS\bin\Debug\BUS.pdb
+C:\Users\Laptopgame\Desktop\aaa\GUI\BUS\bin\Debug\DAO.dll
+C:\Users\Laptopgame\Desktop\aaa\GUI\BUS\bin\Debug\DTO.dll
+C:\Users\Laptopgame\Desktop\aaa\GUI\BUS\bin\Debug\DAO.pdb
+C:\Users\Laptopgame\Desktop\aaa\GUI\BUS\bin\Debug\DTO.pdb
+C:\Users\Laptopgame\Desktop\aaa\GUI\BUS\obj\Debug\BUS.csprojAssemblyReference.cache
+C:\Users\Laptopgame\Desktop\aaa\GUI\BUS\obj\Debug\BUS.csproj.CoreCompileInputs.cache
+C:\Users\Laptopgame\Desktop\aaa\GUI\BUS\obj\Debug\BUS.csproj.CopyComplete
+C:\Users\Laptopgame\Desktop\aaa\GUI\BUS\obj\Debug\BUS.dll
+C:\Users\Laptopgame\Desktop\aaa\GUI\BUS\obj\Debug\BUS.pdb
