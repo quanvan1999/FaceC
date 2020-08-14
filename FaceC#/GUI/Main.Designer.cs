@@ -82,6 +82,7 @@
             this.btnThoat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThoat.UseVisualStyleBackColor = true;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
+            this.btnThoat.Paint += new System.Windows.Forms.PaintEventHandler(this.btnThoat_Paint);
             // 
             // btnLop
             // 
@@ -102,6 +103,7 @@
             this.btnLop.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLop.UseVisualStyleBackColor = true;
             this.btnLop.Click += new System.EventHandler(this.btnLop_Click);
+            this.btnLop.Paint += new System.Windows.Forms.PaintEventHandler(this.btnLop_Paint);
             // 
             // btnDSSV
             // 
@@ -122,6 +124,7 @@
             this.btnDSSV.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDSSV.UseVisualStyleBackColor = true;
             this.btnDSSV.Click += new System.EventHandler(this.btnDSSV_Click);
+            this.btnDSSV.Paint += new System.Windows.Forms.PaintEventHandler(this.btnDSSV_Paint);
             // 
             // btnDiemDanh
             // 
@@ -142,16 +145,18 @@
             this.btnDiemDanh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDiemDanh.UseVisualStyleBackColor = true;
             this.btnDiemDanh.Click += new System.EventHandler(this.btnDiemDanh_Click);
+            this.btnDiemDanh.Paint += new System.Windows.Forms.PaintEventHandler(this.btnDiemDanh_Paint);
             // 
             // panelName
             // 
-            this.panelName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(125)))), ((int)(((byte)(49)))));
+            this.panelName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(114)))), ((int)(((byte)(196)))));
             this.panelName.Controls.Add(this.lblDesign);
             this.panelName.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelName.Location = new System.Drawing.Point(0, 0);
             this.panelName.Name = "panelName";
             this.panelName.Size = new System.Drawing.Size(416, 111);
             this.panelName.TabIndex = 2;
+            this.panelName.Paint += new System.Windows.Forms.PaintEventHandler(this.panelName_Paint);
             // 
             // lblDesign
             // 
@@ -167,7 +172,7 @@
             // 
             // panelTitle
             // 
-            this.panelTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(125)))), ((int)(((byte)(49)))));
+            this.panelTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(136)))), ((int)(((byte)(205)))));
             this.panelTitle.Controls.Add(this.btnCloseChild);
             this.panelTitle.Controls.Add(this.btnMi);
             this.panelTitle.Controls.Add(this.lblTittle);

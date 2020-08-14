@@ -14,8 +14,7 @@ namespace GUI
     public partial class Main : Form
     {
         private Button currentButton;
-        private Random random;
-        private int tempIndex;
+      
         private Form activeForm;
         public Main()
         {
@@ -137,7 +136,11 @@ namespace GUI
 
         private void panelMenu_Paint(object sender, PaintEventArgs e)
         {
-           
+            ControlPaint.DrawBorder(e.Graphics,panelMenu.ClientRectangle,
+                       Color.Black, 1, ButtonBorderStyle.None, // left
+                       Color.Black, 1, ButtonBorderStyle.None, // top
+                       Color.Black,2, ButtonBorderStyle.Solid, // right
+                       Color.Black, 1, ButtonBorderStyle.None);// bottom
         }
       
         private void Main_Load(object sender, EventArgs e)
@@ -148,13 +151,52 @@ namespace GUI
 
         private void panelDeskop_Paint(object sender, PaintEventArgs e)
         {
-            ControlPaint.DrawBorder(e.Graphics, panelMenu.ClientRectangle,
-              Color.Black, 2, ButtonBorderStyle.Solid, // left
-              Color.White, 1, ButtonBorderStyle.None, // top
-              Color.Black, 2, ButtonBorderStyle.None, // right
-              Color.Black, 1, ButtonBorderStyle.None);// bottom
+          
         }
 
-        
+        private void btnThoat_Paint(object sender, PaintEventArgs e)
+        {
+            ControlPaint.DrawBorder(e.Graphics, btnThoat.ClientRectangle,
+                       Color.Black, 1, ButtonBorderStyle.None, // left
+                       Color.Black, 1, ButtonBorderStyle.None, // top
+                       Color.Black, 2, ButtonBorderStyle.Solid, // right
+                       Color.Black, 2, ButtonBorderStyle.Solid);// bottom
+        }
+
+        private void btnLop_Paint(object sender, PaintEventArgs e)
+        {
+            ControlPaint.DrawBorder(e.Graphics, btnLop.ClientRectangle,
+                       Color.Black, 1, ButtonBorderStyle.None, // left
+                       Color.Black, 1, ButtonBorderStyle.None, // top
+                       Color.Black, 2, ButtonBorderStyle.Solid, // right
+                       Color.Black, 2, ButtonBorderStyle.Solid);// bottom
+        }
+
+        private void btnDSSV_Paint(object sender, PaintEventArgs e)
+        {
+            ControlPaint.DrawBorder(e.Graphics, btnDSSV.ClientRectangle,
+                       Color.Black, 1, ButtonBorderStyle.None, // left
+                       Color.Black, 1, ButtonBorderStyle.None, // top
+                       Color.Black, 2, ButtonBorderStyle.Solid, // right
+                       Color.Black, 2, ButtonBorderStyle.Solid);// bottom
+        }
+
+        private void btnDiemDanh_Paint(object sender, PaintEventArgs e)
+        {
+            ControlPaint.DrawBorder(e.Graphics, btnDiemDanh.ClientRectangle,
+                       Color.Black, 1, ButtonBorderStyle.None, // left
+                       Color.Black, 1, ButtonBorderStyle.None, // top
+                       Color.Black, 2, ButtonBorderStyle.Solid, // right
+                       Color.Black, 2, ButtonBorderStyle.Solid);// bottom
+        }
+
+        private void panelName_Paint(object sender, PaintEventArgs e)
+        {
+            ControlPaint.DrawBorder(e.Graphics, panelName.ClientRectangle,
+                      Color.Black, 1, ButtonBorderStyle.None, // left
+                      Color.Black, 1, ButtonBorderStyle.None, // top
+                      Color.Blue, 2, ButtonBorderStyle.None, // right
+                      Color.Black, 1, ButtonBorderStyle.None);// bottom
+        }
     }
 }

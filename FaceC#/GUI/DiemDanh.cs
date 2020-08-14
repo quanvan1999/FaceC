@@ -181,7 +181,7 @@ namespace GUI
             catch (Exception ex)
             {
                 isTrained = false;
-                MessageBox.Show("Lỗi: " + ex.Message);
+                MessageBox.Show("Chưa có dữ liệu nhận dạng sinh viên !");
                 return false;
             }
         }
