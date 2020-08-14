@@ -30,7 +30,6 @@
         {
             this.btnXuatEX = new System.Windows.Forms.Button();
             this.cboLop = new System.Windows.Forms.ComboBox();
-            this.btnThoat = new System.Windows.Forms.Button();
             this.btnCapNhat = new System.Windows.Forms.Button();
             this.btnStop = new System.Windows.Forms.Button();
             this.btnStart = new System.Windows.Forms.Button();
@@ -45,6 +44,7 @@
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.btnLamMoi = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.picBox = new System.Windows.Forms.PictureBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.txtMSSV = new System.Windows.Forms.TextBox();
             this.txtHoten = new System.Windows.Forms.TextBox();
@@ -52,6 +52,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.picBox2 = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvDSSV = new System.Windows.Forms.DataGridView();
             this.Ma_SV = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,16 +61,14 @@
             this.SoNgayHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoNgayVang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TrangThai = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.picBox = new System.Windows.Forms.PictureBox();
-            this.picBox2 = new System.Windows.Forms.PictureBox();
             this.groupBox5.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBox)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBox2)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSSV)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // btnXuatEX
@@ -89,22 +88,11 @@
             // 
             this.cboLop.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboLop.FormattingEnabled = true;
-            this.cboLop.Location = new System.Drawing.Point(98, 228);
+            this.cboLop.Location = new System.Drawing.Point(99, 227);
             this.cboLop.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cboLop.Name = "cboLop";
             this.cboLop.Size = new System.Drawing.Size(318, 31);
             this.cboLop.TabIndex = 12;
-            // 
-            // btnThoat
-            // 
-            this.btnThoat.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThoat.ForeColor = System.Drawing.Color.Black;
-            this.btnThoat.Location = new System.Drawing.Point(250, 113);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(166, 40);
-            this.btnThoat.TabIndex = 16;
-            this.btnThoat.Text = "Thoát";
-            this.btnThoat.UseVisualStyleBackColor = true;
             // 
             // btnCapNhat
             // 
@@ -117,27 +105,29 @@
             this.btnCapNhat.TabIndex = 14;
             this.btnCapNhat.Text = "Cập Nhật Khuôn Mặt";
             this.btnCapNhat.UseVisualStyleBackColor = true;
+            this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
             // 
             // btnStop
             // 
             this.btnStop.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStop.ForeColor = System.Drawing.Color.Black;
-            this.btnStop.Location = new System.Drawing.Point(250, 65);
+            this.btnStop.Location = new System.Drawing.Point(250, 96);
             this.btnStop.Margin = new System.Windows.Forms.Padding(5);
             this.btnStop.Name = "btnStop";
-            this.btnStop.Size = new System.Drawing.Size(165, 40);
+            this.btnStop.Size = new System.Drawing.Size(165, 57);
             this.btnStop.TabIndex = 13;
             this.btnStop.Text = "Dừng";
             this.btnStop.UseVisualStyleBackColor = true;
+            this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
             // 
             // btnStart
             // 
             this.btnStart.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStart.ForeColor = System.Drawing.Color.Black;
-            this.btnStart.Location = new System.Drawing.Point(250, 19);
+            this.btnStart.Location = new System.Drawing.Point(250, 21);
             this.btnStart.Margin = new System.Windows.Forms.Padding(5);
             this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(166, 39);
+            this.btnStart.Size = new System.Drawing.Size(166, 57);
             this.btnStart.TabIndex = 12;
             this.btnStart.Text = "Bật Camera";
             this.btnStart.UseVisualStyleBackColor = true;
@@ -286,6 +276,16 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Camera";
             // 
+            // picBox
+            // 
+            this.picBox.Location = new System.Drawing.Point(8, 24);
+            this.picBox.Margin = new System.Windows.Forms.Padding(5);
+            this.picBox.Name = "picBox";
+            this.picBox.Size = new System.Drawing.Size(494, 283);
+            this.picBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBox.TabIndex = 4;
+            this.picBox.TabStop = false;
+            // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.btnNhapEX);
@@ -315,7 +315,7 @@
             // 
             this.txtHoten.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtHoten.ForeColor = System.Drawing.Color.Black;
-            this.txtHoten.Location = new System.Drawing.Point(98, 163);
+            this.txtHoten.Location = new System.Drawing.Point(98, 161);
             this.txtHoten.Margin = new System.Windows.Forms.Padding(5);
             this.txtHoten.Name = "txtHoten";
             this.txtHoten.Size = new System.Drawing.Size(319, 30);
@@ -348,7 +348,6 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.cboLop);
-            this.groupBox1.Controls.Add(this.btnThoat);
             this.groupBox1.Controls.Add(this.btnCapNhat);
             this.groupBox1.Controls.Add(this.btnStop);
             this.groupBox1.Controls.Add(this.btnStart);
@@ -383,6 +382,15 @@
             this.label5.TabIndex = 5;
             this.label5.Text = "Lớp:";
             // 
+            // picBox2
+            // 
+            this.picBox2.Location = new System.Drawing.Point(9, 21);
+            this.picBox2.Margin = new System.Windows.Forms.Padding(5);
+            this.picBox2.Name = "picBox2";
+            this.picBox2.Size = new System.Drawing.Size(233, 132);
+            this.picBox2.TabIndex = 0;
+            this.picBox2.TabStop = false;
+            // 
             // groupBox2
             // 
             this.groupBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
@@ -415,6 +423,7 @@
             this.dgvDSSV.RowTemplate.Height = 24;
             this.dgvDSSV.Size = new System.Drawing.Size(947, 192);
             this.dgvDSSV.TabIndex = 0;
+            this.dgvDSSV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSSV_CellClick);
             // 
             // Ma_SV
             // 
@@ -457,29 +466,11 @@
             this.TrangThai.HeaderText = "Trạng Thái";
             this.TrangThai.Name = "TrangThai";
             // 
-            // picBox
-            // 
-            this.picBox.Location = new System.Drawing.Point(8, 24);
-            this.picBox.Margin = new System.Windows.Forms.Padding(5);
-            this.picBox.Name = "picBox";
-            this.picBox.Size = new System.Drawing.Size(494, 283);
-            this.picBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picBox.TabIndex = 4;
-            this.picBox.TabStop = false;
-            // 
-            // picBox2
-            // 
-            this.picBox2.Location = new System.Drawing.Point(9, 21);
-            this.picBox2.Margin = new System.Windows.Forms.Padding(5);
-            this.picBox2.Name = "picBox2";
-            this.picBox2.Size = new System.Drawing.Size(233, 132);
-            this.picBox2.TabIndex = 0;
-            this.picBox2.TabStop = false;
-            // 
             // DSSV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(981, 695);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox3);
@@ -493,13 +484,13 @@
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picBox)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBox2)).EndInit();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSSV)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -508,7 +499,6 @@
 
         private System.Windows.Forms.Button btnXuatEX;
         private System.Windows.Forms.ComboBox cboLop;
-        private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Button btnCapNhat;
         private System.Windows.Forms.Button btnStop;
         private System.Windows.Forms.Button btnStart;

@@ -43,23 +43,7 @@ namespace GUI
             dgvDSSV.DataSource = SinhVienBUS.LayDSSV();
 
         }
-        private void LoadTheme()
-        {
-            foreach (Control btns in this.Controls)
-            {
-                if (btns.GetType() == typeof(Button))
-                {
-                    Button btn = (Button)btns;
-                    btn.BackColor = ThemeColor.PrimaryColor;
-                    btn.ForeColor = Color.White;
-                    btn.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
-                }
-            }
-            groupBox5.ForeColor = ThemeColor.PrimaryColor;
-            groupBox3.ForeColor = ThemeColor.PrimaryColor;
-            groupBox4.ForeColor = ThemeColor.PrimaryColor;
-            groupBox1.ForeColor = ThemeColor.PrimaryColor;
-        }
+      
         protected void ChonLop()
         {
             SinhVienDTO sv = new SinhVienDTO();
@@ -264,7 +248,6 @@ namespace GUI
 
         private void DSSV_Load(object sender, EventArgs e)
         {
-            LoadTheme();
             SinhVienDTO sv = new SinhVienDTO();
             sv.Ma_Lop = cboTim.Text.ToString();
             dgvDSSV.DataSource = SinhVienBUS.LayDSSVLop(sv.Ma_Lop);
@@ -569,6 +552,100 @@ namespace GUI
             else
             {
                 e.Handled = false;
+            }
+        }
+
+        private void dgvDSSV_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex > -1 && e.ColumnIndex > -1 && dgvDSSV.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+            {
+
+                dgvDSSV.CurrentRow.Selected = true;
+                txtMSSV.Text = dgvDSSV.Rows[e.RowIndex].Cells[0].FormattedValue.ToString();
+                txtHoten.Text = dgvDSSV.Rows[e.RowIndex].Cells[1].FormattedValue.ToString();
+                cboLop.Text = dgvDSSV.Rows[e.RowIndex].Cells[2].FormattedValue.ToString();
+            }
+            btnXoa.Enabled = true;
+            txtHoten.Enabled = false;
+            cboLop.Enabled = false;
+            txtMSSV.Enabled = false;
+            button = 1;
+            if (quayVideo != null)
+            {
+                btnCapNhat.Enabled = true;
+            }
+            else
+            {
+                btnCapNhat.Enabled = false;
+            }
+
+        }
+
+        private void btnStop_Click(object sender, EventArgs e)
+        {
+            if(quayVideo != null)
+            {
+                quayVideo.Dispose();
+            }
+            btnThem.Enabled = false;
+            picBox.Image = null;
+            picBox2.Image = null;
+            quayVideo = null;
+            btnStart.Enabled = true;
+        }
+
+        private void btnCapNhat_Click(object sender, EventArgs e)
+        {
+            addface = true;
+            SinhVienDTO sv = new SinhVienDTO();
+            LopHocDTO lh = new LopHocDTO();
+
+            sv.Ma_SV = txtMSSV.Text;
+            sv.Ma_Lop = cboLop.Text;
+
+            lh.Ma_Lop = sv.Ma_Lop;
+            lh.SoSinhVien = 1;
+            if (dem == 1)
+            {
+                if (SinhVienBUS.CapNhatTrangThai(sv))
+                {
+                    addface = true;
+                    MessageBox.Show("Bạn Hãy Thêm Vào 5 Khuôn Mặt");
+                    MessageBox.Show("Thêm Khuông Mặt Thứ: " + dem + " Thành Công");
+
+                    txtHoten.Enabled = false;
+                    cboLop.Enabled = false;
+                    txtMSSV.Enabled = false;
+                    dem++;
+
+                }
+                else
+                {
+                    MessageBox.Show("Sinh viên đã có hình ảnh");
+                }
+            }
+            else if (dem > 1 && dem <= 5)
+            {
+                addface = true;
+                MessageBox.Show("Thêm Khuông Mặt Thứ: " + dem + " Thành Công");
+                dem++;
+                if (dem == 6)
+                {
+                    MessageBox.Show("Thêm sinh viên thành công");
+                    txtHoten.Enabled = true;
+                    cboLop.Enabled = true;
+                    txtMSSV.Enabled = true;
+                    txtHoten.Text = "";
+                    cboLop.Text = "";
+                    txtMSSV.Text = "";
+                    dem = 1;
+                    dgvDSSV.DataSource = SinhVienBUS.LayDSSVLop(sv.Ma_Lop);
+                    LopHocBUS.CapNhatSoSinhVienKhiThem(lh);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Thêm sinh viên không thành công");
             }
         }
 

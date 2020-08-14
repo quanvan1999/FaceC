@@ -38,27 +38,9 @@ namespace GUI
             btnThongKe.Enabled = false;
             btnLuu.Enabled = false;
         }
-        private void LoadTheme()
-        {
-            foreach (Control btns in this.Controls)
-            {
-                if (btns.GetType() == typeof(Button))
-                {
-                    Button btn = (Button)btns;
-                    btn.BackColor = ThemeColor.PrimaryColor;
-                    btn.ForeColor = Color.White;
-                    btn.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
-                }
-            }
-            groupBox5.ForeColor = ThemeColor.PrimaryColor;
-            groupBox6.ForeColor = ThemeColor.PrimaryColor;
-            groupBox2.ForeColor = ThemeColor.PrimaryColor;
-            groupBox1.ForeColor = ThemeColor.PrimaryColor;
-        }
-
+       
         private void DiemDanh_Load(object sender, EventArgs e)
         {
-            LoadTheme();
             timer.Start();
             lblNgay.Text = DateTime.Now.ToString("dd/MM/yyyy");
         }

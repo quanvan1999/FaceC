@@ -20,7 +20,6 @@ namespace GUI
         public Main()
         {
             InitializeComponent();
-            random = new Random();
             btnCloseChild.Visible = false;
             this.Text = string.Empty;
             this.ControlBox = false;
@@ -35,17 +34,7 @@ namespace GUI
 
             Application.Run(new ManHinhKhoiDong());// gọi form Welcome 
         }
-        private Color SelectThemeColor()
-        {
-            int index = random.Next(ThemeColor.ColorList.Count);
-            while (tempIndex == index)
-            {
-                index = random.Next(ThemeColor.ColorList.Count);
-            }
-            tempIndex = index;
-            string color = ThemeColor.ColorList[index];
-            return ColorTranslator.FromHtml(color);
-        }
+        
         private void ActivateButton(object btnSender)
         {
             if (btnSender != null)
@@ -53,15 +42,8 @@ namespace GUI
                 if (currentButton != (Button)btnSender)
                 {
                     DisableButton();
-                    Color color = SelectThemeColor();
                     currentButton = (Button)btnSender;
-                    currentButton.BackColor = color;
-                    currentButton.ForeColor = Color.White;
-                    currentButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                    panelTitle.BackColor = color;
-                    panelName.BackColor = ThemeColor.ChangeColorBrightness(color, -0.3);
-                    ThemeColor.PrimaryColor = color;
-                    ThemeColor.SecondaryColor = ThemeColor.ChangeColorBrightness(color, -0.3);
+                    currentButton.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                     btnCloseChild.Visible = true;
 
                 }
@@ -73,9 +55,7 @@ namespace GUI
             {
                 if (previousBtn.GetType() == typeof(Button))
                 {
-                    previousBtn.BackColor = Color.FromArgb(51, 51, 76);
-                    previousBtn.ForeColor = Color.Gainsboro;
-                    previousBtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                    previousBtn.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 }
             }
         }
@@ -100,7 +80,7 @@ namespace GUI
             
             OpenChildForm(new DiemDanh(), sender);
             lblTittle.Text = "ĐIỂM DANH";
-
+            
         }
 
         private void btnDSSV_Click(object sender, EventArgs e)
@@ -116,19 +96,10 @@ namespace GUI
             lblTittle.Text = "DANH SÁCH LỚP";
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
+       
+        
 
-        }
-
-        private void btnMax_Click(object sender, EventArgs e)
-        {
-            if (WindowState == FormWindowState.Normal)
-                this.WindowState = FormWindowState.Maximized;
-            else
-                this.WindowState = FormWindowState.Normal;
-        }
+       
 
         private void btnMi_Click(object sender, EventArgs e)
         {
@@ -146,12 +117,37 @@ namespace GUI
         private void Reset()
         {
             DisableButton();
-            lblTittle.Text = "ỨNG DỤNG ĐIỂM DANH KHUÔN MẶT";
-            panelTitle.BackColor = Color.FromArgb(0, 150, 136);
-            panelName.BackColor = Color.FromArgb(39, 39, 58);
+            lblTittle.Text = "ỨNG DỤNG ĐIỂM DANH";  
             currentButton = null;
             btnCloseChild.Visible = false;
         }
 
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Bạn Có Muốn Thoát ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+
+        }
+        //Border cho button
+      
+    
+
+        private void panelMenu_Paint(object sender, PaintEventArgs e)
+        {
+            ControlPaint.DrawBorder(e.Graphics, panelMenu.ClientRectangle,
+               Color.White, 1, ButtonBorderStyle.None, // left
+               Color.White, 1, ButtonBorderStyle.None, // top
+               Color.Black, 1, ButtonBorderStyle.Solid, // right
+               Color.Black, 1, ButtonBorderStyle.None);// bottom
+        }
+      
+        private void Main_Load(object sender, EventArgs e)
+        {
+            
+
+        }
     }
 }
