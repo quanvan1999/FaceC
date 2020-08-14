@@ -75,12 +75,12 @@ namespace GUI
             }
             if (LopHocBUS.CapNhatLopHoc(lh))
             {
-                MessageBox.Show("Sửa Lớp Thành Công");
+                MessageBox.Show("Cập Nhật Trạng Thái Thành Công");
                 LoadDSLOP();
             }
             else
             {
-                MessageBox.Show("Sửa Lớp Thất Bại");
+                MessageBox.Show("Cập Nhật Trạng Thái Thất Bại");
                 txtLop.Text = "";
             }
         }

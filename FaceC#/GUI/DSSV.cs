@@ -289,7 +289,8 @@ namespace GUI
                     MessageBox.Show("Xóa thành công");
                     LopHocBUS.CapNhatSoSinhVienKhiXoa(lh);
                     XoaForm();
-                    LoadDSSV();
+                    dgvDSSV.DataSource = SinhVienBUS.LayDSSVLop(sv.Ma_Lop);
+
 
                 }
                 else
@@ -492,12 +493,23 @@ namespace GUI
         {
             SinhVienDTO sv = new SinhVienDTO();
             sv.Ma_SV = txtTim.Text.ToString();
+            sv.Ma_Lop = cboTim.Text;
             if (txtTim.Text == "")
             {
                 MessageBox.Show("Bạn chưa nhập thông tin cần tìm");
             }
             else
-                dgvDSSV.DataSource = SinhVienBUS.TimKiemMaSV(sv.Ma_SV);
+            {
+                if (SinhVienBUS.TimKiemMaSV(sv.Ma_SV) != null)
+                {
+                    dgvDSSV.DataSource = SinhVienBUS.TimKiemMaSV(sv.Ma_SV);
+                }
+                else
+                {
+                    MessageBox.Show("Sinh viên không tồn tại");
+                }
+            }
+                
         }
 
         private void cboTim_SelectedIndexChanged(object sender, EventArgs e)
@@ -718,8 +730,7 @@ namespace GUI
                                 {
                                     SinhVienBUS.ThemSVExcel(sv);
                                     lh.SoSinhVien = SinhVienBUS.DemSinhVien(sv);
-
-                                    Debug.WriteLine(LopHocBUS.CapNhatSoLuongSinhVien(lh) + "testttttttttttttt " + lh.SoSinhVien);
+                                    LopHocBUS.CapNhatSoLuongSinhVien(lh);
                                 }
                                 else
                                 {
@@ -743,7 +754,7 @@ namespace GUI
                         else if (dr == DialogResult.No)
                         {
                             click = 0;
-
+                            dgvDSSV.DataSource = SinhVienBUS.LayDSSV();
                         }
                     }
 

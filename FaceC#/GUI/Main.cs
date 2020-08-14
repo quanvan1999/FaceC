@@ -86,7 +86,7 @@ namespace GUI
         {
             
             OpenChildForm(new DSSV(), sender);
-            lblTittle.Text = "DANH SÁCH SINH VIÊN";
+            lblTittle.Text = "QUẢN LÝ SINH VIÊN";
         }
 
         private void btnLop_Click(object sender, EventArgs e)
