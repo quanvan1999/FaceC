@@ -66,6 +66,7 @@
             // btnThoat
             // 
             this.btnThoat.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnThoat.FlatAppearance.BorderSize = 0;
             this.btnThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThoat.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThoat.ForeColor = System.Drawing.Color.Black;
@@ -85,6 +86,7 @@
             // btnLop
             // 
             this.btnLop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnLop.FlatAppearance.BorderSize = 0;
             this.btnLop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLop.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLop.ForeColor = System.Drawing.Color.Black;
@@ -104,6 +106,7 @@
             // btnDSSV
             // 
             this.btnDSSV.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnDSSV.FlatAppearance.BorderSize = 0;
             this.btnDSSV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDSSV.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDSSV.ForeColor = System.Drawing.Color.Black;
@@ -123,6 +126,7 @@
             // btnDiemDanh
             // 
             this.btnDiemDanh.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnDiemDanh.FlatAppearance.BorderSize = 0;
             this.btnDiemDanh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDiemDanh.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDiemDanh.ForeColor = System.Drawing.Color.Black;
@@ -223,6 +227,7 @@
             this.panelDeskop.Name = "panelDeskop";
             this.panelDeskop.Size = new System.Drawing.Size(993, 710);
             this.panelDeskop.TabIndex = 3;
+            this.panelDeskop.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDeskop_Paint);
             // 
             // pictureBox1
             // 

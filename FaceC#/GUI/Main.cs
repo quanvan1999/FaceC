@@ -137,11 +137,7 @@ namespace GUI
 
         private void panelMenu_Paint(object sender, PaintEventArgs e)
         {
-            ControlPaint.DrawBorder(e.Graphics, panelMenu.ClientRectangle,
-               Color.White, 1, ButtonBorderStyle.None, // left
-               Color.White, 1, ButtonBorderStyle.None, // top
-               Color.Black, 1, ButtonBorderStyle.Solid, // right
-               Color.Black, 1, ButtonBorderStyle.None);// bottom
+           
         }
       
         private void Main_Load(object sender, EventArgs e)
@@ -149,5 +145,16 @@ namespace GUI
             
 
         }
+
+        private void panelDeskop_Paint(object sender, PaintEventArgs e)
+        {
+            ControlPaint.DrawBorder(e.Graphics, panelMenu.ClientRectangle,
+              Color.Black, 2, ButtonBorderStyle.Solid, // left
+              Color.White, 1, ButtonBorderStyle.None, // top
+              Color.Black, 2, ButtonBorderStyle.None, // right
+              Color.Black, 1, ButtonBorderStyle.None);// bottom
+        }
+
+        
     }
 }
