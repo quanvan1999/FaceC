@@ -58,8 +58,9 @@
             this.panelMenu.Controls.Add(this.panelName);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
+            this.panelMenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(416, 821);
+            this.panelMenu.Size = new System.Drawing.Size(312, 651);
             this.panelMenu.TabIndex = 0;
             this.panelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMenu_Paint);
             // 
@@ -72,10 +73,11 @@
             this.btnThoat.ForeColor = System.Drawing.Color.Black;
             this.btnThoat.Image = global::GUI.Properties.Resources.icons8_open_door_100;
             this.btnThoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThoat.Location = new System.Drawing.Point(0, 516);
+            this.btnThoat.Location = new System.Drawing.Point(0, 413);
+            this.btnThoat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btnThoat.Size = new System.Drawing.Size(416, 135);
+            this.btnThoat.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
+            this.btnThoat.Size = new System.Drawing.Size(312, 110);
             this.btnThoat.TabIndex = 6;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -93,10 +95,11 @@
             this.btnLop.ForeColor = System.Drawing.Color.Black;
             this.btnLop.Image = global::GUI.Properties.Resources.icons8_class_100;
             this.btnLop.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLop.Location = new System.Drawing.Point(0, 381);
+            this.btnLop.Location = new System.Drawing.Point(0, 303);
+            this.btnLop.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnLop.Name = "btnLop";
-            this.btnLop.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btnLop.Size = new System.Drawing.Size(416, 135);
+            this.btnLop.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
+            this.btnLop.Size = new System.Drawing.Size(312, 110);
             this.btnLop.TabIndex = 5;
             this.btnLop.Text = " Quản Lý Lớp Học";
             this.btnLop.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -114,10 +117,11 @@
             this.btnDSSV.ForeColor = System.Drawing.Color.Black;
             this.btnDSSV.Image = global::GUI.Properties.Resources.icons8_student_registration_100;
             this.btnDSSV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDSSV.Location = new System.Drawing.Point(0, 246);
+            this.btnDSSV.Location = new System.Drawing.Point(0, 193);
+            this.btnDSSV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDSSV.Name = "btnDSSV";
-            this.btnDSSV.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btnDSSV.Size = new System.Drawing.Size(416, 135);
+            this.btnDSSV.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
+            this.btnDSSV.Size = new System.Drawing.Size(312, 110);
             this.btnDSSV.TabIndex = 4;
             this.btnDSSV.Text = " Danh Sách Sinh Viên";
             this.btnDSSV.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -135,10 +139,11 @@
             this.btnDiemDanh.ForeColor = System.Drawing.Color.Black;
             this.btnDiemDanh.Image = global::GUI.Properties.Resources.icons8_face_id_100__1_;
             this.btnDiemDanh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDiemDanh.Location = new System.Drawing.Point(0, 111);
+            this.btnDiemDanh.Location = new System.Drawing.Point(0, 83);
+            this.btnDiemDanh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDiemDanh.Name = "btnDiemDanh";
-            this.btnDiemDanh.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btnDiemDanh.Size = new System.Drawing.Size(416, 135);
+            this.btnDiemDanh.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
+            this.btnDiemDanh.Size = new System.Drawing.Size(312, 110);
             this.btnDiemDanh.TabIndex = 3;
             this.btnDiemDanh.Text = " Điểm Danh";
             this.btnDiemDanh.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -153,8 +158,9 @@
             this.panelName.Controls.Add(this.lblDesign);
             this.panelName.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelName.Location = new System.Drawing.Point(0, 0);
+            this.panelName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelName.Name = "panelName";
-            this.panelName.Size = new System.Drawing.Size(416, 111);
+            this.panelName.Size = new System.Drawing.Size(312, 83);
             this.panelName.TabIndex = 2;
             this.panelName.Paint += new System.Windows.Forms.PaintEventHandler(this.panelName_Paint);
             // 
@@ -164,9 +170,10 @@
             this.lblDesign.AutoSize = true;
             this.lblDesign.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDesign.ForeColor = System.Drawing.Color.White;
-            this.lblDesign.Location = new System.Drawing.Point(137, 34);
+            this.lblDesign.Location = new System.Drawing.Point(103, 24);
+            this.lblDesign.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDesign.Name = "lblDesign";
-            this.lblDesign.Size = new System.Drawing.Size(119, 37);
+            this.lblDesign.Size = new System.Drawing.Size(97, 31);
             this.lblDesign.TabIndex = 1;
             this.lblDesign.Text = "MENU";
             // 
@@ -177,9 +184,10 @@
             this.panelTitle.Controls.Add(this.btnMi);
             this.panelTitle.Controls.Add(this.lblTittle);
             this.panelTitle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTitle.Location = new System.Drawing.Point(416, 0);
+            this.panelTitle.Location = new System.Drawing.Point(312, 0);
+            this.panelTitle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelTitle.Name = "panelTitle";
-            this.panelTitle.Size = new System.Drawing.Size(993, 111);
+            this.panelTitle.Size = new System.Drawing.Size(749, 83);
             this.panelTitle.TabIndex = 2;
             // 
             // btnCloseChild
@@ -188,9 +196,10 @@
             this.btnCloseChild.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCloseChild.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCloseChild.ForeColor = System.Drawing.Color.White;
-            this.btnCloseChild.Location = new System.Drawing.Point(944, 2);
+            this.btnCloseChild.Location = new System.Drawing.Point(711, 16);
+            this.btnCloseChild.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCloseChild.Name = "btnCloseChild";
-            this.btnCloseChild.Size = new System.Drawing.Size(51, 49);
+            this.btnCloseChild.Size = new System.Drawing.Size(38, 40);
             this.btnCloseChild.TabIndex = 4;
             this.btnCloseChild.Text = "X";
             this.btnCloseChild.UseVisualStyleBackColor = true;
@@ -203,9 +212,10 @@
             this.btnMi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMi.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMi.ForeColor = System.Drawing.Color.White;
-            this.btnMi.Location = new System.Drawing.Point(879, 0);
+            this.btnMi.Location = new System.Drawing.Point(669, 16);
+            this.btnMi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnMi.Name = "btnMi";
-            this.btnMi.Size = new System.Drawing.Size(54, 51);
+            this.btnMi.Size = new System.Drawing.Size(38, 32);
             this.btnMi.TabIndex = 3;
             this.btnMi.Text = "-";
             this.btnMi.UseVisualStyleBackColor = true;
@@ -217,9 +227,10 @@
             this.lblTittle.AutoSize = true;
             this.lblTittle.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTittle.ForeColor = System.Drawing.Color.White;
-            this.lblTittle.Location = new System.Drawing.Point(291, 36);
+            this.lblTittle.Location = new System.Drawing.Point(220, 25);
+            this.lblTittle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTittle.Name = "lblTittle";
-            this.lblTittle.Size = new System.Drawing.Size(401, 37);
+            this.lblTittle.Size = new System.Drawing.Size(331, 31);
             this.lblTittle.TabIndex = 0;
             this.lblTittle.Text = "ỨNG DỤNG ĐIỂM DANH";
             // 
@@ -228,9 +239,10 @@
             this.panelDeskop.BackColor = System.Drawing.Color.White;
             this.panelDeskop.Controls.Add(this.pictureBox1);
             this.panelDeskop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDeskop.Location = new System.Drawing.Point(416, 111);
+            this.panelDeskop.Location = new System.Drawing.Point(312, 83);
+            this.panelDeskop.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelDeskop.Name = "panelDeskop";
-            this.panelDeskop.Size = new System.Drawing.Size(993, 710);
+            this.panelDeskop.Size = new System.Drawing.Size(749, 568);
             this.panelDeskop.TabIndex = 3;
             this.panelDeskop.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDeskop_Paint);
             // 
@@ -239,22 +251,24 @@
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = global::GUI.Properties.Resources.logo33;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(993, 710);
+            this.pictureBox1.Size = new System.Drawing.Size(749, 568);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1409, 821);
+            this.ClientSize = new System.Drawing.Size(1061, 651);
             this.Controls.Add(this.panelDeskop);
             this.Controls.Add(this.panelTitle);
             this.Controls.Add(this.panelMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.IsMdiContainer = true;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";

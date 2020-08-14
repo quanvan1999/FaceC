@@ -303,6 +303,11 @@ namespace GUI
             quayVideo = null;
         }
 
+        private void groupBox6_Enter(object sender, EventArgs e)
+        {
+
+        }
+
         private void txtDiemDanhTC_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&

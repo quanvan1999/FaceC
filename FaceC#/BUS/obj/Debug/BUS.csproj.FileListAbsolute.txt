@@ -9,3 +9,14 @@ C:\Users\Laptopgame\Desktop\aaa\GUI\BUS\obj\Debug\BUS.csproj.CoreCompileInputs.c
 C:\Users\Laptopgame\Desktop\aaa\GUI\BUS\obj\Debug\BUS.csproj.CopyComplete
 C:\Users\Laptopgame\Desktop\aaa\GUI\BUS\obj\Debug\BUS.dll
 C:\Users\Laptopgame\Desktop\aaa\GUI\BUS\obj\Debug\BUS.pdb
+E:\FaceC\FaceC#\BUS\bin\Debug\BUS.dll
+E:\FaceC\FaceC#\BUS\bin\Debug\BUS.pdb
+E:\FaceC\FaceC#\BUS\bin\Debug\DAO.dll
+E:\FaceC\FaceC#\BUS\bin\Debug\DTO.dll
+E:\FaceC\FaceC#\BUS\bin\Debug\DAO.pdb
+E:\FaceC\FaceC#\BUS\bin\Debug\DTO.pdb
+E:\FaceC\FaceC#\BUS\obj\Debug\BUS.csprojAssemblyReference.cache
+E:\FaceC\FaceC#\BUS\obj\Debug\BUS.csproj.CoreCompileInputs.cache
+E:\FaceC\FaceC#\BUS\obj\Debug\BUS.csproj.CopyComplete
+E:\FaceC\FaceC#\BUS\obj\Debug\BUS.dll
+E:\FaceC\FaceC#\BUS\obj\Debug\BUS.pdb

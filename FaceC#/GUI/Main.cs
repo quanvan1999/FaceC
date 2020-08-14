@@ -19,7 +19,7 @@ namespace GUI
         public Main()
         {
             InitializeComponent();
-            btnCloseChild.Visible = false;
+            btnCloseChild.Visible = true;
             this.Text = string.Empty;
             this.ControlBox = false;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
@@ -109,8 +109,18 @@ namespace GUI
         private void btnCloseChild_Click(object sender, EventArgs e)
         {
             if (activeForm != null)
+            {
                 activeForm.Close();
-            Reset();
+                Reset();
+            }
+            else
+            {
+                DialogResult dialogResult = MessageBox.Show("Bạn Có Muốn Thoát ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    Application.Exit();
+                }
+            }
             
         }
         private void Reset()
@@ -118,7 +128,9 @@ namespace GUI
             DisableButton();
             lblTittle.Text = "ỨNG DỤNG ĐIỂM DANH";  
             currentButton = null;
-            btnCloseChild.Visible = false;
+            btnCloseChild.Visible = true;
+            activeForm = null;
+            
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
