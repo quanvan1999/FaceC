@@ -743,12 +743,13 @@ namespace GUI
 
                             dgvDSSV.DataSource = SinhVienBUS.LayDSSV();
                             ChonLop();
-                            dgvDSSV.Columns[0].Width = 150;
+                            //Set kich thuoc cua dong datagridview
+                            dgvDSSV.Columns[0].Width = 100;
                             dgvDSSV.Columns[1].Width = 150;
                             dgvDSSV.Columns[2].Width = 150;
                             dgvDSSV.Columns[3].Width = 100;
                             dgvDSSV.Columns[4].Width = 100;
-                            dgvDSSV.Columns[5].Width = 150;
+                            dgvDSSV.Columns[5].Width = 120;
                             LoadDSSV();
                         }
                         else if (dr == DialogResult.No)

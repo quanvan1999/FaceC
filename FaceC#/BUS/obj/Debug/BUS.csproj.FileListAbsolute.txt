@@ -20,3 +20,14 @@ E:\FaceC\FaceC#\BUS\obj\Debug\BUS.csproj.CoreCompileInputs.cache
 E:\FaceC\FaceC#\BUS\obj\Debug\BUS.csproj.CopyComplete
 E:\FaceC\FaceC#\BUS\obj\Debug\BUS.dll
 E:\FaceC\FaceC#\BUS\obj\Debug\BUS.pdb
+C:\Users\Laptopgame\Desktop\aaa\GUI\FaceC\FaceC#\BUS\bin\Debug\BUS.dll
+C:\Users\Laptopgame\Desktop\aaa\GUI\FaceC\FaceC#\BUS\bin\Debug\BUS.pdb
+C:\Users\Laptopgame\Desktop\aaa\GUI\FaceC\FaceC#\BUS\bin\Debug\DAO.dll
+C:\Users\Laptopgame\Desktop\aaa\GUI\FaceC\FaceC#\BUS\bin\Debug\DTO.dll
+C:\Users\Laptopgame\Desktop\aaa\GUI\FaceC\FaceC#\BUS\bin\Debug\DAO.pdb
+C:\Users\Laptopgame\Desktop\aaa\GUI\FaceC\FaceC#\BUS\bin\Debug\DTO.pdb
+C:\Users\Laptopgame\Desktop\aaa\GUI\FaceC\FaceC#\BUS\obj\Debug\BUS.csprojAssemblyReference.cache
+C:\Users\Laptopgame\Desktop\aaa\GUI\FaceC\FaceC#\BUS\obj\Debug\BUS.csproj.CoreCompileInputs.cache
+C:\Users\Laptopgame\Desktop\aaa\GUI\FaceC\FaceC#\BUS\obj\Debug\BUS.csproj.CopyComplete
+C:\Users\Laptopgame\Desktop\aaa\GUI\FaceC\FaceC#\BUS\obj\Debug\BUS.dll
+C:\Users\Laptopgame\Desktop\aaa\GUI\FaceC\FaceC#\BUS\obj\Debug\BUS.pdb
