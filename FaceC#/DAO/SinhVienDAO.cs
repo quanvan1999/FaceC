@@ -54,17 +54,14 @@ namespace DAO
             param[5] = new SqlParameter("@TrangThai", sv.TrangThai);
             return DataProvider.ExecuteInsertQuery(query, param) == 1;
         }
-        //public static bool SuaSV(SinhVienDTO sv)
-        //{
-        //    string query = "UPDATE ThongTinSV SET Ma_SV=@Ma_SV,Ten_SV=@Ten_SV,MaLop=@MaLop,SoNgayHoc=@SoNgayHoc,SoNgayVang=@SoNgayVang";
-        //    SqlParameter[] param = new SqlParameter[5];
-        //    param[0] = new SqlParameter("@Ma_SV", sv.Ma_SV);
-        //    param[1] = new SqlParameter("@Ten_SV", sv.Ten_SV);
-        //    param[2] = new SqlParameter("@MaLop", sv.Ma_Lop);
-        //    param[3] = new SqlParameter("@SoNgayHoc", sv.SoNgayHoc);
-        //    param[4] = new SqlParameter("@SoNgayVang", sv.SoNgayVang);
-        //    return DataProvider.ExecuteUpdateQuery(query, param) == 1;
-        //}
+        public static bool SuaSV(SinhVienDTO sv)
+        {
+            string query = "UPDATE ThongTinSV SET Ten_SV=@Ten_SV WHERE Ma_SV=@Ma_SV";
+            SqlParameter[] param = new SqlParameter[2];
+            param[0] = new SqlParameter("@Ma_SV", sv.Ma_SV);
+            param[1] = new SqlParameter("@Ten_SV", sv.Ten_SV);
+            return DataProvider.ExecuteUpdateQuery(query, param) == 1;
+        }
         public static SinhVienDTO LayThongTinSV(string maSV)
         {
             string query = "SELECT * FROM ThongTinSV WHERE Ma_SV = @Ma_SV";

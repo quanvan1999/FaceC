@@ -125,7 +125,7 @@ namespace GUI
                         {
                             this.Invoke(new MethodInvoker(delegate ()
                             {
-                                resualtFace.Resize(100, 100, Inter.Cubic).Save(path + @"\" + System.Text.RegularExpressions.Regex.Replace(txtHoten.Text.Trim(), @"[\s+]", "") + "_" + txtMSSV.Text.Trim() + "_" + cboLop.Text.Trim() + "_" + dem + ".bmp");
+                                resualtFace.Resize(100, 100, Inter.Cubic).Save(path + @"\"   + txtMSSV.Text.Trim() + "_" + cboLop.Text.Trim() + "_" + dem + ".bmp");
 
                             }));
 
@@ -254,6 +254,7 @@ namespace GUI
             btnStop.Enabled = false;
             btnXoa.Enabled = false;
             btnCapNhat.Enabled = false;
+            btnSua.Enabled = false;
             txtHoten.Enabled = false;
             txtMSSV.Enabled = false;
             cboLop.Enabled = false;
@@ -578,9 +579,10 @@ namespace GUI
                 cboLop.Text = dgvDSSV.Rows[e.RowIndex].Cells[2].FormattedValue.ToString();
             }
             btnXoa.Enabled = true;
-            txtHoten.Enabled = false;
+            txtHoten.Enabled = true;
             cboLop.Enabled = false;
             txtMSSV.Enabled = false;
+            btnSua.Enabled = true;
             button = 1;
             if (quayVideo != null)
             {
@@ -661,6 +663,22 @@ namespace GUI
             }
         }
 
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            SinhVienDTO sv = new SinhVienDTO();
+            sv.Ten_SV = txtHoten.Text.Trim();
+            sv.Ma_SV = txtMSSV.Text;
+            if(SinhVienBUS.SuaSV(sv))
+            {
+                MessageBox.Show("Thay đổi thành công");
+                dgvDSSV.DataSource = SinhVienBUS.TimKiemMaSV(sv.Ma_SV);
+            }
+            else
+            {
+                MessageBox.Show("Thay đổi thất bại");
+            }
+        }
+
         private void btnNhapEX_Click(object sender, EventArgs e)
         {
             SinhVienDTO sv = new SinhVienDTO();
@@ -734,7 +752,7 @@ namespace GUI
                                 }
                                 else
                                 {
-                                    MessageBox.Show("Lớp " + sv.Ma_Lop + " không tồn tại"); break;
+                                    MessageBox.Show("Có "+i+" lớp không tồn tại !"); break;
                                 }
 
 

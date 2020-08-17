@@ -133,6 +133,16 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_picture_in_picture_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-picture-in-picture-100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_student_registration_100 {
             get {
                 object obj = ResourceManager.GetObject("icons8-student-registration-100", resourceCulture);

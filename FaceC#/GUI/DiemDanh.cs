@@ -23,13 +23,12 @@ namespace GUI
         private bool isTrained = false;// Kiểm tra khuôn mặt
 
         EigenFaceRecognizer recognizer;
-        List<string> PersonsNames = new List<string>();
         List<Image<Gray, Byte>> TrainedFaces = new List<Image<Gray, byte>>();
         List<int> PersonsLabes = new List<int>();
         List<string> PersonsMSSV = new List<string>();
         List<string> PersonsLop = new List<string>();
 
-        string names = null, Mssv = null, Lop = null, svHienDien = null, svVang = null;
+        string Mssv = null, Lop = null, svHienDien = null, svVang = null;
         public DiemDanh()
         {
             InitializeComponent();
@@ -83,10 +82,9 @@ namespace GUI
                             //Here results found known faces
                             if (result.Label != 0 && result.Distance < 2000)
                             {
-                                CvInvoke.PutText(currentFrame, PersonsNames[result.Label], new Point(face.X - 2, face.Y - 2),
+                                CvInvoke.PutText(currentFrame, PersonsMSSV[result.Label], new Point(face.X - 2, face.Y - 2),
                                             FontFace.HersheyComplex, 1.0, new Bgr(Color.Orange).MCvScalar);
                                 CvInvoke.Rectangle(currentFrame, face, new Bgr(Color.Green).MCvScalar, 2);
-                                names = PersonsNames[result.Label];
                                 Mssv = PersonsMSSV[result.Label];
                                 Lop = PersonsLop[result.Label];
                                 this.Invoke(new MethodInvoker(delegate ()
@@ -94,19 +92,18 @@ namespace GUI
                                     //in sinh viên đi học
                                     if (lstDiHoc.Items.Count == 0)
                                     {
-                                        lstDiHoc.Items.Add(Mssv + " " + names);
+                                        lstDiHoc.Items.Add(Mssv + " " + Lop);
                                     }
                                     else
                                     {
                                         if (lstDiHoc.FindString(Mssv) != -1) { }
                                         else
                                         {
-                                            lstDiHoc.Items.Add(Mssv + " " + names);
+                                            lstDiHoc.Items.Add(Mssv + " " + Lop);
 
                                         }
                                     }
 
-                                    lblHoten.Text = names;
                                     lblLop.Text = Lop;
                                     lblMSSV.Text = Mssv;
                                 }));
@@ -139,7 +136,6 @@ namespace GUI
             int ImagesCount = 0;
             TrainedFaces.Clear();
             PersonsLabes.Clear();
-            PersonsNames.Clear();
             try
             {
                 string path = Directory.GetCurrentDirectory() + @"\TrainedImages";
@@ -150,10 +146,8 @@ namespace GUI
                     CvInvoke.EqualizeHist(trainedImage, trainedImage);
                     TrainedFaces.Add(trainedImage);
                     PersonsLabes.Add(ImagesCount);
-                    string name = file.Split('\\').Last().Split('_')[0];
-                    string mssv = file.Split('\\').Last().Split('_')[1];
-                    string lop = file.Split('\\').Last().Split('_')[2];
-                    PersonsNames.Add(name);
+                    string mssv = file.Split('\\').Last().Split('_')[0];
+                    string lop = file.Split('\\').Last().Split('_')[1];
                     PersonsMSSV.Add(mssv);
                     PersonsLop.Add(lop);
                     ImagesCount++;
@@ -209,7 +203,6 @@ namespace GUI
             btnDiemDanh.Enabled = false;
             imgBox2.Dispose();
             btnLuu.Enabled = true;
-            lblHoten.Text = "";
             lblLop.Text = "";
             lblMSSV.Text = "";
             //hien thi sinh vien len list vang
@@ -224,7 +217,7 @@ namespace GUI
                     }
                     else
                     {
-                        lstVang.Items.Add(PersonsMSSV[i] + " " + PersonsNames[i]);
+                        lstVang.Items.Add(PersonsMSSV[i] + " " + PersonsLop[i]);
                     }
 
                 }
@@ -245,7 +238,7 @@ namespace GUI
                         }
                         else
                         {
-                            lstVang.Items.Add(PersonsMSSV[i] + " " + PersonsNames[i]);
+                            lstVang.Items.Add(PersonsMSSV[i] + " " + PersonsLop[i]);
                         }
 
                     }
@@ -408,7 +401,6 @@ namespace GUI
         {
             lstDiHoc.Items.Clear();
             lstVang.Items.Clear();
-            lblHoten.Text = "";
             lblLop.Text = "";
             lblMSSV.Text = "";
             txtDiemDanhTC.Text = "";

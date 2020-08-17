@@ -103,6 +103,12 @@
     <Compile Include="QLyLop.Designer.cs">
       <DependentUpon>QLyLop.cs</DependentUpon>
     </Compile>
+    <Compile Include="QLyKhuonMat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLyKhuonMat.Designer.cs">
+      <DependentUpon>QLyKhuonMat.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="DiemDanh.resx">
       <DependentUpon>DiemDanh.cs</DependentUpon>
     </EmbeddedResource>
@@ -119,6 +125,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QLyKhuonMat.resx">
+      <DependentUpon>QLyKhuonMat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QLyLop.resx">
       <DependentUpon>QLyLop.cs</DependentUpon>
@@ -214,6 +223,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-open-door-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-picture-in-picture-100.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

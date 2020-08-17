@@ -133,15 +133,7 @@ namespace GUI
             
         }
 
-        private void btnThoat_Click(object sender, EventArgs e)
-        {
-            DialogResult dialogResult = MessageBox.Show("Bạn Có Muốn Thoát ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dialogResult == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
-
-        }
+       
         //Border cho button
       
     
@@ -168,7 +160,7 @@ namespace GUI
 
         private void btnThoat_Paint(object sender, PaintEventArgs e)
         {
-            ControlPaint.DrawBorder(e.Graphics, btnThoat.ClientRectangle,
+            ControlPaint.DrawBorder(e.Graphics, btnHinh.ClientRectangle,
                        Color.Black, 1, ButtonBorderStyle.None, // left
                        Color.Black, 1, ButtonBorderStyle.None, // top
                        Color.Black, 2, ButtonBorderStyle.Solid, // right
@@ -209,6 +201,21 @@ namespace GUI
                       Color.Black, 1, ButtonBorderStyle.None, // top
                       Color.Blue, 2, ButtonBorderStyle.None, // right
                       Color.Black, 1, ButtonBorderStyle.None);// bottom
+        }
+
+        private void btnThoat_Click_1(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Bạn Có Muốn Thoát ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void btnHinh_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new QLyKhuonMat(), sender);
+            lblTittle.Text = "QUẢN LÝ HÌNH ẢNH";
         }
     }
 }

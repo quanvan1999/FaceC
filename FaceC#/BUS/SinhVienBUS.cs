@@ -71,18 +71,18 @@ namespace BUS
             return SinhVienDAO.ChonLop(sv);
 
         }
-       
-        //public static bool SuaSV(SinhVienDTO sv)
-        //{
-        //    if (!SinhVienDAO.KTTKTonTai(sv.Ma_SV))
-        //    {
-        //        return false;
-        //    }
-        //    else
-        //    {
-        //        return SinhVienDAO.SuaSV(sv);
-        //    }
-        //}
+
+        public static bool SuaSV(SinhVienDTO sv)
+        {
+            if (!SinhVienDAO.KTSVTonTai(sv.Ma_SV))
+            {
+                return false;
+            }
+            else
+            {
+                return SinhVienDAO.SuaSV(sv);
+            }
+        }
 
         public static bool XoaSV(SinhVienDTO sv)
         {
