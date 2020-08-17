@@ -143,3 +143,4 @@ E:\FaceC\FaceC#\GUI\obj\Debug\GUI.csproj.CopyComplete
 E:\FaceC\FaceC#\GUI\obj\Debug\GUI.exe
 E:\FaceC\FaceC#\GUI\obj\Debug\GUI.pdb
 C:\Users\Laptopgame\Desktop\aaa\GUI\FaceC\FaceC#\GUI\obj\Debug\GUI.QLyKhuonMat.resources
+E:\FaceC\FaceC#\GUI\obj\Debug\GUI.QLyKhuonMat.resources

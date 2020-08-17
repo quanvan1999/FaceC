@@ -43,7 +43,7 @@ namespace GUI
             dgvDSSV.DataSource = SinhVienBUS.LayDSSV();
 
         }
-      
+
         protected void ChonLop()
         {
             SinhVienDTO sv = new SinhVienDTO();
@@ -64,7 +64,7 @@ namespace GUI
             txtHoten.Text = "";
             cboLop.Text = "";
         }
-        
+
         private void btnStart_Click(object sender, EventArgs e)
         {
             btnStart.Enabled = false;
@@ -125,7 +125,7 @@ namespace GUI
                         {
                             this.Invoke(new MethodInvoker(delegate ()
                             {
-                                resualtFace.Resize(100, 100, Inter.Cubic).Save(path + @"\"   + txtMSSV.Text.Trim() + "_" + cboLop.Text.Trim() + "_" + dem + ".bmp");
+                                resualtFace.Resize(100, 100, Inter.Cubic).Save(path + @"\" + txtMSSV.Text.Trim() + "_" + cboLop.Text.Trim() + "_" + dem + ".bmp");
 
                             }));
 
@@ -141,6 +141,132 @@ namespace GUI
         private void btnThem_Click(object sender, EventArgs e)
         {
 
+            //btnStart.Enabled = false;
+            //btnXoa.Enabled = false;
+            //btnCapNhat.Enabled = false;
+            //txtHoten.Enabled = false;
+            //txtMSSV.Enabled = false;
+            //cboLop.Enabled = false;
+
+
+
+            //SinhVienDTO sv = new SinhVienDTO();
+            //LopHocDTO lh = new LopHocDTO();
+            //sv.Ma_SV = txtMSSV.Text;
+            //sv.Ten_SV = txtHoten.Text;
+            //sv.Ma_Lop = cboLop.Text; ;
+            //sv.TrangThai = true;
+
+            //lh.Ma_Lop = sv.Ma_Lop;
+            //lh.SoSinhVien = 1;
+            //if (button == 1)
+            //{
+            //    txtHoten.Enabled = true;
+            //    txtMSSV.Enabled = true;
+            //    cboLop.Enabled = true;
+            //    txtMSSV.Text = "";
+            //    txtHoten.Text = "";
+            //    cboLop.Text = "";
+            //    button = 0;
+            //}
+            //else
+            //{
+            //    if (txtMSSV.Text == "" || txtHoten.Text == "" || cboLop.Text == "")
+            //    {
+            //        MessageBox.Show("Thông tin không được để trống");
+            //    }
+
+
+            //    else if (r.IsMatch(txtHoten.Text) || r.IsMatch(cboLop.Text) || r.IsMatch(txtMSSV.Text))
+            //    {
+            //        MessageBox.Show("Thông tin không hợp lệ");
+            //    }
+            //    else
+            //    {
+
+            //        if (dem == 1)
+            //        {
+            //            if (SinhVienBUS.ThemSV(sv))
+            //            {
+            //                addface = true;
+            //                MessageBox.Show("Bạn Hãy Thêm Vào 12 Khuôn Mặt");
+            //                MessageBox.Show("Thêm 4 khuôn mặt nhìn trực tiếp camera, với khoảng cách khoảng 0.5m");
+            //                txtHoten.Enabled = false;
+            //                cboLop.Enabled = false;
+            //                txtMSSV.Enabled = false;
+            //                txtTim.Enabled = false;
+            //                btnTim.Enabled = false;
+            //                cboTim.Enabled = false;
+
+            //                dem++;
+            //            }
+            //            else
+            //            {
+            //                MessageBox.Show("Sinh viên đã tồn tại");
+            //                txtHoten.Enabled = true;
+            //                cboLop.Enabled = true;
+            //                txtMSSV.Enabled = true;
+            //                txtHoten.Text = "";
+            //                cboLop.Text = "";
+            //                txtMSSV.Text = "";
+
+            //            }
+            //        }
+            //        else if (dem > 1 && dem <= 12)
+            //        {
+            //            dem++;
+            //            addface = true;
+            //            if (dem == 2)
+            //            {
+            //                addface = true;
+            //            }
+            //            else if (dem == 4)
+            //            {
+            //                addface = true;
+            //                MessageBox.Show("Thêm 2 khuôn mặt nghiêng trái 10-15 độ, với khoảng cách 0.5m");
+            //            }
+            //            else if (dem == 6)
+            //            {
+            //                addface = true;
+            //                MessageBox.Show("Thêm 2 khuôn mặt nghiêng phải 10-15 độ, với khoảng cách 0.5m");
+            //            }
+            //            else if (dem == 8)
+            //            {
+            //                addface = true;
+            //                MessageBox.Show("Thêm 2 khuôn mặt nhìn lên trên, với khoảng cách 0.5m");
+            //            }
+            //            else if (dem == 10)
+            //            {
+            //                addface = true;
+            //                MessageBox.Show("Thêm 2 khuôn mặt nhìn xuống dưới, với khoảng cách 0.5m");
+            //            }
+
+            //            if (dem == 13)
+            //            {
+            //                MessageBox.Show("Thêm sinh viên thành công");
+            //                txtHoten.Enabled = true;
+            //                cboLop.Enabled = true;
+            //                txtMSSV.Enabled = true;
+            //                txtTim.Enabled = true;
+            //                btnTim.Enabled = true;
+            //                cboTim.Enabled = true;
+            //                txtHoten.Text = "";
+            //                cboLop.Text = "";
+            //                txtMSSV.Text = "";
+            //                dgvDSSV.DataSource = SinhVienBUS.LayDSSVLop(sv.Ma_Lop);
+            //                LopHocBUS.CapNhatSoSinhVienKhiThem(lh);
+            //                dem = 1;
+            //            }
+            //            else
+            //            {
+
+            //                MessageBox.Show("Thêm sinh viên không thành công");
+
+            //            }
+            //        }
+
+            //    }
+            //}
             btnStart.Enabled = false;
             btnXoa.Enabled = false;
             btnCapNhat.Enabled = false;
@@ -212,12 +338,31 @@ namespace GUI
 
                         }
                     }
-                    else if (dem > 1 && dem <= 5)
+                    else if (dem > 1 && dem < 13)
                     {
                         addface = true;
-                        MessageBox.Show("Thêm Khuông Mặt Thứ: " + dem + " Thành Công");
                         dem++;
+                        if (dem == 4)
+                        {
+                            addface = true;
+                            MessageBox.Show("Thêm sinh viên 4 công");
+                        }
                         if (dem == 6)
+                        {
+                            addface = true;
+                            MessageBox.Show("Thêm sinh viên 6 công");
+                        }
+                        if (dem == 8)
+                        {
+                            addface = true;
+                            MessageBox.Show("Thêm sinh viên 8 công");
+                        }
+                        if (dem == 10)
+                        {
+                            addface = true;
+                            MessageBox.Show("Thêm sinh viên 10 công");
+                        }
+                        if (dem == 13)
                         {
                             MessageBox.Show("Thêm sinh viên thành công");
                             txtHoten.Enabled = true;
@@ -245,6 +390,7 @@ namespace GUI
                 }
             }
         }
+    
 
         private void DSSV_Load(object sender, EventArgs e)
         {
