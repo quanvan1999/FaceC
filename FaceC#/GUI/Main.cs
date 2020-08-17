@@ -158,14 +158,7 @@ namespace GUI
           
         }
 
-        private void btnThoat_Paint(object sender, PaintEventArgs e)
-        {
-            ControlPaint.DrawBorder(e.Graphics, btnHinh.ClientRectangle,
-                       Color.Black, 1, ButtonBorderStyle.None, // left
-                       Color.Black, 1, ButtonBorderStyle.None, // top
-                       Color.Black, 2, ButtonBorderStyle.Solid, // right
-                       Color.Black, 2, ButtonBorderStyle.Solid);// bottom
-        }
+        
 
         private void btnLop_Paint(object sender, PaintEventArgs e)
         {
@@ -216,6 +209,24 @@ namespace GUI
         {
             OpenChildForm(new QLyKhuonMat(), sender);
             lblTittle.Text = "QUẢN LÝ HÌNH ẢNH";
+        }
+
+        private void btnHinh_Paint(object sender, PaintEventArgs e)
+        {
+            ControlPaint.DrawBorder(e.Graphics, btnHinh.ClientRectangle,
+                       Color.Black, 1, ButtonBorderStyle.None, // left
+                       Color.Black, 1, ButtonBorderStyle.None, // top
+                       Color.Black, 2, ButtonBorderStyle.Solid, // right
+                       Color.Black, 2, ButtonBorderStyle.Solid);// bottom
+        }
+
+        private void btnThoat_Paint_1(object sender, PaintEventArgs e)
+        {
+            ControlPaint.DrawBorder(e.Graphics, btnHinh.ClientRectangle,
+                      Color.Black, 1, ButtonBorderStyle.None, // left
+                      Color.Black, 1, ButtonBorderStyle.None, // top
+                      Color.Black, 2, ButtonBorderStyle.Solid, // right
+                      Color.Black, 2, ButtonBorderStyle.Solid);// bottom
         }
     }
 }

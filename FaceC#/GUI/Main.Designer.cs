@@ -191,6 +191,7 @@
             this.btnThoat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThoat.UseVisualStyleBackColor = true;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click_1);
+            this.btnThoat.Paint += new System.Windows.Forms.PaintEventHandler(this.btnThoat_Paint_1);
             // 
             // btnHinh
             // 
@@ -212,7 +213,7 @@
             this.btnHinh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnHinh.UseVisualStyleBackColor = true;
             this.btnHinh.Click += new System.EventHandler(this.btnHinh_Click);
-            this.btnHinh.Paint += new System.Windows.Forms.PaintEventHandler(this.btnThoat_Paint);
+            this.btnHinh.Paint += new System.Windows.Forms.PaintEventHandler(this.btnHinh_Paint);
             // 
             // btnLop
             // 
