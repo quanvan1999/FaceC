@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.pictureBox12 = new System.Windows.Forms.PictureBox();
+            this.pictureBox13 = new System.Windows.Forms.PictureBox();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
@@ -38,17 +42,23 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvDS = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.button3 = new System.Windows.Forms.Button();
             this.Camera = new System.Windows.Forms.GroupBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.pictureBox12 = new System.Windows.Forms.PictureBox();
-            this.pictureBox13 = new System.Windows.Forms.PictureBox();
+            this.Ma_SV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ten_SV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoNgayHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoNgayVang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TrangThai = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -58,13 +68,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             this.Camera.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -91,6 +97,42 @@
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Hình ảnh";
+            // 
+            // pictureBox12
+            // 
+            this.pictureBox12.Location = new System.Drawing.Point(327, 228);
+            this.pictureBox12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox12.Name = "pictureBox12";
+            this.pictureBox12.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox12.TabIndex = 23;
+            this.pictureBox12.TabStop = false;
+            // 
+            // pictureBox13
+            // 
+            this.pictureBox13.Location = new System.Drawing.Point(221, 228);
+            this.pictureBox13.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox13.Name = "pictureBox13";
+            this.pictureBox13.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox13.TabIndex = 22;
+            this.pictureBox13.TabStop = false;
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.Location = new System.Drawing.Point(115, 228);
+            this.pictureBox9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox9.TabIndex = 21;
+            this.pictureBox9.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Location = new System.Drawing.Point(9, 228);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox4.TabIndex = 20;
+            this.pictureBox4.TabStop = false;
             // 
             // pictureBox10
             // 
@@ -166,7 +208,7 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.dataGridView1);
+            this.groupBox3.Controls.Add(this.dgvDS);
             this.groupBox3.Font = new System.Drawing.Font("Times New Roman", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(10, 352);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -177,15 +219,22 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Danh sách sinh viên";
             // 
-            // dataGridView1
+            // dgvDS
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 18);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(750, 176);
-            this.dataGridView1.TabIndex = 4;
+            this.dgvDS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDS.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Ma_SV,
+            this.Ten_SV,
+            this.MaLop,
+            this.SoNgayHoc,
+            this.SoNgayVang,
+            this.TrangThai});
+            this.dgvDS.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvDS.Location = new System.Drawing.Point(3, 22);
+            this.dgvDS.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvDS.Name = "dgvDS";
+            this.dgvDS.Size = new System.Drawing.Size(750, 172);
+            this.dgvDS.TabIndex = 4;
             // 
             // button1
             // 
@@ -243,45 +292,47 @@
             this.Camera.TabStop = false;
             this.Camera.Text = "Camera";
             // 
-            // pictureBox4
+            // Ma_SV
             // 
-            this.pictureBox4.Location = new System.Drawing.Point(9, 228);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(100, 100);
-            this.pictureBox4.TabIndex = 20;
-            this.pictureBox4.TabStop = false;
+            this.Ma_SV.DataPropertyName = "Ma_SV";
+            this.Ma_SV.HeaderText = "Mã SV";
+            this.Ma_SV.Name = "Ma_SV";
             // 
-            // pictureBox9
+            // Ten_SV
             // 
-            this.pictureBox9.Location = new System.Drawing.Point(115, 228);
-            this.pictureBox9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(100, 100);
-            this.pictureBox9.TabIndex = 21;
-            this.pictureBox9.TabStop = false;
+            this.Ten_SV.DataPropertyName = "Ten_SV";
+            this.Ten_SV.HeaderText = "Tên SV";
+            this.Ten_SV.Name = "Ten_SV";
+            this.Ten_SV.Width = 200;
             // 
-            // pictureBox12
+            // MaLop
             // 
-            this.pictureBox12.Location = new System.Drawing.Point(327, 228);
-            this.pictureBox12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(100, 100);
-            this.pictureBox12.TabIndex = 23;
-            this.pictureBox12.TabStop = false;
+            this.MaLop.DataPropertyName = "MaLop";
+            this.MaLop.HeaderText = "Mã Lớp";
+            this.MaLop.Name = "MaLop";
             // 
-            // pictureBox13
+            // SoNgayHoc
             // 
-            this.pictureBox13.Location = new System.Drawing.Point(221, 228);
-            this.pictureBox13.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox13.Name = "pictureBox13";
-            this.pictureBox13.Size = new System.Drawing.Size(100, 100);
-            this.pictureBox13.TabIndex = 22;
-            this.pictureBox13.TabStop = false;
+            this.SoNgayHoc.DataPropertyName = "SoNgayHoc";
+            this.SoNgayHoc.HeaderText = "Số Ngày Học";
+            this.SoNgayHoc.Name = "SoNgayHoc";
+            // 
+            // SoNgayVang
+            // 
+            this.SoNgayVang.DataPropertyName = "SoNgayVang";
+            this.SoNgayVang.HeaderText = "Số Ngày Vắng";
+            this.SoNgayVang.Name = "SoNgayVang";
+            // 
+            // TrangThai
+            // 
+            this.TrangThai.DataPropertyName = "TrangThai";
+            this.TrangThai.HeaderText = "Khuôn mặt";
+            this.TrangThai.Name = "TrangThai";
+            this.TrangThai.Width = 120;
             // 
             // QLyKhuonMat
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(778, 555);
             this.Controls.Add(this.groupBox3);
@@ -292,6 +343,10 @@
             this.Name = "QLyKhuonMat";
             this.Text = "Quản_lý_khuôn_mặt";
             this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
@@ -301,13 +356,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             this.Camera.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -323,7 +374,7 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvDS;
         private System.Windows.Forms.PictureBox pictureBox12;
         private System.Windows.Forms.PictureBox pictureBox13;
         private System.Windows.Forms.PictureBox pictureBox9;
@@ -333,5 +384,11 @@
         private System.Windows.Forms.PictureBox pictureBox11;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.GroupBox Camera;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ma_SV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ten_SV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaLop;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoNgayHoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoNgayVang;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn TrangThai;
     }
 }

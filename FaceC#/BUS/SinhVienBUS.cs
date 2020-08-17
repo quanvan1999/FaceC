@@ -127,6 +127,12 @@ namespace BUS
             return SinhVienDAO.LayDSLopHoc(sv);
 
         }
+        public static DataTable LayDSTheoHinh(SinhVienDTO sv)
+        {
+
+            return SinhVienDAO.LayDSTheoHinh(sv);
+
+        }
         public static int DemSinhVien(SinhVienDTO sv)
         {
             return SinhVienDAO.DemSoSinhVien(sv.Ma_Lop);

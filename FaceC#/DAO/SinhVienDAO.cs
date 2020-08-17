@@ -81,6 +81,12 @@ namespace DAO
             SqlParameter[] param = new SqlParameter[0];
             return DataProvider.ExecuteSelectQuery(query, param);
         }
+        public static DataTable LayDSTheoHinh(SinhVienDTO sv)
+        {
+            string query = "SELECT * FROM ThongTinSV WHERE TrangThai=1";
+            SqlParameter[] param = new SqlParameter[0];
+            return DataProvider.ExecuteSelectQuery(query, param);
+        }
         public static List<SinhVienDTO> TimKiemMaSV(string maSV)
         {
             string query = "SELECT * FROM ThongTinSV WHERE Ma_SV = @Ma_SV";
