@@ -78,6 +78,7 @@ namespace GUI
         {
             
             OpenChildForm(new DiemDanh(), sender);
+
             lblTittle.Text = "ĐIỂM DANH";
             
         }

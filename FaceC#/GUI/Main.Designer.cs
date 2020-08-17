@@ -60,7 +60,7 @@
             this.panelMenu.Controls.Add(this.panelName);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
-            this.panelMenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelMenu.Margin = new System.Windows.Forms.Padding(2);
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(312, 685);
             this.panelMenu.TabIndex = 0;
@@ -76,7 +76,7 @@
             this.btnThoat.Image = global::GUI.Properties.Resources.icons8_open_door_100;
             this.btnThoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThoat.Location = new System.Drawing.Point(0, 523);
-            this.btnThoat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnThoat.Margin = new System.Windows.Forms.Padding(2);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
             this.btnThoat.Size = new System.Drawing.Size(312, 110);
@@ -98,7 +98,7 @@
             this.btnHinh.Image = global::GUI.Properties.Resources.icons8_picture_in_picture_100;
             this.btnHinh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHinh.Location = new System.Drawing.Point(0, 413);
-            this.btnHinh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnHinh.Margin = new System.Windows.Forms.Padding(2);
             this.btnHinh.Name = "btnHinh";
             this.btnHinh.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
             this.btnHinh.Size = new System.Drawing.Size(312, 110);
@@ -120,7 +120,7 @@
             this.btnLop.Image = global::GUI.Properties.Resources.icons8_class_100;
             this.btnLop.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLop.Location = new System.Drawing.Point(0, 303);
-            this.btnLop.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLop.Margin = new System.Windows.Forms.Padding(2);
             this.btnLop.Name = "btnLop";
             this.btnLop.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
             this.btnLop.Size = new System.Drawing.Size(312, 110);
@@ -142,7 +142,7 @@
             this.btnDSSV.Image = global::GUI.Properties.Resources.icons8_student_registration_100;
             this.btnDSSV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDSSV.Location = new System.Drawing.Point(0, 193);
-            this.btnDSSV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDSSV.Margin = new System.Windows.Forms.Padding(2);
             this.btnDSSV.Name = "btnDSSV";
             this.btnDSSV.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
             this.btnDSSV.Size = new System.Drawing.Size(312, 110);
@@ -164,7 +164,7 @@
             this.btnDiemDanh.Image = global::GUI.Properties.Resources.icons8_face_id_100__1_;
             this.btnDiemDanh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDiemDanh.Location = new System.Drawing.Point(0, 83);
-            this.btnDiemDanh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDiemDanh.Margin = new System.Windows.Forms.Padding(2);
             this.btnDiemDanh.Name = "btnDiemDanh";
             this.btnDiemDanh.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
             this.btnDiemDanh.Size = new System.Drawing.Size(312, 110);
@@ -182,7 +182,7 @@
             this.panelName.Controls.Add(this.lblDesign);
             this.panelName.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelName.Location = new System.Drawing.Point(0, 0);
-            this.panelName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelName.Margin = new System.Windows.Forms.Padding(2);
             this.panelName.Name = "panelName";
             this.panelName.Size = new System.Drawing.Size(312, 83);
             this.panelName.TabIndex = 2;
@@ -209,7 +209,7 @@
             this.panelTitle.Controls.Add(this.lblTittle);
             this.panelTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitle.Location = new System.Drawing.Point(312, 0);
-            this.panelTitle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelTitle.Margin = new System.Windows.Forms.Padding(2);
             this.panelTitle.Name = "panelTitle";
             this.panelTitle.Size = new System.Drawing.Size(773, 83);
             this.panelTitle.TabIndex = 2;
@@ -221,7 +221,7 @@
             this.btnCloseChild.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCloseChild.ForeColor = System.Drawing.Color.White;
             this.btnCloseChild.Location = new System.Drawing.Point(723, 27);
-            this.btnCloseChild.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCloseChild.Margin = new System.Windows.Forms.Padding(2);
             this.btnCloseChild.Name = "btnCloseChild";
             this.btnCloseChild.Size = new System.Drawing.Size(38, 31);
             this.btnCloseChild.TabIndex = 4;
@@ -236,8 +236,8 @@
             this.btnMi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMi.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMi.ForeColor = System.Drawing.Color.White;
-            this.btnMi.Location = new System.Drawing.Point(657, 27);
-            this.btnMi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMi.Location = new System.Drawing.Point(681, 27);
+            this.btnMi.Margin = new System.Windows.Forms.Padding(2);
             this.btnMi.Name = "btnMi";
             this.btnMi.Size = new System.Drawing.Size(38, 31);
             this.btnMi.TabIndex = 3;
@@ -265,7 +265,7 @@
             this.panelDeskop.Controls.Add(this.pictureBox1);
             this.panelDeskop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDeskop.Location = new System.Drawing.Point(312, 83);
-            this.panelDeskop.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelDeskop.Margin = new System.Windows.Forms.Padding(2);
             this.panelDeskop.Name = "panelDeskop";
             this.panelDeskop.Size = new System.Drawing.Size(773, 602);
             this.panelDeskop.TabIndex = 3;
@@ -276,7 +276,7 @@
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = global::GUI.Properties.Resources.logo33;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(773, 602);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -293,7 +293,7 @@
             this.Controls.Add(this.panelMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.IsMdiContainer = true;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";

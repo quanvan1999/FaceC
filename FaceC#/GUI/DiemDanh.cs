@@ -10,6 +10,7 @@ using Emgu.CV.CvEnum;
 using System.IO;
 using BUS;
 using DTO;
+using System.Threading;
 
 namespace GUI
 {
@@ -83,10 +84,11 @@ namespace GUI
                             if (result.Label != 0 && result.Distance < 2000)
                             {
                                 CvInvoke.PutText(currentFrame, PersonsMSSV[result.Label], new Point(face.X - 2, face.Y - 2),
-                                            FontFace.HersheyComplex, 1.0, new Bgr(Color.Orange).MCvScalar);
+                                            FontFace.HersheyComplex, 0.7, new Bgr(Color.Orange).MCvScalar);
                                 CvInvoke.Rectangle(currentFrame, face, new Bgr(Color.Green).MCvScalar, 2);
                                 Mssv = PersonsMSSV[result.Label];
                                 Lop = PersonsLop[result.Label];
+                                
                                 this.Invoke(new MethodInvoker(delegate ()
                                 {
                                     //in sinh viên đi học
@@ -113,7 +115,7 @@ namespace GUI
                             else
                             {
                                 CvInvoke.PutText(currentFrame, "Unknown", new Point(face.X - 2, face.Y - 2),
-                                    FontFace.HersheyComplex, 1.0, new Bgr(Color.Orange).MCvScalar);
+                                    FontFace.HersheyComplex, 0.7, new Bgr(Color.Orange).MCvScalar);
                                 CvInvoke.Rectangle(currentFrame, face, new Bgr(Color.Red).MCvScalar, 2);
 
                             }
@@ -151,9 +153,6 @@ namespace GUI
                     PersonsMSSV.Add(mssv);
                     PersonsLop.Add(lop);
                     ImagesCount++;
-
-
-
                 }
                 if (TrainedFaces.Count() > 0)
                 {
@@ -330,7 +329,9 @@ namespace GUI
             if (quayVideo != null)
             {
                 quayVideo.Dispose();
+                facederection = false;
             }
+            quayVideo = null;
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
