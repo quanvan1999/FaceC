@@ -11,6 +11,7 @@ using System.IO;
 using BUS;
 using DTO;
 using System.Threading;
+using System.Diagnostics;
 
 namespace GUI
 {
@@ -49,9 +50,9 @@ namespace GUI
         {
             SinhVienDTO sv = new SinhVienDTO();
             LopHocDTO lh = new LopHocDTO();
-            cboTim.DataSource = SinhVienBUS.LayDSLopHoc(sv);
-            cboTim.DisplayMember = "Ma_Lop";
-            cboTim.ValueMember = "Ma_Lop";
+            cboChonLop.DataSource = SinhVienBUS.LayDSLopHoc(sv);
+            cboChonLop.DisplayMember = "Ma_Lop";
+            cboChonLop.ValueMember = "Ma_Lop";
 
             
 
@@ -100,27 +101,30 @@ namespace GUI
                                 CvInvoke.Rectangle(currentFrame, face, new Bgr(Color.Green).MCvScalar, 2);
                                 Mssv = PersonsMSSV[result.Label];
                                 Lop = PersonsLop[result.Label];
-                                
                                 this.Invoke(new MethodInvoker(delegate ()
-                                {
+                                {                                         
                                     //in sinh viên đi học
-                                    if (lstDiHoc.Items.Count == 0)
+                                    if(Lop==cboChonLop.Text)
                                     {
-                                        lstDiHoc.Items.Add(Mssv + " " + Lop);
-                                    }
-                                    else
-                                    {
-                                        if (lstDiHoc.FindString(Mssv) != -1) { }
-                                        else
+                                        if (lstDiHoc.Items.Count == 0)
                                         {
                                             lstDiHoc.Items.Add(Mssv + " " + Lop);
-
                                         }
-                                    }
+                                        else
+                                        {
+                                            if (lstDiHoc.FindString(Mssv) != -1) { }
+                                            else
+                                            {
+                                                lstDiHoc.Items.Add(Mssv + " " + Lop);
+                                            }
+                                        }
 
-                                    lblLop.Text = Lop;
-                                    lblMSSV.Text = Mssv;
+                                        lblLop.Text = Lop;
+                                        lblMSSV.Text = Mssv;
+                                    }            
                                 }));
+                                
+                               
                             }
 
                             //here results did not found any know faces
@@ -202,6 +206,7 @@ namespace GUI
             facederection = true; // quet khuon mat 
             TrainImagesFromDir();//train hinh anh tuong duong khuon mat
             btnStart.Enabled = false;
+            cboChonLop.Enabled = false;
             //cam = new VideoCaptureDevice(camera[0].MonikerString);
         }
 
@@ -214,47 +219,60 @@ namespace GUI
             btnDiemDanh.Enabled = false;
             imgBox2.Dispose();
             btnLuu.Enabled = true;
+            cboChonLop.Enabled = true;
             lblLop.Text = "";
             lblMSSV.Text = "";
+       
             //hien thi sinh vien len list vang
             //PersonsLabes so hinh anh
-            if (lstDiHoc.Items.Count == 0)
-            {
-                for (int i = 0; i < PersonsLabes.Count; i++)
+           
+                if (lstDiHoc.Items.Count == 0)
                 {
-                    if (lstVang.FindString(PersonsMSSV[i]) != -1)
+                    for (int i = 0; i < PersonsLabes.Count; i++)
                     {
-                        // kiểm tra list vắng có tồn tại mssv đó chưa
-                    }
-                    else
-                    {
-                        lstVang.Items.Add(PersonsMSSV[i] + " " + PersonsLop[i]);
-                    }
 
-                }
-            }
-            else
-            {
-                for (int i = 0; i < PersonsLabes.Count; i++)
-                {
-                    if (lstDiHoc.FindString(PersonsMSSV[i]) != -1)
-                    {
-                        //nếu trong list đi học tồn tại mssv rồi thì không add qua list vắng
-                    }
-                    else
-                    {
                         if (lstVang.FindString(PersonsMSSV[i]) != -1)
                         {
-                            //kiểm tra list vắng có tồn tại mssv đó chưa, có không add
+                            // kiểm tra list vắng có tồn tại mssv đó chưa
                         }
                         else
                         {
-                            lstVang.Items.Add(PersonsMSSV[i] + " " + PersonsLop[i]);
+                            if (PersonsLop[i] == cboChonLop.Text)
+                            {
+                                lstVang.Items.Add(PersonsMSSV[i] + " " + PersonsLop[i]);
+                            }
                         }
-
+                        
                     }
                 }
-            }
+                else
+                {
+                    for (int i = 0; i < PersonsLabes.Count; i++)
+                    {
+                         if (lstDiHoc.FindString(PersonsMSSV[i]) != -1)
+                            {
+                                //nếu trong list đi học tồn tại mssv rồi thì không add qua list vắng
+                            }
+                            else
+                            {
+                                if (lstVang.FindString(PersonsMSSV[i]) != -1)
+                                {
+                                    //kiểm tra list vắng có tồn tại mssv đó chưa, có không add
+                                }
+                                else
+                                {
+                                    if (PersonsLop[i] == cboChonLop.Text)
+                                    {
+                                        lstVang.Items.Add(PersonsMSSV[i] + " " + PersonsLop[i]);
+                                    }
+                                }
+
+                            }
+                        
+                    }
+                }
+            
+            
             lblHienDien.Text = lstDiHoc.Items.Count.ToString();
             lblVang.Text = lstVang.Items.Count.ToString();
         }
@@ -288,6 +306,7 @@ namespace GUI
             }
             btnStop.Enabled = true;
             btnDiemDanh.Enabled = true;
+            cboChonLop.Enabled = true;
         }
 
         private void btnStop_Click(object sender, EventArgs e)
@@ -295,6 +314,7 @@ namespace GUI
             btnStart.Enabled = true;
             btnDiemDanh.Enabled = false;
             btnThongKe.Enabled = false;
+            cboChonLop.Enabled = true;
             btnLuu.Enabled = false;
 
             if (quayVideo != null)
@@ -354,7 +374,7 @@ namespace GUI
         private void btnLuu_Click(object sender, EventArgs e)
         {
             SinhVienDTO sv = new SinhVienDTO();
-
+            cboChonLop.Enabled = true;
             btnStart.Enabled = false;
             DialogResult dialogResult = MessageBox.Show("Bạn Có Muốn Lưu Dữ Liệu ?", "Lưu Đữ Liệu ?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
@@ -418,10 +438,27 @@ namespace GUI
         private void btnHuy_Click(object sender, EventArgs e)
         {
             lstDiHoc.Items.Clear();
+            btnDiemDanh.Enabled = false;
+            btnThongKe.Enabled = false;
+            btnLuu.Enabled = false;
             lstVang.Items.Clear();
+            cboChonLop.Enabled = true;
             lblLop.Text = "";
             lblMSSV.Text = "";
+            lblHienDien.Text = "00";
+            lblVang.Text = "00";
             txtDiemDanhTC.Text = "";
+            if(quayVideo!=null)
+            {
+                facederection = false;
+                quayVideo.Dispose();
+                btnStart.Enabled = true;
+                imgBox.Image = null;
+                imgBox2.Image = null;
+
+            }
+            quayVideo = null;
+           
         }
 
         

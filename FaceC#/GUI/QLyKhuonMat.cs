@@ -29,7 +29,7 @@ namespace GUI
         private Image<Bgr, Byte> currentFrame = null;
         static readonly CascadeClassifier cascadeClassifier = new CascadeClassifier("haarcascade_frontalface_alt.xml");
         private bool addface = false;
-        List<string> picture = new List<string>();
+        List<string> pictureList = new List<string>();
 
 
         public QLyKhuonMat()
@@ -112,26 +112,26 @@ namespace GUI
                             this.Invoke(new MethodInvoker(delegate ()
                             {
                                 resualtFace.Resize(100, 100, Inter.Cubic).Save(path + @"\" + masv + "_" + lop + "_" + chonHinh + ".bmp");
-                                if(chonHinh!=0)
-                                {
-                                    Bitmap hinhAnh = new Bitmap(resualtFace.Bitmap);
-                                    switch (chonHinh)
-                                    {
-                                        case 1:
+                                //if(chonHinh!=0)
+                                //{
+                                //    Bitmap hinhAnh = new Bitmap(resualtFace.Bitmap);
+                                //    switch (chonHinh)
+                                //    {
+                                //        case 1:
                                            
-                                            pic1.Image = hinhAnh;
-                                            pic1.SizeMode = PictureBoxSizeMode.StretchImage;
-                                            break;
-                                        case 2:
-                                            pic2.Image = hinhAnh;
+                                //            pic1.Image = hinhAnh;
+                                //            pic1.SizeMode = PictureBoxSizeMode.StretchImage;
+                                //            break;
+                                //        case 2:
+                                //            pic2.Image = hinhAnh;
 
-                                            pic2.SizeMode = PictureBoxSizeMode.StretchImage;break;
-                                        default:
-                                            pic3.Image = hinhAnh;
+                                //            pic2.SizeMode = PictureBoxSizeMode.StretchImage;break;
+                                //        default:
+                                //            pic3.Image = hinhAnh;
 
-                                            pic3.SizeMode = PictureBoxSizeMode.StretchImage;break;
-                                    }
-                                }
+                                //            pic3.SizeMode = PictureBoxSizeMode.StretchImage;break;
+                                //    }
+                                //}
 
                             }));
 
@@ -219,8 +219,7 @@ namespace GUI
 
         private void dgvDS_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            Bitmap[] bm = new Bitmap[13];
-
+           
             if (e.RowIndex > -1 && e.ColumnIndex > -1 && dgvDS.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
             {
 
@@ -228,34 +227,30 @@ namespace GUI
                 masv = dgvDS.Rows[e.RowIndex].Cells[0].FormattedValue.ToString();
                 ten = dgvDS.Rows[e.RowIndex].Cells[1].FormattedValue.ToString();
                 lop = dgvDS.Rows[e.RowIndex].Cells[2].FormattedValue.ToString();
-                for (int i = 1; i <= SoKhuonMat; i++)
-                {
+               
 
-                    string path = Directory.GetCurrentDirectory() + @"\TrainedImages";
-                    string[] fileHinhs = Directory.GetFiles(path, masv + "_" + lop + "_" + i + "*.bmp", SearchOption.AllDirectories);
-                    foreach (var filehinh in fileHinhs)
-                    {
-                        Debug.WriteLine(fileHinhs + " " + i);
-                    }
-                            
+                    
 
-                }
+                    //Debug.WriteLine(pictureList[i] + " test " +pictureList.Count);
+                    
+                    //pic1.Image = Image.FromFile(pictureList[1]);
+                    //pic2.Image = Image.FromFile(pictureList[2]);
+                    //pic3.Image = Image.FromFile(pictureList[3]);
+                    //pic4.Image = Image.FromFile(pictureList[4]);
+                    //pic5.Image = Image.FromFile(pictureList[5]);
+                    //pic6.Image = Image.FromFile(pictureList[6]);
+                    //pic7.Image = Image.FromFile(pictureList[7]);
+                    //pic8.Image = Image.FromFile(pictureList[8]);
+                    //pic9.Image = Image.FromFile(pictureList[9]);
+                    //pic10.Image = Image.FromFile(pictureList[10]);
+                    //pic11.Image = Image.FromFile(pictureList[11]);
+                    //pic12.Image = Image.FromFile(pictureList[12]);
                 
-            }
-           
 
-            //pic1.Image = bm[1];
-            //pic2.Image = bm[2];
-            //pic3.Image = bm[3];
-            //pic4.Image = bm[4];
-            //pic5.Image = bm[5];
-            //pic6.Image = bm[6];
-            //pic7.Image = bm[7];
-            //pic8.Image = bm[8];
-            //pic9.Image = bm[9];
-            //pic10.Image = bm[10];
-            //pic11.Image = bm[11];
-            //pic12.Image = bm[12];
+            }
+
+
+           
 
         }
     }
