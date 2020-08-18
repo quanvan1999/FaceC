@@ -228,6 +228,7 @@
             // 
             // dgvDS
             // 
+            this.dgvDS.AllowUserToAddRows = false;
             this.dgvDS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDS.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Ma_SV,
