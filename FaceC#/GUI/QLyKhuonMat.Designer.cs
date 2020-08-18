@@ -230,10 +230,10 @@
             this.SoNgayVang,
             this.TrangThai});
             this.dgvDS.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvDS.Location = new System.Drawing.Point(3, 18);
+            this.dgvDS.Location = new System.Drawing.Point(3, 22);
             this.dgvDS.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvDS.Name = "dgvDS";
-            this.dgvDS.Size = new System.Drawing.Size(750, 176);
+            this.dgvDS.Size = new System.Drawing.Size(750, 172);
             this.dgvDS.TabIndex = 4;
             this.dgvDS.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDS_CellClick);
             // 
@@ -284,6 +284,7 @@
             this.btnBatCam.TabIndex = 5;
             this.btnBatCam.Text = "Bật Camera";
             this.btnBatCam.UseVisualStyleBackColor = true;
+            this.btnBatCam.Click += new System.EventHandler(this.btnBatCam_Click);
             // 
             // btnDung
             // 
@@ -333,7 +334,7 @@
             // 
             // QLyKhuonMat
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(778, 555);
             this.Controls.Add(this.groupBox3);

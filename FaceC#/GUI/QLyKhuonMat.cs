@@ -11,16 +11,23 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BUS;
 using DTO;
-
+using Emgu.CV;
+using Emgu.CV.CvEnum;
+using Emgu.CV.Structure;
 
 namespace GUI
 {
     public partial class QLyKhuonMat : Form
     {
+        private Capture quayVideo = null;
         string masv = null,lop=null;
         int SoKhuonMat = 12;
         string path = null;
         string[] files = null;
+        Mat frame = new Mat();
+        private Image<Bgr, Byte> currentFrame = null;
+        static readonly CascadeClassifier cascadeClassifier = new CascadeClassifier("haarcascade_frontalface_alt.xml");
+        private bool addface = false;
         List<string> picture = new List<string>();
         public QLyKhuonMat()
         {
@@ -41,6 +48,11 @@ namespace GUI
 
         }
 
+        private void btnBatCam_Click(object sender, EventArgs e)
+        {
+           
+        }
+        
         private void dgvDS_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             Bitmap[] bm = new Bitmap[100];
