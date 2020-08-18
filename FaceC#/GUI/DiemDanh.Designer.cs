@@ -62,7 +62,7 @@
             this.lblGio = new System.Windows.Forms.Label();
             this.imgBox2 = new System.Windows.Forms.PictureBox();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.cboTim = new System.Windows.Forms.ComboBox();
+            this.cboChonLop = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -161,9 +161,9 @@
             this.groupBox6.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox6.ForeColor = System.Drawing.Color.Red;
             this.groupBox6.Location = new System.Drawing.Point(347, 204);
-            this.groupBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox6.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox6.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox6.Size = new System.Drawing.Size(423, 283);
             this.groupBox6.TabIndex = 15;
             this.groupBox6.TabStop = false;
@@ -187,9 +187,9 @@
             this.groupBox5.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.ForeColor = System.Drawing.Color.Red;
             this.groupBox5.Location = new System.Drawing.Point(9, 10);
-            this.groupBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox5.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox5.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox5.Size = new System.Drawing.Size(333, 283);
             this.groupBox5.TabIndex = 14;
             this.groupBox5.TabStop = false;
@@ -384,9 +384,9 @@
             this.groupBox4.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.ForeColor = System.Drawing.Color.Black;
             this.groupBox4.Location = new System.Drawing.Point(242, 93);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox4.Size = new System.Drawing.Size(176, 85);
             this.groupBox4.TabIndex = 9;
             this.groupBox4.TabStop = false;
@@ -396,7 +396,7 @@
             // 
             this.btnDiemDanhTC.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDiemDanhTC.Location = new System.Drawing.Point(44, 54);
-            this.btnDiemDanhTC.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDiemDanhTC.Margin = new System.Windows.Forms.Padding(2);
             this.btnDiemDanhTC.Name = "btnDiemDanhTC";
             this.btnDiemDanhTC.Size = new System.Drawing.Size(101, 28);
             this.btnDiemDanhTC.TabIndex = 2;
@@ -407,7 +407,7 @@
             // txtDiemDanhTC
             // 
             this.txtDiemDanhTC.Location = new System.Drawing.Point(59, 25);
-            this.txtDiemDanhTC.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDiemDanhTC.Margin = new System.Windows.Forms.Padding(2);
             this.txtDiemDanhTC.MaxLength = 10;
             this.txtDiemDanhTC.Name = "txtDiemDanhTC";
             this.txtDiemDanhTC.Size = new System.Drawing.Size(110, 26);
@@ -460,41 +460,41 @@
             // 
             // groupBox8
             // 
-            this.groupBox8.Controls.Add(this.cboTim);
+            this.groupBox8.Controls.Add(this.cboChonLop);
             this.groupBox8.Controls.Add(this.label1);
             this.groupBox8.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox8.ForeColor = System.Drawing.Color.Red;
             this.groupBox8.Location = new System.Drawing.Point(9, 297);
-            this.groupBox8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox8.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox8.Size = new System.Drawing.Size(338, 57);
+            this.groupBox8.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox8.Size = new System.Drawing.Size(331, 57);
             this.groupBox8.TabIndex = 17;
             this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "groupBox8";
+            this.groupBox8.Text = "Chọn Lớp Điểm Danh";
             // 
-            // cboTim
+            // cboChonLop
             // 
-            this.cboTim.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboTim.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboTim.FormattingEnabled = true;
-            this.cboTim.Location = new System.Drawing.Point(106, 20);
-            this.cboTim.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cboTim.Name = "cboTim";
-            this.cboTim.Size = new System.Drawing.Size(188, 27);
-            this.cboTim.TabIndex = 11;
-            this.cboTim.SelectedIndexChanged += new System.EventHandler(this.cboTim_SelectedIndexChanged);
+            this.cboChonLop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboChonLop.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboChonLop.FormattingEnabled = true;
+            this.cboChonLop.Location = new System.Drawing.Point(78, 20);
+            this.cboChonLop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cboChonLop.Name = "cboChonLop";
+            this.cboChonLop.Size = new System.Drawing.Size(233, 27);
+            this.cboChonLop.TabIndex = 11;
+            this.cboChonLop.SelectedIndexChanged += new System.EventHandler(this.cboTim_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(7, 23);
+            this.label1.Location = new System.Drawing.Point(17, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 19);
+            this.label1.Size = new System.Drawing.Size(45, 19);
             this.label1.TabIndex = 12;
-            this.label1.Text = "Chọn lớp:";
+            this.label1.Text = " Lớp:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // DiemDanh
@@ -508,7 +508,7 @@
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "DiemDanh";
             this.Text = "Điểm Danh";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.DiemDanh_FormClosed);
@@ -566,7 +566,7 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label lblGio;
         private System.Windows.Forms.GroupBox groupBox8;
-        private System.Windows.Forms.ComboBox cboTim;
+        private System.Windows.Forms.ComboBox cboChonLop;
         private System.Windows.Forms.Label label1;
     }
 }
