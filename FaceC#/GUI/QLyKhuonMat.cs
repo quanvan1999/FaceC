@@ -112,26 +112,24 @@ namespace GUI
                             this.Invoke(new MethodInvoker(delegate ()
                             {
                                 resualtFace.Resize(100, 100, Inter.Cubic).Save(path + @"\" + masv + "_" + lop + "_" + chonHinh + ".bmp");
-                                //if(chonHinh!=0)
-                                //{
-                                //    Bitmap hinhAnh = new Bitmap(resualtFace.Bitmap);
-                                //    switch (chonHinh)
-                                //    {
-                                //        case 1:
-                                           
-                                //            pic1.Image = hinhAnh;
-                                //            pic1.SizeMode = PictureBoxSizeMode.StretchImage;
-                                //            break;
-                                //        case 2:
-                                //            pic2.Image = hinhAnh;
+                                if (chonHinh != 0)
+                                {
+                                   
+                                    switch (chonHinh)
+                                    {
+                                        case 1:
 
-                                //            pic2.SizeMode = PictureBoxSizeMode.StretchImage;break;
-                                //        default:
-                                //            pic3.Image = hinhAnh;
-
-                                //            pic3.SizeMode = PictureBoxSizeMode.StretchImage;break;
-                                //    }
-                                //}
+                                            pic1.Image = resualtFace.Bitmap;
+                                            pic1.SizeMode = PictureBoxSizeMode.StretchImage;
+                                            break;
+                                        case 2:
+                                            pic2.Image = resualtFace.Bitmap; 
+                                            pic2.SizeMode = PictureBoxSizeMode.StretchImage; break;
+                                        default:
+                                            pic3.Image = resualtFace.Bitmap;
+                                            pic3.SizeMode = PictureBoxSizeMode.StretchImage; break;
+                                    }
+                                }
 
                             }));
 
@@ -211,6 +209,11 @@ namespace GUI
 
         }
 
+        private void btnDung_Click(object sender, EventArgs e)
+        {
+         
+        }
+
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
             addface = true;
@@ -219,7 +222,8 @@ namespace GUI
 
         private void dgvDS_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-           
+
+            //Bitmap[] bm = new Bitmap[13];
             if (e.RowIndex > -1 && e.ColumnIndex > -1 && dgvDS.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
             {
 
@@ -227,31 +231,34 @@ namespace GUI
                 masv = dgvDS.Rows[e.RowIndex].Cells[0].FormattedValue.ToString();
                 ten = dgvDS.Rows[e.RowIndex].Cells[1].FormattedValue.ToString();
                 lop = dgvDS.Rows[e.RowIndex].Cells[2].FormattedValue.ToString();
-               
-
-                    
-
-                    //Debug.WriteLine(pictureList[i] + " test " +pictureList.Count);
-                    
-                    //pic1.Image = Image.FromFile(pictureList[1]);
-                    //pic2.Image = Image.FromFile(pictureList[2]);
-                    //pic3.Image = Image.FromFile(pictureList[3]);
-                    //pic4.Image = Image.FromFile(pictureList[4]);
-                    //pic5.Image = Image.FromFile(pictureList[5]);
-                    //pic6.Image = Image.FromFile(pictureList[6]);
-                    //pic7.Image = Image.FromFile(pictureList[7]);
-                    //pic8.Image = Image.FromFile(pictureList[8]);
-                    //pic9.Image = Image.FromFile(pictureList[9]);
-                    //pic10.Image = Image.FromFile(pictureList[10]);
-                    //pic11.Image = Image.FromFile(pictureList[11]);
-                    //pic12.Image = Image.FromFile(pictureList[12]);
-                
+            }
+            for (int i = 1; i <= SoKhuonMat; i++)
+            {
+                string path = Directory.GetCurrentDirectory() + @"\TrainedImages";
+                string[] files = Directory.GetFiles(path, masv + "_" + lop + "_" + "" + "*.bmp", SearchOption.AllDirectories);
+                foreach (var file in files)
+                {
+                    pictureList.Add(file);
+                    Debug.WriteLine(file);
+                }
 
             }
 
+            //Debug.WriteLine(pictureList[i] + " test " +pictureList.Count);
 
-           
-
+            pic1.Image = Image.FromFile(pictureList[1]);
+            pic2.Image = Image.FromFile(pictureList[2]);
+            pic3.Image = Image.FromFile(pictureList[3]);
+            pic4.Image = Image.FromFile(pictureList[4]);
+            pic5.Image = Image.FromFile(pictureList[5]);
+            pic6.Image = Image.FromFile(pictureList[6]);
+            pic7.Image = Image.FromFile(pictureList[7]);
+            pic8.Image = Image.FromFile(pictureList[8]);
+            pic9.Image = Image.FromFile(pictureList[9]);
+            pic10.Image = Image.FromFile(pictureList[10]);
+            pic11.Image = Image.FromFile(pictureList[11]);
+            pic12.Image = Image.FromFile(pictureList[12]);
+            pictureList.Clear();
         }
     }
 }

@@ -19,7 +19,10 @@ namespace GUI
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            this.progressBar1.Increment(1);
+            this.Invoke(new MethodInvoker(delegate ()
+            {
+                this.progressBar1.Increment(1);
+            }));
 
         }
 
