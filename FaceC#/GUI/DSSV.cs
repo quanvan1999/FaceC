@@ -468,6 +468,7 @@ namespace GUI
                             {
                                 if (sv.Ma_Lop == lop)
                                 {
+                                    Debug.WriteLine(filelops);
                                     File.Delete(filelops);
                                 }
                             }
