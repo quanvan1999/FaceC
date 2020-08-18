@@ -145,6 +145,7 @@ namespace GUI
             btnStart.Enabled = false;
             btnXoa.Enabled = false;
             btnCapNhat.Enabled = false;
+            btnSua.Enabled = false;
             //txtHoten.Enabled = false;
             //txtMSSV.Enabled = false;
             //cboLop.Enabled = false;
@@ -159,6 +160,7 @@ namespace GUI
             sv.TrangThai = true;
             Debug.WriteLine(dem);
             lh.Ma_Lop = sv.Ma_Lop;
+
             lh.SoSinhVien = 1;
             if (button == 1)
             {
@@ -283,19 +285,17 @@ namespace GUI
                     {
 
                         string path = Directory.GetCurrentDirectory() + @"\TrainedImages";
-                        string[] files = Directory.GetFiles(path, txtMSSV.Text + "_" + cboLop.Text + "_" + i + "*.bmp", SearchOption.AllDirectories);
+                        string[] files = Directory.GetFiles(path, txtMSSV.Text + "_" + cboLop.Text + "_" + i + ".bmp", SearchOption.AllDirectories);
                         foreach (var file in files)
                         {
                             File.Delete(file);
-
+                            Debug.WriteLine(file + "test" + files.Length);
                         }
                     }
-                    MessageBox.Show("Xóa thành công");
                     LopHocBUS.CapNhatSoSinhVienKhiXoa(lh);
+                    MessageBox.Show("Xóa thành công");     
                     XoaForm();
                     dgvDSSV.DataSource = SinhVienBUS.LayDSSVLop(sv.Ma_Lop);
-
-
                 }
                 else
                 {
@@ -463,7 +463,7 @@ namespace GUI
                         string lop = file.Split('\\').Last().Split('_')[1];
                         for (int i = 1; i <= SoKhuonMat; i++)
                         {
-                            string[] fileLop = Directory.GetFiles(path, mssv+"_"+sv.Ma_Lop + "_" + i + "*.bmp", SearchOption.AllDirectories);
+                            string[] fileLop = Directory.GetFiles(path, mssv+"_"+sv.Ma_Lop + "_" + i + ".bmp", SearchOption.AllDirectories);
                             foreach (var filelops in fileLop)
                             {
                                 if (sv.Ma_Lop == lop)
@@ -604,12 +604,16 @@ namespace GUI
             if(quayVideo != null)
             {
                 quayVideo.Dispose();
+                btnCapNhat.Enabled = false;
             }
             btnThem.Enabled = false;
             picBox.Image = null;
             picBox2.Image = null;
             quayVideo = null;
             btnStart.Enabled = true;
+            btnXoa.Enabled = false;
+            btnSua.Enabled = false;
+            
         }
 
         private void btnCapNhat_Click(object sender, EventArgs e)
@@ -636,7 +640,7 @@ namespace GUI
                     txtTim.Enabled = false;
                     btnTim.Enabled = false;
                     cboTim.Enabled = false;
-                   
+                    
                     dem++;
 
                 }
@@ -651,11 +655,11 @@ namespace GUI
                     txtMSSV.Text = "";
                 }
             }
-            else if (dem > 1 && dem <13)
+            else if (dem > 1 && dem < 13)
             {
-                dem++;
                 addface = true;
                 MessageBox.Show("Thêm Khuông Mặt Thứ: " + dem + " Thành Công");
+                dem++;
                 if (dem == 13)
                 {
                     addface = false;
@@ -776,7 +780,7 @@ namespace GUI
 
                             }
 
-                            dgvDSSV.DataSource = SinhVienBUS.LayDSSV();
+                          
                             ChonLop();
                             //Set kich thuoc cua dong datagridview
                             dgvDSSV.Columns[0].Width = 100;
