@@ -100,6 +100,19 @@ namespace DAO
             }
             return lstSinhVien;
         }
+        public static List<SinhVienDTO> TimKiemMaSVCoHinh(string maSV)
+        {
+            string query = "SELECT * FROM ThongTinSV WHERE Ma_SV = @Ma_SV AND TrangThai=1";
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@Ma_SV", maSV);
+            DataTable dtbKetQua = DataProvider.ExecuteSelectQuery(query, param);
+            List<SinhVienDTO> lstSinhVien = new List<SinhVienDTO>();
+            foreach (DataRow dr in dtbKetQua.Rows)
+            {
+                lstSinhVien.Add(ConvertToDTO(dr));
+            }
+            return lstSinhVien;
+        }
         public static List<SinhVienDTO> LayDSSVLop(string maLop)
         {
             string query = "SELECT * FROM ThongTinSV WHERE MaLop=@MaLop";
@@ -113,7 +126,19 @@ namespace DAO
             }
             return lstSinhVien;
         }
-
+        public static List<SinhVienDTO> LayDSSVLopCoHinh(string maLop)
+        {
+            string query = "SELECT * FROM ThongTinSV WHERE MaLop=@MaLop AND TrangThai=1";
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@MaLop", maLop);
+            DataTable dtbKetQua = DataProvider.ExecuteSelectQuery(query, param);
+            List<SinhVienDTO> lstSinhVien = new List<SinhVienDTO>();
+            foreach (DataRow dr in dtbKetQua.Rows)
+            {
+                lstSinhVien.Add(ConvertToDTO(dr));
+            }
+            return lstSinhVien;
+        }
         public static bool UpdateChuyenCan(SinhVienDTO sv)
         {
             string query = "UPDATE ThongTinSV SET SoNgayHoc = SoNgayHoc + @SoNgayHoc,SoNgayVang = SoNgayVang + @SoNgayVang WHERE Ma_SV = @Ma_SV";

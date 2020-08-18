@@ -54,6 +54,12 @@
             this.picCamera = new System.Windows.Forms.PictureBox();
             this.btnCapNhat = new System.Windows.Forms.Button();
             this.Camera = new System.Windows.Forms.GroupBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtTim = new System.Windows.Forms.TextBox();
+            this.btnTim = new System.Windows.Forms.Button();
+            this.cboTim = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblNhapMSSV = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic11)).BeginInit();
@@ -71,6 +77,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvDS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCamera)).BeginInit();
             this.Camera.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -210,11 +217,11 @@
             // 
             this.groupBox3.Controls.Add(this.dgvDS);
             this.groupBox3.Font = new System.Drawing.Font("Times New Roman", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(10, 352);
+            this.groupBox3.Location = new System.Drawing.Point(10, 437);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox3.Size = new System.Drawing.Size(756, 196);
+            this.groupBox3.Size = new System.Drawing.Size(756, 148);
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Danh sách sinh viên";
@@ -233,7 +240,7 @@
             this.dgvDS.Location = new System.Drawing.Point(3, 22);
             this.dgvDS.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvDS.Name = "dgvDS";
-            this.dgvDS.Size = new System.Drawing.Size(750, 172);
+            this.dgvDS.Size = new System.Drawing.Size(750, 124);
             this.dgvDS.TabIndex = 4;
             this.dgvDS.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDS_CellClick);
             // 
@@ -332,11 +339,91 @@
             this.Camera.TabStop = false;
             this.Camera.Text = "Camera";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.txtTim);
+            this.groupBox1.Controls.Add(this.btnTim);
+            this.groupBox1.Controls.Add(this.cboTim);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.lblNhapMSSV);
+            this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.Red;
+            this.groupBox1.Location = new System.Drawing.Point(10, 354);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(756, 78);
+            this.groupBox1.TabIndex = 5;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Tìm kiếm và lọc danh sách SV";
+            // 
+            // txtTim
+            // 
+            this.txtTim.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTim.Location = new System.Drawing.Point(135, 31);
+            this.txtTim.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.txtTim.MaxLength = 10;
+            this.txtTim.Multiline = true;
+            this.txtTim.Name = "txtTim";
+            this.txtTim.Size = new System.Drawing.Size(178, 32);
+            this.txtTim.TabIndex = 11;
+            this.txtTim.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTim_KeyPress);
+            // 
+            // btnTim
+            // 
+            this.btnTim.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTim.ForeColor = System.Drawing.Color.Black;
+            this.btnTim.Location = new System.Drawing.Point(321, 28);
+            this.btnTim.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.btnTim.Name = "btnTim";
+            this.btnTim.Size = new System.Drawing.Size(111, 36);
+            this.btnTim.TabIndex = 12;
+            this.btnTim.Text = "Tìm Kiếm";
+            this.btnTim.UseVisualStyleBackColor = true;
+            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
+            // 
+            // cboTim
+            // 
+            this.cboTim.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTim.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboTim.FormattingEnabled = true;
+            this.cboTim.Location = new System.Drawing.Point(579, 31);
+            this.cboTim.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.cboTim.Name = "cboTim";
+            this.cboTim.Size = new System.Drawing.Size(170, 31);
+            this.cboTim.TabIndex = 13;
+            this.cboTim.SelectedIndexChanged += new System.EventHandler(this.cboTim_SelectedIndexChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(479, 35);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(82, 19);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "Chọn lớp:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // lblNhapMSSV
+            // 
+            this.lblNhapMSSV.AutoSize = true;
+            this.lblNhapMSSV.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNhapMSSV.ForeColor = System.Drawing.Color.Black;
+            this.lblNhapMSSV.Location = new System.Drawing.Point(9, 34);
+            this.lblNhapMSSV.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNhapMSSV.Name = "lblNhapMSSV";
+            this.lblNhapMSSV.Size = new System.Drawing.Size(100, 19);
+            this.lblNhapMSSV.TabIndex = 14;
+            this.lblNhapMSSV.Text = "Nhập MSSV:";
+            this.lblNhapMSSV.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
             // QLyKhuonMat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(778, 555);
+            this.ClientSize = new System.Drawing.Size(778, 596);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.Camera);
@@ -362,6 +449,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvDS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCamera)).EndInit();
             this.Camera.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -393,5 +482,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SoNgayHoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoNgayVang;
         private System.Windows.Forms.DataGridViewCheckBoxColumn TrangThai;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox txtTim;
+        private System.Windows.Forms.Button btnTim;
+        private System.Windows.Forms.ComboBox cboTim;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblNhapMSSV;
     }
 }

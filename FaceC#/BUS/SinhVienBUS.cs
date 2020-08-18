@@ -61,9 +61,24 @@ namespace BUS
                 return null;
             }
         }
+        public static List<SinhVienDTO> TimKiemMaSVCoHinh(string maSV)
+        {
+            if (SinhVienDAO.KTSVTonTai(maSV))
+            {
+                return SinhVienDAO.TimKiemMaSVCoHinh(maSV);
+            }
+            else
+            {
+                return null;
+            }
+        }
         public static List<SinhVienDTO> LayDSSVLop(string maLop)
         {
             return SinhVienDAO.LayDSSVLop(maLop);
+        }
+        public static List<SinhVienDTO> LayDSSVLopCoHinh(string maLop)
+        {
+            return SinhVienDAO.LayDSSVLopCoHinh(maLop);
         }
         public static DataTable ChonLop(SinhVienDTO sv)
         {

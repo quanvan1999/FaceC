@@ -32,7 +32,7 @@ namespace GUI
         public QLyKhuonMat()
         {
             InitializeComponent();
-             
+            ChonLop();
             LoadDSSV();
         }
         private void LoadDSSV()
@@ -47,12 +47,75 @@ namespace GUI
             files = Directory.GetFiles(path, "*.bmp", SearchOption.AllDirectories);
 
         }
+        protected void ChonLop()
+        {
+            SinhVienDTO sv = new SinhVienDTO();
+            LopHocDTO lh = new LopHocDTO();
+            cboTim.DataSource = SinhVienBUS.LayDSLopHoc(sv);
+            cboTim.DisplayMember = "Ma_Lop";
+            cboTim.ValueMember = "Ma_Lop";
 
+            
+
+        }
         private void btnBatCam_Click(object sender, EventArgs e)
         {
            
         }
-        
+
+        private void txtTim_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+       (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // ko cho phep nhap dau .
+            else if ((e.KeyChar == '.') && ((sender as System.Windows.Forms.TextBox).Text.IndexOf('.') == -1))
+            {
+                e.Handled = true;
+            }
+            else if (e.Handled = (e.KeyChar == (char)Keys.Space))
+            {
+
+            }
+
+            else
+            {
+                e.Handled = false;
+            }
+        }
+
+        private void btnTim_Click(object sender, EventArgs e)
+        {
+            SinhVienDTO sv = new SinhVienDTO();
+            sv.Ma_SV = txtTim.Text.ToString();
+            sv.Ma_Lop = cboTim.Text;
+            if (txtTim.Text == "")
+            {
+                MessageBox.Show("Bạn chưa nhập thông tin cần tìm");
+            }
+            else
+            {
+                if (SinhVienBUS.TimKiemMaSV(sv.Ma_SV) != null)
+                {
+                    dgvDS.DataSource = SinhVienBUS.TimKiemMaSVCoHinh(sv.Ma_SV);
+                }
+                else
+                {
+                    MessageBox.Show("Sinh viên không tồn tại");
+                }
+            }
+        }
+
+        private void cboTim_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SinhVienDTO sv = new SinhVienDTO();
+            sv.Ma_Lop = cboTim.Text.ToString();
+            dgvDS.DataSource = SinhVienBUS.LayDSSVLopCoHinh(sv.Ma_Lop);
+        }
+
         private void dgvDS_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             Bitmap[] bm = new Bitmap[100];
