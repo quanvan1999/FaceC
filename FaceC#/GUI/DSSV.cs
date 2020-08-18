@@ -145,6 +145,7 @@ namespace GUI
             btnStart.Enabled = false;
             btnXoa.Enabled = false;
             btnCapNhat.Enabled = false;
+            btnSua.Enabled = false;
             //txtHoten.Enabled = false;
             //txtMSSV.Enabled = false;
             //cboLop.Enabled = false;
@@ -284,7 +285,7 @@ namespace GUI
                     {
 
                         string path = Directory.GetCurrentDirectory() + @"\TrainedImages";
-                        string[] files = Directory.GetFiles(path, txtMSSV.Text + "_" + cboLop.Text + "_" + i + "*.bmp", SearchOption.AllDirectories);
+                        string[] files = Directory.GetFiles(path, txtMSSV.Text + "_" + cboLop.Text + "_" + i + ".bmp", SearchOption.AllDirectories);
                         foreach (var file in files)
                         {
                             File.Delete(file);
@@ -462,7 +463,7 @@ namespace GUI
                         string lop = file.Split('\\').Last().Split('_')[1];
                         for (int i = 1; i <= SoKhuonMat; i++)
                         {
-                            string[] fileLop = Directory.GetFiles(path, mssv+"_"+sv.Ma_Lop + "_" + i + "*.bmp", SearchOption.AllDirectories);
+                            string[] fileLop = Directory.GetFiles(path, mssv+"_"+sv.Ma_Lop + "_" + i + ".bmp", SearchOption.AllDirectories);
                             foreach (var filelops in fileLop)
                             {
                                 if (sv.Ma_Lop == lop)
@@ -603,12 +604,16 @@ namespace GUI
             if(quayVideo != null)
             {
                 quayVideo.Dispose();
+                btnCapNhat.Enabled = false;
             }
             btnThem.Enabled = false;
             picBox.Image = null;
             picBox2.Image = null;
             quayVideo = null;
             btnStart.Enabled = true;
+            btnXoa.Enabled = false;
+            btnSua.Enabled = false;
+            
         }
 
         private void btnCapNhat_Click(object sender, EventArgs e)
