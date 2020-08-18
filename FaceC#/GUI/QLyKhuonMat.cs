@@ -29,7 +29,6 @@ namespace GUI
         private Image<Bgr, Byte> currentFrame = null;
         static readonly CascadeClassifier cascadeClassifier = new CascadeClassifier("haarcascade_frontalface_alt.xml");
         private bool addface = false;
-        List<string> picture = new List<string>();
 
 
         public QLyKhuonMat()
@@ -211,6 +210,11 @@ namespace GUI
 
         }
 
+        private void btnDung_Click(object sender, EventArgs e)
+        {
+            
+        }
+
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
             addface = true;
@@ -219,7 +223,6 @@ namespace GUI
 
         private void dgvDS_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            Bitmap[] bm = new Bitmap[13];
 
             if (e.RowIndex > -1 && e.ColumnIndex > -1 && dgvDS.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
             {
@@ -228,19 +231,17 @@ namespace GUI
                 masv = dgvDS.Rows[e.RowIndex].Cells[0].FormattedValue.ToString();
                 ten = dgvDS.Rows[e.RowIndex].Cells[1].FormattedValue.ToString();
                 lop = dgvDS.Rows[e.RowIndex].Cells[2].FormattedValue.ToString();
+
                 for (int i = 1; i <= SoKhuonMat; i++)
                 {
 
                     string path = Directory.GetCurrentDirectory() + @"\TrainedImages";
-                    string[] fileHinhs = Directory.GetFiles(path, masv + "_" + lop + "_" + i + "*.bmp", SearchOption.AllDirectories);
-                    foreach (var filehinh in fileHinhs)
+                    string[] files = Directory.GetFiles(path, masv + "_" + lop + "_" + i + "*.bmp", SearchOption.AllDirectories);
+                    foreach (var file in files)
                     {
-                        Debug.WriteLine(fileHinhs + " " + i);
+                        Debug.WriteLine(file);
                     }
-                            
-
                 }
-                
             }
            
 
