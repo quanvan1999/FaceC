@@ -37,24 +37,12 @@ namespace GUI
             btnDiemDanh.Enabled = false;
             btnThongKe.Enabled = false;
             btnLuu.Enabled = false;
-            ChonLop();
         }
        
         private void DiemDanh_Load(object sender, EventArgs e)
         {
             timer.Start();
             lblNgay.Text = DateTime.Now.ToString("dd/MM/yyyy");
-        }
-        protected void ChonLop()
-        {
-            SinhVienDTO sv = new SinhVienDTO();
-            LopHocDTO lh = new LopHocDTO();
-            cboTim.DataSource = SinhVienBUS.LayDSLopHoc(sv);
-            cboTim.DisplayMember = "Ma_Lop";
-            cboTim.ValueMember = "Ma_Lop";
-
-
-
         }
         private void ProcessFrame(object sender, EventArgs e)
         {
