@@ -614,7 +614,6 @@ namespace GUI
 
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
-            addface = true;
             SinhVienDTO sv = new SinhVienDTO();
             LopHocDTO lh = new LopHocDTO();
 
@@ -622,7 +621,6 @@ namespace GUI
             sv.Ma_Lop = cboLop.Text;
 
             lh.Ma_Lop = sv.Ma_Lop;
-            lh.SoSinhVien = 1;
             if (dem == 1)
             {
                 if (SinhVienBUS.CapNhatTrangThai(sv))
@@ -653,9 +651,9 @@ namespace GUI
             }
             else if (dem > 1 && dem <13)
             {
-                dem++;
                 addface = true;
                 MessageBox.Show("Thêm Khuông Mặt Thứ: " + dem + " Thành Công");
+                dem++;
                 if (dem == 13)
                 {
                     addface = false;
