@@ -203,6 +203,7 @@
             this.pic2.Size = new System.Drawing.Size(100, 100);
             this.pic2.TabIndex = 11;
             this.pic2.TabStop = false;
+            this.pic2.Click += new System.EventHandler(this.pic2_Click);
             // 
             // pic1
             // 
@@ -212,6 +213,7 @@
             this.pic1.Size = new System.Drawing.Size(100, 100);
             this.pic1.TabIndex = 10;
             this.pic1.TabStop = false;
+            this.pic1.Click += new System.EventHandler(this.pic1_Click);
             // 
             // groupBox3
             // 
@@ -237,10 +239,10 @@
             this.SoNgayVang,
             this.TrangThai});
             this.dgvDS.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvDS.Location = new System.Drawing.Point(3, 22);
+            this.dgvDS.Location = new System.Drawing.Point(3, 18);
             this.dgvDS.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvDS.Name = "dgvDS";
-            this.dgvDS.Size = new System.Drawing.Size(750, 124);
+            this.dgvDS.Size = new System.Drawing.Size(750, 128);
             this.dgvDS.TabIndex = 4;
             this.dgvDS.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDS_CellClick);
             // 
@@ -321,6 +323,7 @@
             this.btnCapNhat.TabIndex = 7;
             this.btnCapNhat.Text = "Cập nhật";
             this.btnCapNhat.UseVisualStyleBackColor = true;
+            this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
             // 
             // Camera
             // 
@@ -388,7 +391,7 @@
             this.cboTim.Location = new System.Drawing.Point(579, 31);
             this.cboTim.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.cboTim.Name = "cboTim";
-            this.cboTim.Size = new System.Drawing.Size(170, 31);
+            this.cboTim.Size = new System.Drawing.Size(170, 27);
             this.cboTim.TabIndex = 13;
             this.cboTim.SelectedIndexChanged += new System.EventHandler(this.cboTim_SelectedIndexChanged);
             // 
@@ -400,7 +403,7 @@
             this.label2.Location = new System.Drawing.Point(479, 35);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 19);
+            this.label2.Size = new System.Drawing.Size(69, 17);
             this.label2.TabIndex = 15;
             this.label2.Text = "Chọn lớp:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -413,14 +416,14 @@
             this.lblNhapMSSV.Location = new System.Drawing.Point(9, 34);
             this.lblNhapMSSV.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNhapMSSV.Name = "lblNhapMSSV";
-            this.lblNhapMSSV.Size = new System.Drawing.Size(100, 19);
+            this.lblNhapMSSV.Size = new System.Drawing.Size(85, 17);
             this.lblNhapMSSV.TabIndex = 14;
             this.lblNhapMSSV.Text = "Nhập MSSV:";
             this.lblNhapMSSV.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // QLyKhuonMat
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(778, 596);
             this.Controls.Add(this.groupBox1);

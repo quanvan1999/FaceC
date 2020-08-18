@@ -20,15 +20,18 @@ namespace GUI
     public partial class QLyKhuonMat : Form
     {
         private Capture quayVideo = null;
-        string masv = null,lop=null;
+        string masv = null,lop=null,ten=null;
         int SoKhuonMat = 12;
-        string path = null;
-        string[] files = null;
+        //string path = null;
+        //string[] files = null;
+        int chonHinh = 0;
         Mat frame = new Mat();
         private Image<Bgr, Byte> currentFrame = null;
         static readonly CascadeClassifier cascadeClassifier = new CascadeClassifier("haarcascade_frontalface_alt.xml");
         private bool addface = false;
         List<string> picture = new List<string>();
+
+
         public QLyKhuonMat()
         {
             InitializeComponent();
@@ -43,8 +46,7 @@ namespace GUI
 
         private void QLyKhuonMat_Load(object sender, EventArgs e)
         {
-            path = Directory.GetCurrentDirectory() + @"\TrainedImages";
-            files = Directory.GetFiles(path, "*.bmp", SearchOption.AllDirectories);
+            
 
         }
         protected void ChonLop()
@@ -60,7 +62,87 @@ namespace GUI
         }
         private void btnBatCam_Click(object sender, EventArgs e)
         {
-           
+            if (quayVideo == null)
+            {
+                quayVideo = new Capture();
+                quayVideo.ImageGrabbed += StartFrame;// tao ham lam viec voi camera
+                quayVideo.FlipHorizontal = !quayVideo.FlipHorizontal;
+                quayVideo.Start();
+
+            }
+            else
+            {
+                quayVideo.Dispose();
+            }
+        }
+
+        private void StartFrame(object sender, EventArgs e)
+        {
+            quayVideo.Retrieve(frame, 0);
+            currentFrame = frame.ToImage<Bgr, Byte>().Resize(320, 240, Inter.Cubic);
+
+            Mat grayImage = new Mat();
+            CvInvoke.CvtColor(currentFrame, grayImage, ColorConversion.Bgr2Gray);
+            CvInvoke.EqualizeHist(grayImage, grayImage);//cân bằng độ sáng
+            System.Drawing.Rectangle[] faces = cascadeClassifier.DetectMultiScale(grayImage, 1.2, 10, new Size(20, 20));
+
+
+            if (faces.Length > 0)
+            {
+                foreach (var face in faces)
+                {
+                    // vẽ hình vuông vào mặt
+                    CvInvoke.Rectangle(currentFrame, face, new Bgr(Color.Red).MCvScalar, 2);
+
+                    //add khuôn mặt : resualtFace
+                    Image<Gray, Byte> resualtFace = currentFrame.Convert<Gray, Byte>();
+                    resualtFace.ROI = face;
+                    //picBox2.SizeMode = PictureBoxSizeMode.StretchImage;// Chỉnh size cho imagebox;
+                    //picBox2.Image = resualtFace.Bitmap;
+                    if (addface)
+                    {
+
+
+                        string path = Directory.GetCurrentDirectory() + @"\TrainedImages";//Tạo thư mục Trained trong debug
+                        if (!Directory.Exists(path))
+                            Directory.CreateDirectory(path);
+
+                        Task.Factory.StartNew(() =>
+                        {
+                            this.Invoke(new MethodInvoker(delegate ()
+                            {
+                                resualtFace.Resize(100, 100, Inter.Cubic).Save(path + @"\" + masv + "_" + lop + "_" + chonHinh + ".bmp");
+                                if(chonHinh!=0)
+                                {
+                                    Bitmap hinhAnh = new Bitmap(resualtFace.Bitmap);
+                                    switch (chonHinh)
+                                    {
+                                        case 1:
+                                           
+                                            pic1.Image = hinhAnh;
+                                            pic1.SizeMode = PictureBoxSizeMode.StretchImage;
+                                            break;
+                                        case 2:
+                                            pic2.Image = hinhAnh;
+
+                                            pic2.SizeMode = PictureBoxSizeMode.StretchImage;break;
+                                        default:
+                                            pic3.Image = hinhAnh;
+
+                                            pic3.SizeMode = PictureBoxSizeMode.StretchImage;break;
+                                    }
+                                }
+
+                            }));
+
+                        });
+
+                    }
+
+                    addface = false;
+                }
+            }
+            picCamera.Image = currentFrame.Bitmap;
         }
 
         private void txtTim_KeyPress(object sender, KeyPressEventArgs e)
@@ -116,48 +198,65 @@ namespace GUI
             dgvDS.DataSource = SinhVienBUS.LayDSSVLopCoHinh(sv.Ma_Lop);
         }
 
+        private void pic1_Click(object sender, EventArgs e)
+        {
+            chonHinh = 1;
+            Debug.WriteLine(chonHinh);
+        }
+
+        private void pic2_Click(object sender, EventArgs e)
+        {
+            chonHinh = 2;
+            Debug.WriteLine(chonHinh);
+
+        }
+
+        private void btnCapNhat_Click(object sender, EventArgs e)
+        {
+            addface = true;
+            
+        }
+
         private void dgvDS_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            Bitmap[] bm = new Bitmap[100];
+            Bitmap[] bm = new Bitmap[13];
+
             if (e.RowIndex > -1 && e.ColumnIndex > -1 && dgvDS.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
             {
 
                 dgvDS.CurrentRow.Selected = true;
                 masv = dgvDS.Rows[e.RowIndex].Cells[0].FormattedValue.ToString();
+                ten = dgvDS.Rows[e.RowIndex].Cells[1].FormattedValue.ToString();
                 lop = dgvDS.Rows[e.RowIndex].Cells[2].FormattedValue.ToString();
-                foreach (var file in files)
+                for (int i = 1; i <= SoKhuonMat; i++)
                 {
-                    string mssv = file.Split('\\').Last().Split('_')[0];
-                    string lop = file.Split('\\').Last().Split('_')[1];
-                    for (int i = 1; i <= SoKhuonMat; i++)
-                    {
-                        if (masv == mssv)
-                        {
-                            string[] fileHinh = Directory.GetFiles(path, masv + "_" + lop + "_" + i + "*.bmp", SearchOption.AllDirectories);
-                            foreach(var fileHinhs in fileHinh)
-                            {
-                                bm[i] = new Bitmap(fileHinhs);
-                            }
-                            
-                           
-                        }
 
+                    string path = Directory.GetCurrentDirectory() + @"\TrainedImages";
+                    string[] fileHinhs = Directory.GetFiles(path, masv + "_" + lop + "_" + i + "*.bmp", SearchOption.AllDirectories);
+                    foreach (var filehinh in fileHinhs)
+                    {
+                        Debug.WriteLine(fileHinhs + " " + i);
                     }
-                    pic1.Image = bm[1];
-                    pic2.Image = bm[2];
-                    pic3.Image = bm[3];
-                    pic4.Image = bm[4];
-                    pic5.Image = bm[5];
-                    pic6.Image = bm[6];
-                    pic7.Image = bm[7];
-                    pic8.Image = bm[8];
-                    pic9.Image = bm[9];
-                    pic10.Image = bm[10];
-                    pic11.Image = bm[11];
-                    pic12.Image = bm[12];
+                            
+
                 }
-            }
                 
+            }
+           
+
+            //pic1.Image = bm[1];
+            //pic2.Image = bm[2];
+            //pic3.Image = bm[3];
+            //pic4.Image = bm[4];
+            //pic5.Image = bm[5];
+            //pic6.Image = bm[6];
+            //pic7.Image = bm[7];
+            //pic8.Image = bm[8];
+            //pic9.Image = bm[9];
+            //pic10.Image = bm[10];
+            //pic11.Image = bm[11];
+            //pic12.Image = bm[12];
+
         }
     }
 }
