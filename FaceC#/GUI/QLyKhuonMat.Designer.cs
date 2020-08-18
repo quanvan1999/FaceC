@@ -304,7 +304,6 @@
             this.btnDung.TabIndex = 6;
             this.btnDung.Text = "Dừng";
             this.btnDung.UseVisualStyleBackColor = true;
-            this.btnDung.Click += new System.EventHandler(this.btnDung_Click);
             // 
             // picCamera
             // 
