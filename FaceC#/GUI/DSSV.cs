@@ -193,7 +193,7 @@ namespace GUI
                         {
                             addface = true;
                             MessageBox.Show("Bạn Hãy Nhìn Trực Tiếp Camera Và Thêm Vào 12 Khuôn Mặt, Với Khoảng Cách 0.5m");
-                            MessageBox.Show("Thêm Khuông Mặt Thứ: " + dem + " Thành Công");
+                            MessageBox.Show("Thêm Khuôn Mặt Thứ: " + dem + " Thành Công");
                             txtHoten.Enabled = false;
                             cboLop.Enabled = false;
                             txtMSSV.Enabled = false;
@@ -218,7 +218,7 @@ namespace GUI
                     else if (dem > 1 && dem < 13)
                     {
                         addface = true;
-                        MessageBox.Show("Thêm Khuông Mặt Thứ: " + dem + " Thành Công");
+                        MessageBox.Show("Thêm Khuôn Mặt Thứ: " + dem + " Thành Công");
                         dem++;
                         if (dem == 13)
                         {
@@ -633,7 +633,7 @@ namespace GUI
                 {
                     addface = true;
                     MessageBox.Show("Bạn Hãy Nhìn Trực Tiếp Camera Và Thêm Vào 12 Khuôn Mặt, Với Khoảng Cách 0.5m");
-                    MessageBox.Show("Thêm Khuông Mặt Thứ: " + dem + " Thành Công");
+                    MessageBox.Show("Thêm Khuôn Mặt Thứ: " + dem + " Thành Công");
                     txtHoten.Enabled = false;
                     cboLop.Enabled = false;
                     txtMSSV.Enabled = false;
@@ -658,7 +658,7 @@ namespace GUI
             else if (dem > 1 && dem < 13)
             {
                 addface = true;
-                MessageBox.Show("Thêm Khuông Mặt Thứ: " + dem + " Thành Công");
+                MessageBox.Show("Thêm Khuôn Mặt Thứ: " + dem + " Thành Công");
                 dem++;
                 if (dem == 13)
                 {

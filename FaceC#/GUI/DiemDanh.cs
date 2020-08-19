@@ -90,7 +90,7 @@ namespace GUI
                             Image<Gray, Byte> grayFaceResult = resualtFace.Convert<Gray, Byte>().Resize(100, 100, Inter.Cubic);
                             CvInvoke.EqualizeHist(grayFaceResult, grayFaceResult);
                             var result = recognizer.Predict(grayFaceResult);
-                            imgBox.Image = grayFaceResult.Bitmap;
+                            //imgBox.Image = grayFaceResult.Bitmap;
                             //imgBox2.Image = TrainedFaces[result.Label].Bitmap;
                             imgBox2.SizeMode = PictureBoxSizeMode.StretchImage;
                             //Here results found known faces
