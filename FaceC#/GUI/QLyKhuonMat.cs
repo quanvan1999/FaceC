@@ -7,6 +7,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BUS;
@@ -115,22 +116,25 @@ namespace GUI
 
                             //var i = Image.FromFile(path + @"\" + masv + "_" + lop + "_" + chonHinh + ".bmp");
                             //bm = new Bitmap(i);
-                        
+                          
                                 string[] files = Directory.GetFiles(path, masv + "_" + lop + "_" + chonHinh + ".bmp", SearchOption.AllDirectories);
                                 foreach (var file in files)
                                 {
-                                    File.Delete(file);
+                                    //File.Delete(file);
                                     resualtFace.Resize(100, 100, Inter.Cubic).Save(path + @"\" + masv + "_" + lop + "_" + chonHinh + ".bmp");
                                     bm = new Bitmap(resualtFace.Bitmap);
-                                Debug.WriteLine(file + " test ");
+                            
                                 }
-                                switch (chonHinh)
+                                
+                            switch (chonHinh)
                                 {
                                     case 1:
+                                        
                                         pic1.Image = bm;
                                         pic1.SizeMode = PictureBoxSizeMode.StretchImage;
                                         break;
                                     case 2:
+                                       
                                         pic2.Image = bm;
                                         pic2.SizeMode = PictureBoxSizeMode.StretchImage;
                                         break;
@@ -240,9 +244,9 @@ namespace GUI
 
         private void pic1_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Bạn Có Muốn Thoát ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dialogResult == DialogResult.Yes)
-            {
+            //DialogResult dialogResult = MessageBox.Show("Bạn Có Muốn Thoát ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            //if (dialogResult == DialogResult.Yes)
+            //{
                 pic1.Image = null;
                 pic1.SizeMode = PictureBoxSizeMode.StretchImage;
                 chonHinh = 1;
@@ -260,7 +264,7 @@ namespace GUI
                 pic10.Enabled = false;
                 pic11.Enabled = false;
                 pic12.Enabled = false;
-            }
+            //}
            
         }
 
@@ -286,7 +290,11 @@ namespace GUI
 
         private void btnDung_Click(object sender, EventArgs e)
         {
-            btnCapNhat.Enabled = false;
+            if (quayVideo != null)
+            {
+                quayVideo.Dispose();
+                btnCapNhat.Enabled = false;
+            }
         }
 
         private void pic3_Click(object sender, EventArgs e)

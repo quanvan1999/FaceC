@@ -334,7 +334,7 @@
             this.btnCapNhat.Name = "btnCapNhat";
             this.btnCapNhat.Size = new System.Drawing.Size(97, 40);
             this.btnCapNhat.TabIndex = 7;
-            this.btnCapNhat.Text = "Cập nhật";
+            this.btnCapNhat.Text = "Cập Nhật";
             this.btnCapNhat.UseVisualStyleBackColor = true;
             this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
             // 
