@@ -113,6 +113,7 @@
             this.pic12.Size = new System.Drawing.Size(100, 100);
             this.pic12.TabIndex = 23;
             this.pic12.TabStop = false;
+            this.pic12.Click += new System.EventHandler(this.pic12_Click);
             // 
             // pic11
             // 
@@ -122,6 +123,7 @@
             this.pic11.Size = new System.Drawing.Size(100, 100);
             this.pic11.TabIndex = 22;
             this.pic11.TabStop = false;
+            this.pic11.Click += new System.EventHandler(this.pic11_Click);
             // 
             // pic10
             // 
@@ -131,6 +133,7 @@
             this.pic10.Size = new System.Drawing.Size(100, 100);
             this.pic10.TabIndex = 21;
             this.pic10.TabStop = false;
+            this.pic10.Click += new System.EventHandler(this.pic10_Click);
             // 
             // pic9
             // 
@@ -140,6 +143,7 @@
             this.pic9.Size = new System.Drawing.Size(100, 100);
             this.pic9.TabIndex = 20;
             this.pic9.TabStop = false;
+            this.pic9.Click += new System.EventHandler(this.pic9_Click);
             // 
             // pic5
             // 
@@ -149,6 +153,7 @@
             this.pic5.Size = new System.Drawing.Size(100, 100);
             this.pic5.TabIndex = 19;
             this.pic5.TabStop = false;
+            this.pic5.Click += new System.EventHandler(this.pic5_Click);
             // 
             // pic6
             // 
@@ -158,6 +163,7 @@
             this.pic6.Size = new System.Drawing.Size(100, 100);
             this.pic6.TabIndex = 17;
             this.pic6.TabStop = false;
+            this.pic6.Click += new System.EventHandler(this.pic6_Click);
             // 
             // pic8
             // 
@@ -167,6 +173,7 @@
             this.pic8.Size = new System.Drawing.Size(100, 100);
             this.pic8.TabIndex = 16;
             this.pic8.TabStop = false;
+            this.pic8.Click += new System.EventHandler(this.pic8_Click);
             // 
             // pic3
             // 
@@ -176,6 +183,7 @@
             this.pic3.Size = new System.Drawing.Size(100, 100);
             this.pic3.TabIndex = 15;
             this.pic3.TabStop = false;
+            this.pic3.Click += new System.EventHandler(this.pic3_Click);
             // 
             // pic7
             // 
@@ -185,6 +193,7 @@
             this.pic7.Size = new System.Drawing.Size(100, 100);
             this.pic7.TabIndex = 14;
             this.pic7.TabStop = false;
+            this.pic7.Click += new System.EventHandler(this.pic7_Click);
             // 
             // pic4
             // 
@@ -194,6 +203,7 @@
             this.pic4.Size = new System.Drawing.Size(100, 100);
             this.pic4.TabIndex = 12;
             this.pic4.TabStop = false;
+            this.pic4.Click += new System.EventHandler(this.pic4_Click);
             // 
             // pic2
             // 
@@ -230,6 +240,8 @@
             // 
             // dgvDS
             // 
+            this.dgvDS.AllowUserToAddRows = false;
+            this.dgvDS.AllowUserToDeleteRows = false;
             this.dgvDS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDS.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Ma_SV,
@@ -304,6 +316,7 @@
             this.btnDung.TabIndex = 6;
             this.btnDung.Text = "Dừng";
             this.btnDung.UseVisualStyleBackColor = true;
+            this.btnDung.Click += new System.EventHandler(this.btnDung_Click);
             // 
             // picCamera
             // 
