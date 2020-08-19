@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -150,7 +151,9 @@ namespace GUI
       
         private void Main_Load(object sender, EventArgs e)
         {
-            
+            string path = Directory.GetCurrentDirectory() + @"\TrainedImages";//Tạo thư mục Trained trong debug
+            if (!Directory.Exists(path))
+                Directory.CreateDirectory(path);
 
         }
 

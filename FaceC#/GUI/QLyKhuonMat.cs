@@ -111,17 +111,18 @@ namespace GUI
 
                         Task.Factory.StartNew(() =>
                         {
-                           
-                            
+
+
                             //var i = Image.FromFile(path + @"\" + masv + "_" + lop + "_" + chonHinh + ".bmp");
                             //bm = new Bitmap(i);
-                         
+                        
                                 string[] files = Directory.GetFiles(path, masv + "_" + lop + "_" + chonHinh + ".bmp", SearchOption.AllDirectories);
                                 foreach (var file in files)
                                 {
                                     File.Delete(file);
                                     resualtFace.Resize(100, 100, Inter.Cubic).Save(path + @"\" + masv + "_" + lop + "_" + chonHinh + ".bmp");
                                     bm = new Bitmap(resualtFace.Bitmap);
+                                Debug.WriteLine(file + " test ");
                                 }
                                 switch (chonHinh)
                                 {
@@ -174,13 +175,8 @@ namespace GUI
                                         pic12.Image = bm;
                                         pic12.SizeMode = PictureBoxSizeMode.StretchImage;
                                         break;
-                            }
-                            
-                          
-
-
+                                }
                         });
-
                     }
 
                     addface = false;
@@ -244,29 +240,35 @@ namespace GUI
 
         private void pic1_Click(object sender, EventArgs e)
         {
-            chonHinh = 1;
-            pic1.Image = null;
-            pic1.SizeMode = PictureBoxSizeMode.StretchImage;
-            Debug.WriteLine(chonHinh);
-            
-            pic2.Enabled = false;
-            pic3.Enabled = false;
-            pic4.Enabled = false;
-            pic5.Enabled = false;
-            pic6.Enabled = false;
-            pic7.Enabled = false;
-            pic8.Enabled = false;
-            pic9.Enabled = false;
-            pic10.Enabled = false;
-            pic11.Enabled = false;
-            pic12.Enabled = false;
+            DialogResult dialogResult = MessageBox.Show("Bạn Có Muốn Thoát ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                pic1.Image = null;
+                pic1.SizeMode = PictureBoxSizeMode.StretchImage;
+                chonHinh = 1;
+              
+                Debug.WriteLine(chonHinh);
+
+                pic2.Enabled = false;
+                pic3.Enabled = false;
+                pic4.Enabled = false;
+                pic5.Enabled = false;
+                pic6.Enabled = false;
+                pic7.Enabled = false;
+                pic8.Enabled = false;
+                pic9.Enabled = false;
+                pic10.Enabled = false;
+                pic11.Enabled = false;
+                pic12.Enabled = false;
+            }
+           
         }
 
         private void pic2_Click(object sender, EventArgs e)
         {
             chonHinh = 2;
             pic2.Image = null;
-            pic2.SizeMode = PictureBoxSizeMode.StretchImage;
+           
             Debug.WriteLine(chonHinh);
             pic1.Enabled = false;
             pic3.Enabled = false;
@@ -289,6 +291,7 @@ namespace GUI
 
         private void pic3_Click(object sender, EventArgs e)
         {
+            
             chonHinh = 3;
             pic3.Image = null;
             pic3.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -480,60 +483,70 @@ namespace GUI
         private void btnCapNhat_Click(object sender, EventArgs e)
         {   
            addface = true;
+            pic1.Enabled = true;
+            pic2.Enabled = true;
+            pic3.Enabled = true;
+            pic4.Enabled = true;
+            pic5.Enabled = true;
+            pic6.Enabled = true;
+            pic7.Enabled = true;
+            pic8.Enabled = true;
+            pic9.Enabled = true;
+            pic10.Enabled = true;
+            pic11.Enabled = true;
+            pic12.Enabled = true;
         }
 
         private void dgvDS_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             dgvDS.ReadOnly = true;
-            //Bitmap[] bm = new Bitmap[13];
             if (e.RowIndex > -1 && e.ColumnIndex > -1 && dgvDS.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
             {
 
                 dgvDS.CurrentRow.Selected = true;
                 masv = dgvDS.Rows[e.RowIndex].Cells[0].FormattedValue.ToString();
                 lop = dgvDS.Rows[e.RowIndex].Cells[2].FormattedValue.ToString();
-
-                for (int i = 1; i <= SoKhuonMat; i++)
-                {
-                    string path = Directory.GetCurrentDirectory() + @"\TrainedImages";
-                    string[] files = Directory.GetFiles(path, masv + "_" + lop + "_" + i + ".bmp", SearchOption.AllDirectories);
-                    foreach (var file in files)
-                    {
-                        pictureList.Add(file);
-                        Debug.WriteLine(file);
-                    }
-                }
-                pic1.Image = Image.FromFile(pictureList[0]);
-                pic2.Image = Image.FromFile(pictureList[1]);
-                pic3.Image = Image.FromFile(pictureList[2]);
-                pic4.Image = Image.FromFile(pictureList[3]);
-                pic5.Image = Image.FromFile(pictureList[4]);
-                pic6.Image = Image.FromFile(pictureList[5]);
-                pic7.Image = Image.FromFile(pictureList[6]);
-                pic8.Image = Image.FromFile(pictureList[7]);
-                pic9.Image = Image.FromFile(pictureList[8]);
-                pic10.Image = Image.FromFile(pictureList[9]);
-                pic11.Image = Image.FromFile(pictureList[10]);
-                pic12.Image = Image.FromFile(pictureList[11]);
-                pictureList.Clear();
-
-                pic1.Enabled = true;
-                pic2.Enabled = true;
-                pic3.Enabled = true;
-                pic4.Enabled = true;
-                pic5.Enabled = true;
-                pic6.Enabled = true;
-                pic7.Enabled = true;
-                pic8.Enabled = true;
-                pic9.Enabled = true;
-                pic10.Enabled = true;
-                pic11.Enabled = true;
-                pic12.Enabled = true;
+              
+                   
             }
-           
 
+            for (int i = 1; i <= SoKhuonMat; i++)
+            {
+                string path = Directory.GetCurrentDirectory() + @"\TrainedImages";
+                string[] files = Directory.GetFiles(path, masv + "_" + lop + "_" + i + ".bmp", SearchOption.AllDirectories);
+                foreach (var file in files)
+                {
+                    pictureList.Add(file);
+                }
+            }
+            pic1.Image = Image.FromFile(pictureList[0]);
+            pic2.Image = Image.FromFile(pictureList[1]);
+            pic3.Image = Image.FromFile(pictureList[2]);
+            pic4.Image = Image.FromFile(pictureList[3]);
+            pic5.Image = Image.FromFile(pictureList[4]);
+            pic6.Image = Image.FromFile(pictureList[5]);
+            pic7.Image = Image.FromFile(pictureList[6]);
+            pic8.Image = Image.FromFile(pictureList[7]);
+            pic9.Image = Image.FromFile(pictureList[8]);
+            pic10.Image = Image.FromFile(pictureList[9]);
+            pic11.Image = Image.FromFile(pictureList[10]);
+            pic12.Image = Image.FromFile(pictureList[11]);
+            pictureList.Clear();
            
-           
+            pic1.Enabled = true;
+            pic2.Enabled = true;
+            pic3.Enabled = true;
+            pic4.Enabled = true;
+            pic5.Enabled = true;
+            pic6.Enabled = true;
+            pic7.Enabled = true;
+            pic8.Enabled = true;
+            pic9.Enabled = true;
+            pic10.Enabled = true;
+            pic11.Enabled = true;
+            pic12.Enabled = true;
+
+
             //Debug.WriteLine(pictureList[i] + " test " +pictureList.Count);
 
 
