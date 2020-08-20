@@ -48,7 +48,18 @@ namespace GUI
 
         private void QLyKhuonMat_Load(object sender, EventArgs e)
         {
-            
+            pic1.Enabled = false;
+            pic2.Enabled = false;
+            pic3.Enabled = false;
+            pic4.Enabled = false;
+            pic5.Enabled = false;
+            pic6.Enabled = false;
+            pic7.Enabled = false;
+            pic8.Enabled = false;
+            pic9.Enabled = false;
+            pic10.Enabled = false;
+            pic11.Enabled = false;
+            pic12.Enabled = false;
 
         }
         protected void ChonLop()
@@ -70,7 +81,7 @@ namespace GUI
                 quayVideo.ImageGrabbed += StartFrame;// tao ham lam viec voi camera
                 quayVideo.FlipHorizontal = !quayVideo.FlipHorizontal;
                 quayVideo.Start();
-                btnCapNhat.Enabled = true;
+               
 
             }
             else
@@ -120,66 +131,65 @@ namespace GUI
                                 string[] files = Directory.GetFiles(path, masv + "_" + lop + "_" + chonHinh + ".bmp", SearchOption.AllDirectories);
                                 foreach (var file in files)
                                 {
-                                    //File.Delete(file);
+                                    File.Delete(file);
                                     resualtFace.Resize(100, 100, Inter.Cubic).Save(path + @"\" + masv + "_" + lop + "_" + chonHinh + ".bmp");
                                     bm = new Bitmap(resualtFace.Bitmap);
                             
                                 }
                                 
-                            switch (chonHinh)
+                                switch (chonHinh)
                                 {
-                                    case 1:
-                                        
-                                        pic1.Image = bm;
-                                        pic1.SizeMode = PictureBoxSizeMode.StretchImage;
-                                        break;
-                                    case 2:
+                                        case 1:
+                                            pic1.Image = bm;
+                                            pic1.SizeMode = PictureBoxSizeMode.StretchImage;
+                                            break;
+                                        case 2:
                                        
-                                        pic2.Image = bm;
-                                        pic2.SizeMode = PictureBoxSizeMode.StretchImage;
-                                        break;
-                                    case 3:
-                                        pic3.Image = bm;
-                                        pic3.SizeMode = PictureBoxSizeMode.StretchImage;
-                                        break;
-                                    case 4:
-                                        pic4.Image = bm;
-                                        pic4.SizeMode = PictureBoxSizeMode.StretchImage;
-                                        break;
-                                    case 5:
-                                        pic5.Image = bm;
-                                        pic5.SizeMode = PictureBoxSizeMode.StretchImage;
-                                        break;
-                                    case 6:
-                                        pic6.Image = bm;
-                                        pic6.SizeMode = PictureBoxSizeMode.StretchImage;
-                                        break;
-                                    case 7:
-                                        pic7.Image = bm;
-                                        pic7.SizeMode = PictureBoxSizeMode.StretchImage;
-                                        break;
-                                    case 8:
-                                        pic8.Image = bm;
-                                        pic8.SizeMode = PictureBoxSizeMode.StretchImage;
-                                        break;
-                                    case 9:
-                                        pic9.Image = bm;
-                                        pic9.SizeMode = PictureBoxSizeMode.StretchImage;
-                                        break;
-                                    case 10:
-                                        pic10.Image = bm;
-                                        pic10.SizeMode = PictureBoxSizeMode.StretchImage;
-                                        break;
-                                    case 11:
-                                        pic11.Image = bm;
-                                        pic11.SizeMode = PictureBoxSizeMode.StretchImage;
-                                        break;
+                                            pic2.Image = bm;
+                                            pic2.SizeMode = PictureBoxSizeMode.StretchImage;
+                                            break;
+                                        case 3:
+                                            pic3.Image = bm;
+                                            pic3.SizeMode = PictureBoxSizeMode.StretchImage;
+                                            break;
+                                        case 4:
+                                            pic4.Image = bm;
+                                            pic4.SizeMode = PictureBoxSizeMode.StretchImage;
+                                            break;
+                                        case 5:
+                                            pic5.Image = bm;
+                                            pic5.SizeMode = PictureBoxSizeMode.StretchImage;
+                                            break;
+                                        case 6:
+                                            pic6.Image = bm;
+                                            pic6.SizeMode = PictureBoxSizeMode.StretchImage;
+                                            break;
+                                        case 7:
+                                            pic7.Image = bm;
+                                            pic7.SizeMode = PictureBoxSizeMode.StretchImage;
+                                            break;
+                                        case 8:
+                                            pic8.Image = bm;
+                                            pic8.SizeMode = PictureBoxSizeMode.StretchImage;
+                                            break;
+                                        case 9:
+                                            pic9.Image = bm;
+                                            pic9.SizeMode = PictureBoxSizeMode.StretchImage;
+                                            break;
+                                        case 10:
+                                            pic10.Image = bm;
+                                            pic10.SizeMode = PictureBoxSizeMode.StretchImage;
+                                            break;
+                                        case 11:
+                                            pic11.Image = bm;
+                                            pic11.SizeMode = PictureBoxSizeMode.StretchImage;
+                                            break;
 
-                                    case 12:
-                                        pic12.Image = bm;
-                                        pic12.SizeMode = PictureBoxSizeMode.StretchImage;
-                                        break;
-                                }
+                                        case 12:
+                                            pic12.Image = bm;
+                                            pic12.SizeMode = PictureBoxSizeMode.StretchImage;
+                                            break;
+                                    }
                         });
                     }
 
@@ -246,7 +256,7 @@ namespace GUI
         {
             chonHinh = 1;
 
-            DialogResult dialogResult = MessageBox.Show("Bạn Có Muốn Thoát ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult dialogResult = MessageBox.Show("Bạn Có Muốn Cập Nhật Ảnh Này ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
             {
                 pic1.Image = null;
@@ -265,6 +275,8 @@ namespace GUI
                 pic10.Enabled = false;
                 pic11.Enabled = false;
                 pic12.Enabled = false;
+
+                btnCapNhat.Enabled = true;
             }
 
         }
@@ -272,7 +284,7 @@ namespace GUI
         private void pic2_Click(object sender, EventArgs e)
         {
             chonHinh = 2;
-            DialogResult dialogResult = MessageBox.Show("Bạn Có Muốn Thoát ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult dialogResult = MessageBox.Show("Bạn Có Muốn Cập Nhật Ảnh Này ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
             {
                 pic2.Image = null;
@@ -289,6 +301,8 @@ namespace GUI
                 pic10.Enabled = false;
                 pic11.Enabled = false;
                 pic12.Enabled = false;
+
+                btnCapNhat.Enabled = true;
             }
         }
 
@@ -299,13 +313,14 @@ namespace GUI
                 quayVideo.Dispose();
                 btnCapNhat.Enabled = false;
             }
+            quayVideo = null;
         }
 
         private void pic3_Click(object sender, EventArgs e)
         {
             
             chonHinh = 3;
-            DialogResult dialogResult = MessageBox.Show("Bạn Có Muốn Thoát ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult dialogResult = MessageBox.Show("Bạn Có Muốn Cập Nhật Ảnh Này ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
             {
                 pic3.Image = null;
@@ -322,13 +337,15 @@ namespace GUI
                 pic10.Enabled = false;
                 pic11.Enabled = false;
                 pic12.Enabled = false;
+
+                btnCapNhat.Enabled = true;
             }
         }
 
         private void pic4_Click(object sender, EventArgs e)
         {
             chonHinh = 4;
-            DialogResult dialogResult = MessageBox.Show("Bạn Có Muốn Thoát ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult dialogResult = MessageBox.Show("Bạn Có Muốn Cập Nhật Ảnh Này ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
             {
                 pic4.Image = null;
@@ -345,13 +362,15 @@ namespace GUI
                 pic10.Enabled = false;
                 pic11.Enabled = false;
                 pic12.Enabled = false;
+
+                btnCapNhat.Enabled = true;
             }
         }
 
         private void pic5_Click(object sender, EventArgs e)
         {
             chonHinh = 5;
-            DialogResult dialogResult = MessageBox.Show("Bạn Có Muốn Thoát ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult dialogResult = MessageBox.Show("Bạn Có Muốn Cập Nhật Ảnh Này ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
             {
                 pic5.Image = null;
@@ -368,13 +387,15 @@ namespace GUI
                 pic10.Enabled = false;
                 pic11.Enabled = false;
                 pic12.Enabled = false;
+
+                btnCapNhat.Enabled = true;
             }
         }
 
         private void pic6_Click(object sender, EventArgs e)
         {
             chonHinh = 6;
-            DialogResult dialogResult = MessageBox.Show("Bạn Có Muốn Thoát ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult dialogResult = MessageBox.Show("Bạn Có Muốn Cập Nhật Ảnh Này ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
             {
                 pic6.Image = null;
@@ -391,13 +412,15 @@ namespace GUI
                 pic10.Enabled = false;
                 pic11.Enabled = false;
                 pic12.Enabled = false;
+
+                btnCapNhat.Enabled = true;
             }
         }
 
         private void pic7_Click(object sender, EventArgs e)
         {
             chonHinh = 7;
-            DialogResult dialogResult = MessageBox.Show("Bạn Có Muốn Thoát ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult dialogResult = MessageBox.Show("Bạn Có Muốn Cập Nhật Ảnh Này ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
             {
                 pic7.Image = null;
@@ -414,13 +437,15 @@ namespace GUI
                 pic10.Enabled = false;
                 pic11.Enabled = false;
                 pic12.Enabled = false;
+
+                btnCapNhat.Enabled = true;
             }
         }
 
         private void pic8_Click(object sender, EventArgs e)
         {
             chonHinh = 8;
-            DialogResult dialogResult = MessageBox.Show("Bạn Có Muốn Thoát ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult dialogResult = MessageBox.Show("Bạn Có Muốn Cập Nhật Ảnh Này ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
             {
                 pic8.Image = null;
@@ -437,13 +462,15 @@ namespace GUI
                 pic10.Enabled = false;
                 pic11.Enabled = false;
                 pic12.Enabled = false;
+
+                btnCapNhat.Enabled = true;
             }
         }
 
         private void pic9_Click(object sender, EventArgs e)
         {
             chonHinh = 9;
-            DialogResult dialogResult = MessageBox.Show("Bạn Có Muốn Thoát ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult dialogResult = MessageBox.Show("Bạn Có Muốn Cập Nhật Ảnh Này ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
             {
                 pic9.Image = null;
@@ -460,13 +487,15 @@ namespace GUI
                 pic10.Enabled = false;
                 pic11.Enabled = false;
                 pic12.Enabled = false;
+
+                btnCapNhat.Enabled = true;
             }
         }
 
         private void pic10_Click(object sender, EventArgs e)
         {
             chonHinh = 10;
-            DialogResult dialogResult = MessageBox.Show("Bạn Có Muốn Thoát ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult dialogResult = MessageBox.Show("Bạn Có Muốn Cập Nhật Ảnh Này ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
             {
                 pic10.Image = null;
@@ -483,13 +512,15 @@ namespace GUI
                 pic9.Enabled = false;
                 pic11.Enabled = false;
                 pic12.Enabled = false;
+
+                btnCapNhat.Enabled = true;
             }
         }
 
         private void pic11_Click(object sender, EventArgs e)
         {
             chonHinh = 11;
-            DialogResult dialogResult = MessageBox.Show("Bạn Có Muốn Thoát ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult dialogResult = MessageBox.Show("Bạn Có Muốn Cập Nhật Ảnh Này ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
             {
                 pic11.Image = null;
@@ -506,13 +537,15 @@ namespace GUI
                 pic9.Enabled = false;
                 pic10.Enabled = false;
                 pic12.Enabled = false;
+
+                btnCapNhat.Enabled = true;
             }
         }
 
         private void pic12_Click(object sender, EventArgs e)
         {
             chonHinh = 12;
-            DialogResult dialogResult = MessageBox.Show("Bạn Có Muốn Thoát ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult dialogResult = MessageBox.Show("Bạn Có Muốn Cập Nhật Ảnh Này ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
             {
                 pic12.Image = null;
@@ -529,6 +562,8 @@ namespace GUI
                 pic9.Enabled = false;
                 pic10.Enabled = false;
                 pic11.Enabled = false;
+
+                 btnCapNhat.Enabled = true;
             }
         }
 
@@ -568,7 +603,8 @@ namespace GUI
                         pictureList.Add(file);
                     }
                 }
-                
+                try
+                {
                     pic1.Image = Image.FromFile(pictureList[0]);
                     pic2.Image = Image.FromFile(pictureList[1]);
                     pic3.Image = Image.FromFile(pictureList[2]);
@@ -582,6 +618,12 @@ namespace GUI
                     pic11.Image = Image.FromFile(pictureList[10]);
                     pic12.Image = Image.FromFile(pictureList[11]);
                     pictureList.Clear();
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("Sinh viên không dủ 12 hình ảnh !","Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                }
+                    
                 
 
                 pic1.Enabled = true;

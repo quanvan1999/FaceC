@@ -30,7 +30,6 @@ namespace GUI
         private bool addface = false;
         int dem = 1, button = 0,SoKhuonMat=12;//số khuôn mặt khi thêm vào
         System.Text.RegularExpressions.Regex r = new System.Text.RegularExpressions.Regex(@"[~`!@#$%^&*()+=|\\{}':;.,<>/?[\]""_-]");
-
         public DSSV()
         {
             InitializeComponent();
@@ -125,10 +124,9 @@ namespace GUI
                         {
                             this.Invoke(new MethodInvoker(delegate ()
                             {
-                                resualtFace.Resize(100, 100, Inter.Cubic).Save(path + @"\" + txtMSSV.Text.Trim() + "_" + cboLop.Text.Trim() + "_" + dem + ".bmp");
 
+                              resualtFace.Resize(100, 100, Inter.Cubic).Save(path + @"\" + txtMSSV.Text.Trim() + "_" + cboLop.Text.Trim() + "_" + dem + ".bmp");
                             }));
-
                         });
 
                     }
