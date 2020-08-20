@@ -244,12 +244,13 @@ namespace GUI
 
         private void pic1_Click(object sender, EventArgs e)
         {
-            //DialogResult dialogResult = MessageBox.Show("Bạn Có Muốn Thoát ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            //if (dialogResult == DialogResult.Yes)
-            //{
+            chonHinh = 1;
+
+            DialogResult dialogResult = MessageBox.Show("Bạn Có Muốn Thoát ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
                 pic1.Image = null;
                 pic1.SizeMode = PictureBoxSizeMode.StretchImage;
-                chonHinh = 1;
               
                 Debug.WriteLine(chonHinh);
 
@@ -264,28 +265,31 @@ namespace GUI
                 pic10.Enabled = false;
                 pic11.Enabled = false;
                 pic12.Enabled = false;
-            //}
-           
+            }
+
         }
 
         private void pic2_Click(object sender, EventArgs e)
         {
             chonHinh = 2;
-            pic2.Image = null;
-           
-            Debug.WriteLine(chonHinh);
-            pic1.Enabled = false;
-            pic3.Enabled = false;
-            pic4.Enabled = false;
-            pic5.Enabled = false;
-            pic6.Enabled = false;
-            pic7.Enabled = false;
-            pic8.Enabled = false;
-            pic9.Enabled = false;
-            pic10.Enabled = false;
-            pic11.Enabled = false;
-            pic12.Enabled = false;
+            DialogResult dialogResult = MessageBox.Show("Bạn Có Muốn Thoát ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                pic2.Image = null;
 
+                Debug.WriteLine(chonHinh);
+                pic1.Enabled = false;
+                pic3.Enabled = false;
+                pic4.Enabled = false;
+                pic5.Enabled = false;
+                pic6.Enabled = false;
+                pic7.Enabled = false;
+                pic8.Enabled = false;
+                pic9.Enabled = false;
+                pic10.Enabled = false;
+                pic11.Enabled = false;
+                pic12.Enabled = false;
+            }
         }
 
         private void btnDung_Click(object sender, EventArgs e)
@@ -301,191 +305,231 @@ namespace GUI
         {
             
             chonHinh = 3;
-            pic3.Image = null;
-            pic3.SizeMode = PictureBoxSizeMode.StretchImage;
-            Debug.WriteLine(chonHinh);
-            pic1.Enabled = false;
-            pic2.Enabled = false;
-            pic4.Enabled = false;
-            pic5.Enabled = false;
-            pic6.Enabled = false;
-            pic7.Enabled = false;
-            pic8.Enabled = false;
-            pic9.Enabled = false;
-            pic10.Enabled = false;
-            pic11.Enabled = false;
-            pic12.Enabled = false;
+            DialogResult dialogResult = MessageBox.Show("Bạn Có Muốn Thoát ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                pic3.Image = null;
+                pic3.SizeMode = PictureBoxSizeMode.StretchImage;
+                Debug.WriteLine(chonHinh);
+                pic1.Enabled = false;
+                pic2.Enabled = false;
+                pic4.Enabled = false;
+                pic5.Enabled = false;
+                pic6.Enabled = false;
+                pic7.Enabled = false;
+                pic8.Enabled = false;
+                pic9.Enabled = false;
+                pic10.Enabled = false;
+                pic11.Enabled = false;
+                pic12.Enabled = false;
+            }
         }
 
         private void pic4_Click(object sender, EventArgs e)
         {
             chonHinh = 4;
-            pic4.Image = null;
-            pic4.SizeMode = PictureBoxSizeMode.StretchImage;
-            Debug.WriteLine(chonHinh);
-            pic1.Enabled = false;
-            pic2.Enabled = false;
-            pic3.Enabled = false;
-            pic5.Enabled = false;
-            pic6.Enabled = false;
-            pic7.Enabled = false;
-            pic8.Enabled = false;
-            pic9.Enabled = false;
-            pic10.Enabled = false;
-            pic11.Enabled = false;
-            pic12.Enabled = false;
+            DialogResult dialogResult = MessageBox.Show("Bạn Có Muốn Thoát ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                pic4.Image = null;
+                pic4.SizeMode = PictureBoxSizeMode.StretchImage;
+                Debug.WriteLine(chonHinh);
+                pic1.Enabled = false;
+                pic2.Enabled = false;
+                pic3.Enabled = false;
+                pic5.Enabled = false;
+                pic6.Enabled = false;
+                pic7.Enabled = false;
+                pic8.Enabled = false;
+                pic9.Enabled = false;
+                pic10.Enabled = false;
+                pic11.Enabled = false;
+                pic12.Enabled = false;
+            }
         }
 
         private void pic5_Click(object sender, EventArgs e)
         {
             chonHinh = 5;
-            pic5.Image = null;
-            pic5.SizeMode = PictureBoxSizeMode.StretchImage;
-            Debug.WriteLine(chonHinh);
-            pic1.Enabled = false;
-            pic2.Enabled = false;
-            pic3.Enabled = false;
-            pic4.Enabled = false;
-            pic6.Enabled = false;
-            pic7.Enabled = false;
-            pic8.Enabled = false;
-            pic9.Enabled = false;
-            pic10.Enabled = false;
-            pic11.Enabled = false;
-            pic12.Enabled = false;
+            DialogResult dialogResult = MessageBox.Show("Bạn Có Muốn Thoát ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                pic5.Image = null;
+                pic5.SizeMode = PictureBoxSizeMode.StretchImage;
+                Debug.WriteLine(chonHinh);
+                pic1.Enabled = false;
+                pic2.Enabled = false;
+                pic3.Enabled = false;
+                pic4.Enabled = false;
+                pic6.Enabled = false;
+                pic7.Enabled = false;
+                pic8.Enabled = false;
+                pic9.Enabled = false;
+                pic10.Enabled = false;
+                pic11.Enabled = false;
+                pic12.Enabled = false;
+            }
         }
 
         private void pic6_Click(object sender, EventArgs e)
         {
             chonHinh = 6;
-            pic6.Image = null;
-            pic6.SizeMode = PictureBoxSizeMode.StretchImage;
-            Debug.WriteLine(chonHinh);
-            pic1.Enabled = false;
-            pic2.Enabled = false;
-            pic3.Enabled = false;
-            pic4.Enabled = false;
-            pic5.Enabled = false;
-            pic7.Enabled = false;
-            pic8.Enabled = false;
-            pic9.Enabled = false;
-            pic10.Enabled = false;
-            pic11.Enabled = false;
-            pic12.Enabled = false;
+            DialogResult dialogResult = MessageBox.Show("Bạn Có Muốn Thoát ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                pic6.Image = null;
+                pic6.SizeMode = PictureBoxSizeMode.StretchImage;
+                Debug.WriteLine(chonHinh);
+                pic1.Enabled = false;
+                pic2.Enabled = false;
+                pic3.Enabled = false;
+                pic4.Enabled = false;
+                pic5.Enabled = false;
+                pic7.Enabled = false;
+                pic8.Enabled = false;
+                pic9.Enabled = false;
+                pic10.Enabled = false;
+                pic11.Enabled = false;
+                pic12.Enabled = false;
+            }
         }
 
         private void pic7_Click(object sender, EventArgs e)
         {
             chonHinh = 7;
-            pic7.Image = null;
-            pic7.SizeMode = PictureBoxSizeMode.StretchImage;
-            Debug.WriteLine(chonHinh);
-            pic1.Enabled = false;
-            pic2.Enabled = false;
-            pic3.Enabled = false;
-            pic4.Enabled = false;
-            pic5.Enabled = false;
-            pic6.Enabled = false;
-            pic8.Enabled = false;
-            pic9.Enabled = false;
-            pic10.Enabled = false;
-            pic11.Enabled = false;
-            pic12.Enabled = false;
+            DialogResult dialogResult = MessageBox.Show("Bạn Có Muốn Thoát ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                pic7.Image = null;
+                pic7.SizeMode = PictureBoxSizeMode.StretchImage;
+                Debug.WriteLine(chonHinh);
+                pic1.Enabled = false;
+                pic2.Enabled = false;
+                pic3.Enabled = false;
+                pic4.Enabled = false;
+                pic5.Enabled = false;
+                pic6.Enabled = false;
+                pic8.Enabled = false;
+                pic9.Enabled = false;
+                pic10.Enabled = false;
+                pic11.Enabled = false;
+                pic12.Enabled = false;
+            }
         }
 
         private void pic8_Click(object sender, EventArgs e)
         {
             chonHinh = 8;
-            pic8.Image = null;
-            pic8.SizeMode = PictureBoxSizeMode.StretchImage;
-            Debug.WriteLine(chonHinh);
-            pic1.Enabled = false;
-            pic2.Enabled = false;
-            pic3.Enabled = false;
-            pic4.Enabled = false;
-            pic5.Enabled = false;
-            pic6.Enabled = false;
-            pic7.Enabled = false;
-            pic9.Enabled = false;
-            pic10.Enabled = false;
-            pic11.Enabled = false;
-            pic12.Enabled = false;
+            DialogResult dialogResult = MessageBox.Show("Bạn Có Muốn Thoát ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                pic8.Image = null;
+                pic8.SizeMode = PictureBoxSizeMode.StretchImage;
+                Debug.WriteLine(chonHinh);
+                pic1.Enabled = false;
+                pic2.Enabled = false;
+                pic3.Enabled = false;
+                pic4.Enabled = false;
+                pic5.Enabled = false;
+                pic6.Enabled = false;
+                pic7.Enabled = false;
+                pic9.Enabled = false;
+                pic10.Enabled = false;
+                pic11.Enabled = false;
+                pic12.Enabled = false;
+            }
         }
 
         private void pic9_Click(object sender, EventArgs e)
         {
             chonHinh = 9;
-            pic9.Image = null;
-            pic9.SizeMode = PictureBoxSizeMode.StretchImage;
-            Debug.WriteLine(chonHinh);
-            pic1.Enabled = false;
-            pic2.Enabled = false;
-            pic3.Enabled = false;
-            pic4.Enabled = false;
-            pic5.Enabled = false;
-            pic6.Enabled = false;
-            pic7.Enabled = false;
-            pic8.Enabled = false;
-            pic10.Enabled = false;
-            pic11.Enabled = false;
-            pic12.Enabled = false;
+            DialogResult dialogResult = MessageBox.Show("Bạn Có Muốn Thoát ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                pic9.Image = null;
+                pic9.SizeMode = PictureBoxSizeMode.StretchImage;
+                Debug.WriteLine(chonHinh);
+                pic1.Enabled = false;
+                pic2.Enabled = false;
+                pic3.Enabled = false;
+                pic4.Enabled = false;
+                pic5.Enabled = false;
+                pic6.Enabled = false;
+                pic7.Enabled = false;
+                pic8.Enabled = false;
+                pic10.Enabled = false;
+                pic11.Enabled = false;
+                pic12.Enabled = false;
+            }
         }
 
         private void pic10_Click(object sender, EventArgs e)
         {
             chonHinh = 10;
-            pic10.Image = null;
-            pic10.SizeMode = PictureBoxSizeMode.StretchImage;
-            Debug.WriteLine(chonHinh);
-            pic1.Enabled = false;
-            pic2.Enabled = false;
-            pic3.Enabled = false;
-            pic4.Enabled = false;
-            pic5.Enabled = false;
-            pic6.Enabled = false;
-            pic7.Enabled = false;
-            pic8.Enabled = false;
-            pic9.Enabled = false;
-            pic11.Enabled = false;
-            pic12.Enabled = false;
+            DialogResult dialogResult = MessageBox.Show("Bạn Có Muốn Thoát ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                pic10.Image = null;
+                pic10.SizeMode = PictureBoxSizeMode.StretchImage;
+                Debug.WriteLine(chonHinh);
+                pic1.Enabled = false;
+                pic2.Enabled = false;
+                pic3.Enabled = false;
+                pic4.Enabled = false;
+                pic5.Enabled = false;
+                pic6.Enabled = false;
+                pic7.Enabled = false;
+                pic8.Enabled = false;
+                pic9.Enabled = false;
+                pic11.Enabled = false;
+                pic12.Enabled = false;
+            }
         }
 
         private void pic11_Click(object sender, EventArgs e)
         {
             chonHinh = 11;
-            pic11.Image = null;
-            pic11.SizeMode = PictureBoxSizeMode.StretchImage;
-            Debug.WriteLine(chonHinh);
-            pic1.Enabled = false;
-            pic2.Enabled = false;
-            pic3.Enabled = false;
-            pic4.Enabled = false;
-            pic5.Enabled = false;
-            pic6.Enabled = false;
-            pic7.Enabled = false;
-            pic8.Enabled = false;
-            pic9.Enabled = false;
-            pic10.Enabled = false;
-            pic12.Enabled = false;
+            DialogResult dialogResult = MessageBox.Show("Bạn Có Muốn Thoát ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                pic11.Image = null;
+                pic11.SizeMode = PictureBoxSizeMode.StretchImage;
+                Debug.WriteLine(chonHinh);
+                pic1.Enabled = false;
+                pic2.Enabled = false;
+                pic3.Enabled = false;
+                pic4.Enabled = false;
+                pic5.Enabled = false;
+                pic6.Enabled = false;
+                pic7.Enabled = false;
+                pic8.Enabled = false;
+                pic9.Enabled = false;
+                pic10.Enabled = false;
+                pic12.Enabled = false;
+            }
         }
 
         private void pic12_Click(object sender, EventArgs e)
         {
             chonHinh = 12;
-            pic12.Image = null;
-            pic12.SizeMode = PictureBoxSizeMode.StretchImage;
-            Debug.WriteLine(chonHinh);
-            pic1.Enabled = false;
-            pic2.Enabled = false;
-            pic3.Enabled = false;
-            pic4.Enabled = false;
-            pic5.Enabled = false;
-            pic6.Enabled = false;
-            pic7.Enabled = false;
-            pic8.Enabled = false;
-            pic9.Enabled = false;
-            pic10.Enabled = false;
-            pic11.Enabled = false;
+            DialogResult dialogResult = MessageBox.Show("Bạn Có Muốn Thoát ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                pic12.Image = null;
+                pic12.SizeMode = PictureBoxSizeMode.StretchImage;
+                Debug.WriteLine(chonHinh);
+                pic1.Enabled = false;
+                pic2.Enabled = false;
+                pic3.Enabled = false;
+                pic4.Enabled = false;
+                pic5.Enabled = false;
+                pic6.Enabled = false;
+                pic7.Enabled = false;
+                pic8.Enabled = false;
+                pic9.Enabled = false;
+                pic10.Enabled = false;
+                pic11.Enabled = false;
+            }
         }
 
         private void btnCapNhat_Click(object sender, EventArgs e)
@@ -514,45 +558,47 @@ namespace GUI
                 dgvDS.CurrentRow.Selected = true;
                 masv = dgvDS.Rows[e.RowIndex].Cells[0].FormattedValue.ToString();
                 lop = dgvDS.Rows[e.RowIndex].Cells[2].FormattedValue.ToString();
-              
-                   
+
+                for (int i = 1; i <= SoKhuonMat; i++)
+                {
+                    string path = Directory.GetCurrentDirectory() + @"\TrainedImages";
+                    string[] files = Directory.GetFiles(path, masv + "_" + lop + "_" + i + ".bmp", SearchOption.AllDirectories);
+                    foreach (var file in files)
+                    {
+                        pictureList.Add(file);
+                    }
+                }
+                
+                    pic1.Image = Image.FromFile(pictureList[0]);
+                    pic2.Image = Image.FromFile(pictureList[1]);
+                    pic3.Image = Image.FromFile(pictureList[2]);
+                    pic4.Image = Image.FromFile(pictureList[3]);
+                    pic5.Image = Image.FromFile(pictureList[4]);
+                    pic6.Image = Image.FromFile(pictureList[5]);
+                    pic7.Image = Image.FromFile(pictureList[6]);
+                    pic8.Image = Image.FromFile(pictureList[7]);
+                    pic9.Image = Image.FromFile(pictureList[8]);
+                    pic10.Image = Image.FromFile(pictureList[9]);
+                    pic11.Image = Image.FromFile(pictureList[10]);
+                    pic12.Image = Image.FromFile(pictureList[11]);
+                    pictureList.Clear();
+                
+
+                pic1.Enabled = true;
+                pic2.Enabled = true;
+                pic3.Enabled = true;
+                pic4.Enabled = true;
+                pic5.Enabled = true;
+                pic6.Enabled = true;
+                pic7.Enabled = true;
+                pic8.Enabled = true;
+                pic9.Enabled = true;
+                pic10.Enabled = true;
+                pic11.Enabled = true;
+                pic12.Enabled = true;
             }
 
-            for (int i = 1; i <= SoKhuonMat; i++)
-            {
-                string path = Directory.GetCurrentDirectory() + @"\TrainedImages";
-                string[] files = Directory.GetFiles(path, masv + "_" + lop + "_" + i + ".bmp", SearchOption.AllDirectories);
-                foreach (var file in files)
-                {
-                    pictureList.Add(file);
-                }
-            }
-            pic1.Image = Image.FromFile(pictureList[0]);
-            pic2.Image = Image.FromFile(pictureList[1]);
-            pic3.Image = Image.FromFile(pictureList[2]);
-            pic4.Image = Image.FromFile(pictureList[3]);
-            pic5.Image = Image.FromFile(pictureList[4]);
-            pic6.Image = Image.FromFile(pictureList[5]);
-            pic7.Image = Image.FromFile(pictureList[6]);
-            pic8.Image = Image.FromFile(pictureList[7]);
-            pic9.Image = Image.FromFile(pictureList[8]);
-            pic10.Image = Image.FromFile(pictureList[9]);
-            pic11.Image = Image.FromFile(pictureList[10]);
-            pic12.Image = Image.FromFile(pictureList[11]);
-            pictureList.Clear();
-           
-            pic1.Enabled = true;
-            pic2.Enabled = true;
-            pic3.Enabled = true;
-            pic4.Enabled = true;
-            pic5.Enabled = true;
-            pic6.Enabled = true;
-            pic7.Enabled = true;
-            pic8.Enabled = true;
-            pic9.Enabled = true;
-            pic10.Enabled = true;
-            pic11.Enabled = true;
-            pic12.Enabled = true;
+            
 
 
             //Debug.WriteLine(pictureList[i] + " test " +pictureList.Count);

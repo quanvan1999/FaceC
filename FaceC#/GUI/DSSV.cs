@@ -773,7 +773,7 @@ namespace GUI
                                 }
                                 else
                                 {
-                                    MessageBox.Show("Có "+i+" lớp không tồn tại !"); break;
+                                    MessageBox.Show("Có lớp "+lh.Ma_Lop+" không tồn tại !");
                                 }
 
 
