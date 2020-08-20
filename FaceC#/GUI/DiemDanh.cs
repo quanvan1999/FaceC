@@ -66,11 +66,11 @@ namespace GUI
             //nhận diện khuôn mặt: facedetection
             if (facedetection)
             {
-                Mat grayImage = new Mat();
-                CvInvoke.CvtColor(currentFrame, grayImage, ColorConversion.Bgr2Gray);
-                CvInvoke.EqualizeHist(grayImage, grayImage);
+                Mat grayImage = new Mat();//image của thư viên emgucv
+                CvInvoke.CvtColor(currentFrame, grayImage, ColorConversion.Bgr2Gray);//Chuyển hình thành màu xám
+                CvInvoke.EqualizeHist(grayImage, grayImage);// cân bằng độ sáng
 
-                Rectangle[] faces = cascadeClassifier.DetectMultiScale(grayImage, 1.2, 10, new Size(20, 20));
+                Rectangle[] faces = cascadeClassifier.DetectMultiScale(grayImage, 1.2, 10, new Size(20, 20));// xác định khuôn mặt
                 if (faces.Length > 0)
                 {
                     foreach (var face in faces)
@@ -80,7 +80,7 @@ namespace GUI
 
                         //add khuôn mặt : resualtFace
                         Image<Bgr, Byte> resualtFace = currentFrame.Convert<Bgr, Byte>();
-                        resualtFace.ROI = face;
+                        resualtFace.ROI = face;// xác dịnh khu vực khuôn mặt
                         imgBox2.SizeMode = PictureBoxSizeMode.StretchImage;// Chỉnh size cho imagebox;
                         imgBox2.Image = resualtFace.Bitmap;
 
@@ -88,8 +88,8 @@ namespace GUI
                         if (isTrained)
                         {
                             Image<Gray, Byte> grayFaceResult = resualtFace.Convert<Gray, Byte>().Resize(100, 100, Inter.Cubic);
-                            CvInvoke.EqualizeHist(grayFaceResult, grayFaceResult);
-                            var result = recognizer.Predict(grayFaceResult);
+                            CvInvoke.EqualizeHist(grayFaceResult, grayFaceResult);// can bằng
+                            var result = recognizer.Predict(grayFaceResult);// nhận dạng khuôn mặt mới truyền vào
                             //imgBox.Image = grayFaceResult.Bitmap;
                             //imgBox2.Image = TrainedFaces[result.Label].Bitmap;
                             imgBox2.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -97,8 +97,8 @@ namespace GUI
                             if (result.Label != 0 && result.Distance < 2000)
                             {
                                 CvInvoke.PutText(currentFrame, PersonsMSSV[result.Label], new Point(face.X - 2, face.Y - 2),
-                                            FontFace.HersheyComplex, 0.7, new Bgr(Color.Orange).MCvScalar);
-                                CvInvoke.Rectangle(currentFrame, face, new Bgr(Color.Green).MCvScalar, 2);
+                                            FontFace.HersheyComplex, 0.7, new Bgr(Color.Orange).MCvScalar);// vẽ khung chữ xung quanh khuôn mặt
+                                CvInvoke.Rectangle(currentFrame, face, new Bgr(Color.Green).MCvScalar, 2);// hiển thị khung xanh
                                 Mssv = PersonsMSSV[result.Label];
                                 Lop = PersonsLop[result.Label];
                                 try
@@ -110,11 +110,14 @@ namespace GUI
                                         {
                                             if (lstDiHoc.Items.Count == 0)
                                             {
+                                                // nếu lst đi học chưa có ai thì add vào sinh viên 
                                                 lstDiHoc.Items.Add(Mssv + " " + Lop);
                                             }
                                             else
                                             {
-                                                if (lstDiHoc.FindString(Mssv) != -1) { }
+                                                if (lstDiHoc.FindString(Mssv) != -1) {
+                                                    //kiểm tra sinh viên đó có tồn tại ở list chưa nếu có thì không add
+                                                }
                                                 else
                                                 {
                                                     lstDiHoc.Items.Add(Mssv + " " + Lop);
@@ -182,7 +185,7 @@ namespace GUI
                 {
 
                     recognizer = new EigenFaceRecognizer(ImagesCount, Threshold);//khởi tạo để sử dụng phương thức train
-                    recognizer.Train(TrainedFaces.ToArray(), PersonsLabes.ToArray());
+                    recognizer.Train(TrainedFaces.ToArray(), PersonsLabes.ToArray());// ngắn số thứ tự của hình ảnh, vào ảnh
 
                     isTrained = true;
                     //Debug.WriteLine(ImagesCount);
@@ -233,7 +236,7 @@ namespace GUI
        
             //hien thi sinh vien len list vang
             //PersonsLabes so hinh anh
-           
+            // nếu list đi học không có ai thì add tất cả Masv có hình ảnh vào list vắng
                 if (lstDiHoc.Items.Count == 0)
                 {
                     for (int i = 0; i < PersonsLabes.Count; i++)

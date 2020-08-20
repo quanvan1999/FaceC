@@ -122,7 +122,7 @@ namespace GUI
 
                         Task.Factory.StartNew(() =>
                         {
-                            this.Invoke(new MethodInvoker(delegate ()
+                            this.Invoke(new MethodInvoker(delegate ()//ưu tiên thực hiện dòng này trước nếu ko có doạn này sẽ bị lỗi thread
                             {
 
                               resualtFace.Resize(100, 100, Inter.Cubic).Save(path + @"\" + txtMSSV.Text.Trim() + "_" + cboLop.Text.Trim() + "_" + dem + ".bmp");
