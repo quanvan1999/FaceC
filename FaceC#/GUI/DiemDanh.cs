@@ -20,7 +20,7 @@ namespace GUI
         private Capture quayVideo = null;
         static readonly CascadeClassifier cascadeClassifier = new CascadeClassifier("haarcascade_frontalface_alt.xml");
         Mat frame = new Mat();
-        private bool facederection = false;//nhan diện khuôn mặt
+        private bool facedetection = false;//nhan diện khuôn mặt
         private Image<Bgr, Byte> currentFrame = null;// khuôn mặt hiện tại
         private bool isTrained = false;// Kiểm tra khuôn mặt
 
@@ -63,8 +63,8 @@ namespace GUI
             currentFrame = frame.ToImage<Bgr, Byte>().Resize(320, 240, Inter.Cubic);
 
 
-            //nhận diện khuôn mặt: facederection
-            if (facederection)
+            //nhận diện khuôn mặt: facedetection
+            if (facedetection)
             {
                 Mat grayImage = new Mat();
                 CvInvoke.CvtColor(currentFrame, grayImage, ColorConversion.Bgr2Gray);
@@ -101,28 +101,36 @@ namespace GUI
                                 CvInvoke.Rectangle(currentFrame, face, new Bgr(Color.Green).MCvScalar, 2);
                                 Mssv = PersonsMSSV[result.Label];
                                 Lop = PersonsLop[result.Label];
-                                this.Invoke(new MethodInvoker(delegate ()
-                                {                                         
-                                    //in sinh viên đi học
-                                    if(Lop==cboChonLop.Text)
+                                try
+                                {
+                                    this.Invoke(new MethodInvoker(delegate ()
                                     {
-                                        if (lstDiHoc.Items.Count == 0)
+                                        //in sinh viên đi học
+                                        if (Lop == cboChonLop.Text)
                                         {
-                                            lstDiHoc.Items.Add(Mssv + " " + Lop);
-                                        }
-                                        else
-                                        {
-                                            if (lstDiHoc.FindString(Mssv) != -1) { }
-                                            else
+                                            if (lstDiHoc.Items.Count == 0)
                                             {
                                                 lstDiHoc.Items.Add(Mssv + " " + Lop);
                                             }
-                                        }
+                                            else
+                                            {
+                                                if (lstDiHoc.FindString(Mssv) != -1) { }
+                                                else
+                                                {
+                                                    lstDiHoc.Items.Add(Mssv + " " + Lop);
+                                                }
+                                            }
 
-                                        lblLop.Text = Lop;
-                                        lblMSSV.Text = Mssv;
-                                    }            
-                                }));
+                                            lblLop.Text = Lop;
+                                            lblMSSV.Text = Mssv;
+                                        }
+                                    }));
+                                }
+                                catch (Exception ex)
+                                {
+                                  
+                                }
+                                
                                 
                                
                             }
@@ -161,10 +169,10 @@ namespace GUI
                 foreach (var file in files)
                 {
                     Image<Gray, Byte> trainedImage = new Image<Gray, Byte>(file).Resize(100, 100, Inter.Cubic);
-                    CvInvoke.EqualizeHist(trainedImage, trainedImage);
-                    TrainedFaces.Add(trainedImage);
-                    PersonsLabes.Add(ImagesCount);
-                    string mssv = file.Split('\\').Last().Split('_')[0];
+                    CvInvoke.EqualizeHist(trainedImage, trainedImage);// cân bằng độ sáng.
+                    TrainedFaces.Add(trainedImage);// add khuôn mặt có vào list traind
+                    PersonsLabes.Add(ImagesCount);// gắn số tứ tự cho hình ảnh
+                    string mssv = file.Split('\\').Last().Split('_')[0];//lay mssv trước dấu _
                     string lop = file.Split('\\').Last().Split('_')[1];
                     PersonsMSSV.Add(mssv);
                     PersonsLop.Add(lop);
@@ -173,7 +181,7 @@ namespace GUI
                 if (TrainedFaces.Count() > 0)
                 {
 
-                    recognizer = new EigenFaceRecognizer(ImagesCount, Threshold);
+                    recognizer = new EigenFaceRecognizer(ImagesCount, Threshold);//khởi tạo để sử dụng phương thức train
                     recognizer.Train(TrainedFaces.ToArray(), PersonsLabes.ToArray());
 
                     isTrained = true;
@@ -203,7 +211,7 @@ namespace GUI
         private void btnDiemDanh_Click(object sender, EventArgs e)
         {
             btnThongKe.Enabled = true;
-            facederection = true; // quet khuon mat 
+            facedetection = true; // quet khuon mat 
             TrainImagesFromDir();//train hinh anh tuong duong khuon mat
             btnStart.Enabled = false;
             cboChonLop.Enabled = false;
@@ -214,7 +222,7 @@ namespace GUI
 
         private void btnThongKe_Click(object sender, EventArgs e)
         {
-            facederection = false;
+            facedetection = false;
             btnStart.Enabled = false;
             btnDiemDanh.Enabled = false;
             imgBox2.Dispose();
@@ -319,7 +327,7 @@ namespace GUI
 
             if (quayVideo != null)
             {
-                facederection = false;
+                facedetection = false;
                 quayVideo.Dispose();
                 imgBox.Image = null;
                 imgBox2.Image = null;
@@ -366,7 +374,7 @@ namespace GUI
             if (quayVideo != null)
             {
                 quayVideo.Dispose();
-                facederection = false;
+                facedetection = false;
             }
             quayVideo = null;
         }
@@ -450,7 +458,7 @@ namespace GUI
             txtDiemDanhTC.Text = "";
             if(quayVideo!=null)
             {
-                facederection = false;
+                facedetection = false;
                 quayVideo.Dispose();
                 btnStart.Enabled = true;
                 imgBox.Image = null;

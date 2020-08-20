@@ -92,111 +92,109 @@ namespace GUI
 
         private void StartFrame(object sender, EventArgs e)
         {
-            quayVideo.Retrieve(frame, 0);
-            currentFrame = frame.ToImage<Bgr, Byte>().Resize(320, 240, Inter.Cubic);
+          
+                quayVideo.Retrieve(frame, 0);
+                currentFrame = frame.ToImage<Bgr, Byte>().Resize(320, 240, Inter.Cubic);
 
-            Mat grayImage = new Mat();
-            CvInvoke.CvtColor(currentFrame, grayImage, ColorConversion.Bgr2Gray);
-            CvInvoke.EqualizeHist(grayImage, grayImage);//cân bằng độ sáng
-            System.Drawing.Rectangle[] faces = cascadeClassifier.DetectMultiScale(grayImage, 1.2, 10, new Size(20, 20));
+                Mat grayImage = new Mat();
+                CvInvoke.CvtColor(currentFrame, grayImage, ColorConversion.Bgr2Gray);
+                CvInvoke.EqualizeHist(grayImage, grayImage);//cân bằng độ sáng
+                System.Drawing.Rectangle[] faces = cascadeClassifier.DetectMultiScale(grayImage, 1.2, 10, new Size(20, 20));
 
 
-            if (faces.Length > 0)
-            {
-                foreach (var face in faces)
+                if (faces.Length > 0)
                 {
-                    // vẽ hình vuông vào mặt
-                    CvInvoke.Rectangle(currentFrame, face, new Bgr(Color.Red).MCvScalar, 2);
-
-                    //add khuôn mặt : resualtFace
-                    Image<Gray, Byte> resualtFace = currentFrame.Convert<Gray, Byte>();
-                    resualtFace.ROI = face;
-                    //picBox2.SizeMode = PictureBoxSizeMode.StretchImage;// Chỉnh size cho imagebox;
-                    //picBox2.Image = resualtFace.Bitmap;
-                    if (addface)
+                    foreach (var face in faces)
                     {
+                        // vẽ hình vuông vào mặt
+                        CvInvoke.Rectangle(currentFrame, face, new Bgr(Color.Red).MCvScalar, 2);
 
-
-                        string path = Directory.GetCurrentDirectory() + @"\TrainedImages";//Tạo thư mục Trained trong debug
-                        if (!Directory.Exists(path))
-                            Directory.CreateDirectory(path);
-
-                        Task.Factory.StartNew(() =>
+                        //add khuôn mặt : resualtFace
+                        Image<Gray, Byte> resualtFace = currentFrame.Convert<Gray, Byte>();
+                        resualtFace.ROI = face;
+                        //picBox2.SizeMode = PictureBoxSizeMode.StretchImage;// Chỉnh size cho imagebox;
+                        //picBox2.Image = resualtFace.Bitmap;
+                        if (addface)
                         {
 
 
-                            //var i = Image.FromFile(path + @"\" + masv + "_" + lop + "_" + chonHinh + ".bmp");
-                            //bm = new Bitmap(i);
-                          
-                                string[] files = Directory.GetFiles(path, masv + "_" + lop + "_" + chonHinh + ".bmp", SearchOption.AllDirectories);
-                                foreach (var file in files)
-                                {
-                                    File.Delete(file);
+                            string path = Directory.GetCurrentDirectory() + @"\TrainedImages";//Tạo thư mục Trained trong debug
+                            if (!Directory.Exists(path))
+                                Directory.CreateDirectory(path);
+
+                            Task.Factory.StartNew(() =>
+                            {
+                                try { 
+                                
                                     resualtFace.Resize(100, 100, Inter.Cubic).Save(path + @"\" + masv + "_" + lop + "_" + chonHinh + ".bmp");
                                     bm = new Bitmap(resualtFace.Bitmap);
-                            
                                 }
-                                
+                                catch (Exception ex)
+                                {
+                                   
+                                }
+
+
                                 switch (chonHinh)
                                 {
-                                        case 1:
-                                            pic1.Image = bm;
-                                            pic1.SizeMode = PictureBoxSizeMode.StretchImage;
-                                            break;
-                                        case 2:
-                                       
-                                            pic2.Image = bm;
-                                            pic2.SizeMode = PictureBoxSizeMode.StretchImage;
-                                            break;
-                                        case 3:
-                                            pic3.Image = bm;
-                                            pic3.SizeMode = PictureBoxSizeMode.StretchImage;
-                                            break;
-                                        case 4:
-                                            pic4.Image = bm;
-                                            pic4.SizeMode = PictureBoxSizeMode.StretchImage;
-                                            break;
-                                        case 5:
-                                            pic5.Image = bm;
-                                            pic5.SizeMode = PictureBoxSizeMode.StretchImage;
-                                            break;
-                                        case 6:
-                                            pic6.Image = bm;
-                                            pic6.SizeMode = PictureBoxSizeMode.StretchImage;
-                                            break;
-                                        case 7:
-                                            pic7.Image = bm;
-                                            pic7.SizeMode = PictureBoxSizeMode.StretchImage;
-                                            break;
-                                        case 8:
-                                            pic8.Image = bm;
-                                            pic8.SizeMode = PictureBoxSizeMode.StretchImage;
-                                            break;
-                                        case 9:
-                                            pic9.Image = bm;
-                                            pic9.SizeMode = PictureBoxSizeMode.StretchImage;
-                                            break;
-                                        case 10:
-                                            pic10.Image = bm;
-                                            pic10.SizeMode = PictureBoxSizeMode.StretchImage;
-                                            break;
-                                        case 11:
-                                            pic11.Image = bm;
-                                            pic11.SizeMode = PictureBoxSizeMode.StretchImage;
-                                            break;
+                                    case 1:
+                                        pic1.Image = bm;
+                                        pic1.SizeMode = PictureBoxSizeMode.StretchImage;
+                                        break;
+                                    case 2:
 
-                                        case 12:
-                                            pic12.Image = bm;
-                                            pic12.SizeMode = PictureBoxSizeMode.StretchImage;
-                                            break;
-                                    }
-                        });
+                                        pic2.Image = bm;
+                                        pic2.SizeMode = PictureBoxSizeMode.StretchImage;
+                                        break;
+                                    case 3:
+                                        pic3.Image = bm;
+                                        pic3.SizeMode = PictureBoxSizeMode.StretchImage;
+                                        break;
+                                    case 4:
+                                        pic4.Image = bm;
+                                        pic4.SizeMode = PictureBoxSizeMode.StretchImage;
+                                        break;
+                                    case 5:
+                                        pic5.Image = bm;
+                                        pic5.SizeMode = PictureBoxSizeMode.StretchImage;
+                                        break;
+                                    case 6:
+                                        pic6.Image = bm;
+                                        pic6.SizeMode = PictureBoxSizeMode.StretchImage;
+                                        break;
+                                    case 7:
+                                        pic7.Image = bm;
+                                        pic7.SizeMode = PictureBoxSizeMode.StretchImage;
+                                        break;
+                                    case 8:
+                                        pic8.Image = bm;
+                                        pic8.SizeMode = PictureBoxSizeMode.StretchImage;
+                                        break;
+                                    case 9:
+                                        pic9.Image = bm;
+                                        pic9.SizeMode = PictureBoxSizeMode.StretchImage;
+                                        break;
+                                    case 10:
+                                        pic10.Image = bm;
+                                        pic10.SizeMode = PictureBoxSizeMode.StretchImage;
+                                        break;
+                                    case 11:
+                                        pic11.Image = bm;
+                                        pic11.SizeMode = PictureBoxSizeMode.StretchImage;
+                                        break;
+
+                                    case 12:
+                                        pic12.Image = bm;
+                                        pic12.SizeMode = PictureBoxSizeMode.StretchImage;
+                                        break;
+                                }
+                            });
+                        }
+
+                        addface = false;
                     }
-
-                    addface = false;
                 }
-            }
-            picCamera.Image = currentFrame.Bitmap;
+                picCamera.Image = currentFrame.Bitmap;   
         }
 
         private void txtTim_KeyPress(object sender, KeyPressEventArgs e)
@@ -542,6 +540,15 @@ namespace GUI
             }
         }
 
+        private void QLyKhuonMat_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (quayVideo != null)
+            {
+                quayVideo.Dispose();
+            }
+            quayVideo = null;
+        }
+
         private void pic12_Click(object sender, EventArgs e)
         {
             chonHinh = 12;
@@ -621,7 +628,7 @@ namespace GUI
                 }
                 catch(Exception ex)
                 {
-                    MessageBox.Show("Sinh viên không dủ 12 hình ảnh !","Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                    //MessageBox.Show("Sinh viên không dủ 12 hình ảnh !","Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
                 }
                     
                 
