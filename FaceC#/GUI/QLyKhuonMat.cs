@@ -492,7 +492,10 @@ namespace GUI
                 dgvDS.CurrentRow.Selected = true;
                 masv = dgvDS.Rows[e.RowIndex].Cells[0].FormattedValue.ToString();
                 lop = dgvDS.Rows[e.RowIndex].Cells[2].FormattedValue.ToString();
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
                 for (int i = 1; i <= SoKhuonMat; i++)
                 {
                     string path = Directory.GetCurrentDirectory() + @"\TrainedImages";
@@ -500,7 +503,10 @@ namespace GUI
                     foreach (var file in files)
                     {
                         pictureList.Add(file);
+<<<<<<< Updated upstream
                         Debug.WriteLine(file);
+=======
+>>>>>>> Stashed changes
                     }
                 }
                 pic1.Image = Image.FromFile(pictureList[0]);
@@ -529,8 +535,16 @@ namespace GUI
                 pic10.Enabled = true;
                 pic11.Enabled = true;
                 pic12.Enabled = true;
+<<<<<<< Updated upstream
             }
            
+=======
+
+            }
+
+           
+
+>>>>>>> Stashed changes
 
            
            
